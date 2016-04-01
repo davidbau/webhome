@@ -16,8 +16,8 @@ creating a programming tool called Pencil Code.
 
 ### Creating a Programmable World
 
-Fundamentally the problem that motivates me most is the problem of
-programmability. How can we keep people in charge of our complex
+The problem that motivates me most is the problem of
+programmability. How can we put people in charge of our complex
 computational devices, instead of the other way around?  I am very
 proud of my work in helping to implement highly programmable web
 standards, democratizing the internet by making web browsers radically
@@ -32,30 +32,38 @@ We all know that deep neural networks are making remarkable strides.
 For the first time, simple optimization techniques are automatically
 creating complexity that is worthy of being called artificial
 intelligence. We are training neural networks with dozens of layers and
-hundreds of millions of learned parameters, the equivalent of many
+hundreds of millions of learned parameters, the equivalent of
 thousands of lines of automatically-generated code.  And yet
 we do not know, really, how they work, why they fail when they do,
 or how to intentionally create beavhior within them.
 
-Meanwhile the culture around deep neural networks is somewhat resistant
-to opening the black box. Within the deep network community, understandable
+Meanwhile, within the deep network community, understandable
 AI is generally perceived as an ineffective approach: people can only
 comprehend a few things at once, but neural networks are capable
-balancing thousands of signals at every neuron.
+balancing thousands of signals at every neuron - and this capability
+seems essential to their function.  For example, biasing a network
+towards sparse connections to aid understandability appears to
+penalize performance. So practitioners generally believe it is
+best to set aside human comprehension and let the
+algorithms optimize freely.
 
-Furthermore, biasing a network towards sparse connections to aid
-understandability appears to penalize performance. Since comprehensibility
-seems at odds with performance, it is more productive to set aside
-human comprehension and let the algorithms optimize freely.
+For my whole career, I have built tools to make it easier to for
+people to program, debug, and control increasingly complex software
+systems. So this is a disquieting moment.  Whereas previously
+all my work has made human programmers progressively more capable,
+more aware, and more expressive, for the first time, the best way
+to program a computer is to take the human out of the loop. For
+the first time, it is best to let the computers devise
+their own algorithms.
 
-If true, this point of view would represent a remarkable phase-change
-in the history of computer science: the first time when it is most
-effective for computers to program themselves, rather than to have
-people program them.
+Computers programming themselves: it is a real phase-change.
 
 ### Can Deep Neural Networks be Designed?
 
-And yet I think there are reasons to believe that opening the black box
+But does stocastic gradient descent really mean the end of
+human software engineering?
+
+I think there are reasons to believe that opening the black box
 of deep neural networks is still worthwhile, even just measured with the
 metric of pursuing performance.  Here are a few reasons.
 
@@ -78,12 +86,23 @@ metric of pursuing performance.  Here are a few reasons.
       that represent well-factored single concepts.
       [Quiroga found individual neurons in the hippocampus of epilsepy
       patients that cleanly encoded concepts such as "Halle Berry."](https://scholar.google.com/scholar?q=quiroga+Invariant+visual+representation+by+single+neurons+in+the+human+brain)
-      
-It seems to me that these are all reason to believe that even better
-neural networks could be created by combining the power of gradient
-descent with the power of software engineering. Perhaps a first step
-would be to open the black box and understand how to transfer knowledge
-between neural networks in detail.
+
+These are all reasons to believe that even better neural networks
+could be created by combining the power of gradient descent with
+the power of human-driven software engineering.
+
+However, it seems like it will be a different flavor of software
+engineering, more driven by measurement, experience, and learning
+rather than by types, axioms, and proofs.  Programming might be
+more akin to biologists investigating gene expression and manipulating
+recominant DNA than mathematicians preserving hard invariants in an
+argument.
+
+To extend the analogy, in neural networks, we are like biologists who
+know that DNA is the genetic code, but who do not yet know how DNA
+is divided into genes or how it encodes proteins. The time is ripe,
+it seems, to crack open the black box and understand how the knowledge
+locked up in neural networks might be able to be subdivided.
 
 What a neat problem!
 

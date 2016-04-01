@@ -15,12 +15,12 @@ save_as: index.html
 }
 .projects td {
     vertical-align: top;
-    padding: 30px 0 0 0;
+    padding: 0 0 30px 0;
 }
 .projects td:nth-child(1) {
     width: 84px;
     text-align: center;
-    padding: 30px 20px 0 0;
+    padding: 0 20px 30px 0;
 }
 .projects td p {
     padding-top: 12px;
@@ -83,7 +83,9 @@ for beginners that introduces several innovations that
 bridge the gap between beginner coding and mainstream programming.
 It has a block code editor that smoothly bridges to text, and it
 includes a turtle graphics environment that smoothly bridges to
-mainstream web programming.
+mainstream web programming. The system helps students transition
+to text-based programming remarkably quickly; I have published
+several papers about the system, its components, and its efficacy.
 </td>
 </tr>
 <tr>
@@ -94,6 +96,12 @@ mainstream web programming.
 I am coauthor of the textbook
 <a href="http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617"><em>Numerical Linear Algebra</em></a>,
 with Nick Trefethen, which I wrote while I was at Cornell.
+It provides a conceptual, mathematical introduction to
+the field. If you would like a principled overview of the
+fundamental algorithms behind matlab, or if you are worried about
+things like the stability, conditioning, or the imprecision of
+floating-point arithmetic in your large matrix algorithms,
+the book is worth a read.
 </td>
 </tr>
 <tr>
@@ -103,13 +111,6 @@ with Nick Trefethen, which I wrote while I was at Cornell.
 <td>
 I have an M.S. in Computer Science
 from Cornell, and an A.B. in mathematics from Harvard.
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td>
-<a href="https://scholar.google.com/citations?hl=en&user=CYI6cKgAAAAJ">Google Scholar Citations</a>
 </td>
 </tr>
 </table>
@@ -126,3 +127,6 @@ David Bau and D. Anthony Bau. 2014. A Preview of Pencil Code: A Tool for Develop
 
 Zhao, J., Yagnik, J., Adam, H. and Bau, D., 2008, September. Large scale learning and recognition of faces in web videos. In Automatic Face & Gesture Recognition, 2008. FG'08. 8th IEEE International Conference on (pp. 1-7). IEEE.
 
+Trefethen, Lloyd N., and David Bau. Numerical linear algebra. Vol. 50. Siam, 1997.
+
+<a href="https://scholar.google.com/citations?hl=en&user=CYI6cKgAAAAJ">Google Scholar Citations</a>
