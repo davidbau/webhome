@@ -4,24 +4,18 @@ Category: Blog
 
 I am approaching the end of my first year of my EECS graduate program at
 MIT, and although a PhD typically stretches for years, I feel how acutely
-limited and precious this time is.  So I have been hunting for a research
-topic to devote the rest of my time to.
-
-I have been lucky enough to work on a lot of interesting projects
-over the years: a linear algebra textbook with Nick Trefethen; developing
-Internet Explorer for Microsoft; building Java programming tools with a
-startup; creating Google Talk; working on Google Image Search.  Recently
-I have worked on broadening access to computer science for beginners by
-creating a programming tool called Pencil Code.
+limited and precious this time is. It is a unique moment of academic
+freedom.  What really interests me?
 
 ### Creating a Programmable World
 
 The problem that motivates me most is the problem of
-programmability. How can we put people in charge of our complex
-computational devices, instead of the other way around?  I am very
-proud of my work in helping to implement highly programmable web
+programmability. How can we put people in charge of our
+computational systems, instead of the other way around?  I am very
+proud of my work in helping to implement programmable web
 standards, democratizing the internet by making web browsers radically
-easy to program. When I came to MIT, I had planned to continue
+easy to program. I am also proud of my work helping to teach young
+people to program. When I came to MIT, I had planned to continue
 work on programming tools geared toward making programming
 understandable to everyday users and beginners.
 
@@ -56,8 +50,6 @@ to program a computer is to take the human out of the loop. For
 the first time, it is best to let the computers devise
 their own algorithms.
 
-Computers programming themselves: it is a real phase-change.
-
 ### Can Deep Neural Networks be Designed?
 
 But does stocastic gradient descent really mean the end of
@@ -91,18 +83,13 @@ These are all reasons to believe that even better neural networks
 could be created by combining the power of gradient descent with
 the power of human-driven software engineering.
 
-However, it seems like it will be a different flavor of software
-engineering, more driven by measurement, experience, and learning
-rather than by types, axioms, and proofs.  Programming might be
-more akin to biologists investigating gene expression and manipulating
-recominant DNA than mathematicians preserving hard invariants in an
-argument.
-
-To extend the analogy, in neural networks, we are like biologists who
-know that DNA is the genetic code, but who do not yet know how DNA
-is divided into genes or how it encodes proteins. The time is ripe,
-it seems, to crack open the black box and understand how the knowledge
-locked up in neural networks might be able to be subdivided.
+But it might be a different flavor of software engineering, one
+more driven by measurement, experience, and learning rather
+than by types, axioms, and proofs.  Programming might be
+more akin to biologists investigating gene expression and
+less like mathematicians preserving hard invariants in an
+argument. Is there structure nevertheless?  Can neural networks
+have the equivalent of recombinant DNA?
 
 What a neat problem!
 

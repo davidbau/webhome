@@ -28,7 +28,7 @@ save_as: index.html
 </style>
 
 First year PhD student at MIT in Computer Science, working with
-[Robert Miller](http://people.csail.mit.edu/rcm/).
+[Rob Miller](http://people.csail.mit.edu/rcm/).
 
 ![David Bau](img/davidbau.jpg){: style="float:left;width:160px;padding:0 10px 10px 0"}
 
@@ -110,7 +110,7 @@ the book is worth a read.
 </td>
 <td>
 I have an M.S. in Computer Science
-from Cornell, and an A.B. in mathematics from Harvard.
+from Cornell, and an A.B. in Mathematics from Harvard.
 </td>
 </tr>
 </table>
@@ -128,5 +128,7 @@ David Bau and D. Anthony Bau. 2014. A Preview of Pencil Code: A Tool for Develop
 Zhao, J., Yagnik, J., Adam, H. and Bau, D., 2008, September. Large scale learning and recognition of faces in web videos. In Automatic Face & Gesture Recognition, 2008. FG'08. 8th IEEE International Conference on (pp. 1-7). IEEE.
 
 Trefethen, Lloyd N., and David Bau. Numerical linear algebra. Vol. 50. Siam, 1997.
+
+Bau, David, Induprakas Kodukula, Vladimir Kotlyar, Keshav Pingali, and Paul Stodghill. Solving alignment using elementary linear algebra. Springer Berlin Heidelberg, 1994.
 
 <a href="https://scholar.google.com/citations?hl=en&user=CYI6cKgAAAAJ">Google Scholar Citations</a>
