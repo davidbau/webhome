@@ -19,6 +19,9 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = u'en'
 
+# Summaries contain the whole article
+SUMMARY_MAX_LENGTH = 600
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
