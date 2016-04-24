@@ -78,12 +78,12 @@ and a <a href="http://davidbau.com/about/hacks.html">and a variety of other hack
 <img alt="Pencil Code" src="img/dpencil-128.png">
 </td>
 <td>
-I created <a href="http://pencilcode.net/">Pencil Code</a>, a programming tool
-for beginners that introduces several innovations that
+I created <a href="http://pencilcode.net/">Pencil Code</a>, a programming
+tool for beginners that introduces several innovations that
 bridge the gap between beginner coding and mainstream programming.
 It has a block code editor that smoothly bridges to text, and it
 includes a turtle graphics environment that smoothly bridges to
-mainstream web programming. The system helps students transition
+mainstream web programming.  The system helps students transition
 to text-based programming remarkably quickly; I have published
 several papers about the system, its components, and its efficacy.
 </td>
