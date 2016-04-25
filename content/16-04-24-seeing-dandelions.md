@@ -3,11 +3,11 @@ Date: 2016-04-24 13:29
 Category: Blog
 
 I spent the morning with my son Cody digging dandelions out of our lawn.
-Some dandelions are easy to spot since they are sprouting yellow flowers
-now, but other dandelions are harder to see. Since dandelions spread out,
-when you dig them out, you need to find the center of the plant to locate
-the taproot. Some plants are hard to find and Cody helped me with his
-eagle-eyes.  We filled half of a trash bag full of dandelions.
+Some dandelions are easy to spot since they are sprouting yellow flowers,
+but other dandelions are harder to see.  Cody helped me on the hunt.
+Also, since dandelions spread out, when you dig them out, you need to
+also look carefully to find the center of the plant to locate
+the taproot.  We filled half of a trash bag full of dandelions.
 
 My brain doing an odd thing now that I am resting.  Whenever I close my
 eyes, I see dandelion plants, a different plant each time I blink.

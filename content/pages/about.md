@@ -37,7 +37,7 @@ I work on programmability and debugging of deep neural networks.
 My work investigates three questions.
 
 * Can knowledge from several neural networks be tranplanted together
-  economically?
+  intentionally?
 * Can latent knowledge be cleanly encapsulated within deep networks?
 * Can tools be created to allow programmers to effectively debug and design
   deep neural networks?
@@ -78,7 +78,8 @@ and a <a href="http://davidbau.com/about/hacks.html">and a variety of other hack
 <img alt="Pencil Code" src="img/dpencil-128.png">
 </td>
 <td>
-I created <a href="http://pencilcode.net/">Pencil Code</a>, a programming
+Working with my son, I created
+<a href="http://pencilcode.net/">Pencil Code</a>, a programming
 tool for beginners that introduces several innovations that
 bridge the gap between beginner coding and mainstream programming.
 It has a block code editor that smoothly bridges to text, and it
@@ -99,7 +100,7 @@ with Nick Trefethen, which I wrote while I was at Cornell.
 It provides a conceptual, mathematical introduction to
 the field. If you would like a principled overview of the
 fundamental algorithms behind matlab, or if you are worried about
-things like the stability, conditioning, or the imprecision of
+things like the stability, conditioning, or the precision of
 floating-point arithmetic in your large matrix algorithms,
 the book is worth a read.
 </td>
