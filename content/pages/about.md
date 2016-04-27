@@ -28,7 +28,8 @@ save_as: index.html
 </style>
 
 First year PhD student at MIT in Computer Science, working with
-[Rob Miller](http://people.csail.mit.edu/rcm/).
+[Rob Miller](http://people.csail.mit.edu/rcm/) and collaborating with
+[Antonio Torralba](http://web.mit.edu/torralba/www/).
 
 ![David Bau](img/davidbau.jpg){: style="float:left;width:160px;padding:0 10px 10px 0"}
 
@@ -38,7 +39,8 @@ My work investigates three questions.
 
 * Can knowledge from several neural networks be tranplanted together
   intentionally?
-* Can latent knowledge be cleanly encapsulated within deep networks?
+* Can latent knowledge within deep neural networks be cleanly encapsulated
+  and reused?
 * Can tools be created to allow programmers to effectively debug and design
   deep neural networks?
 
@@ -78,7 +80,7 @@ and a <a href="http://davidbau.com/about/hacks.html">and a variety of other hack
 <img alt="Pencil Code" src="img/dpencil-128.png">
 </td>
 <td>
-Working with my son, I created
+Together with my son I created
 <a href="http://pencilcode.net/">Pencil Code</a>, a programming
 tool for beginners that introduces several innovations that
 bridge the gap between beginner coding and mainstream programming.
@@ -99,7 +101,7 @@ I am coauthor of the textbook
 with Nick Trefethen, which I wrote while I was at Cornell.
 It provides a conceptual, mathematical introduction to
 the field. If you would like a principled overview of the
-fundamental algorithms behind matlab, or if you are worried about
+fundamental algorithms behind Matlab, or if you are worried about
 things like the stability, conditioning, or the precision of
 floating-point arithmetic in your large matrix algorithms,
 the book is worth a read.
