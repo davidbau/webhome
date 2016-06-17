@@ -28,7 +28,7 @@ save_as: index.html
 </style>
 
 First year PhD student at MIT in Computer Science, working with
-[Rob Miller](http://people.csail.mit.edu/rcm/) and collaborating with
+[Rob Miller](http://people.csail.mit.edu/rcm/) and
 [Antonio Torralba](http://web.mit.edu/torralba/www/).
 
 ![David Bau](img/davidbau.jpg){: style="float:left;width:160px;padding:0 10px 10px 0"}
