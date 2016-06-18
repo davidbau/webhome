@@ -141,7 +141,7 @@ Here I am probing the classic network LeNet-5, which is a small convolutional
 neural network that classifies 10 handwritten digits from the MNIST data set.
 I am using the original network design by Yann LeCun with some L2
 regularization, tuned so that it can reach testing accuracy of about 99.2%
-after about 3000 training batches (with 500 instances of each batch).
+after about 3000 training batches (with 500 instances in each batch).
 
 In the video above, each neuron is represented by a row, which attempts
 to show its "purpose" in distinguishing the 10 different classes of
