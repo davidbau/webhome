@@ -27,27 +27,25 @@ save_as: index.html
 }
 </style>
 
-First year PhD student at MIT in Computer Science, working with
+PhD student at MIT in Computer Science, working with
 [Rob Miller](http://people.csail.mit.edu/rcm/) and
 [Antonio Torralba](http://web.mit.edu/torralba/www/).
 
 ![David Bau](img/davidbau.jpg){: style="float:left;width:160px;padding:0 10px 10px 0"}
 
 I work on programmability and debugging of deep neural networks.
+Systems should be transparent to the people who use them.
 
-My work investigates three questions.
+My work investigates the following questions.
 
-* Can knowledge from several neural networks be tranplanted together
-  intentionally?
-* Can latent knowledge within deep neural networks be cleanly encapsulated
-  and reused?
+* Can latent knowledge within deep neural networks be cleanly identified,
+  debugged, encapsulated, and reused?
 * Can tools be created to allow programmers to effectively debug and design
   deep neural networks?
 
 I am also interested in programming tools that make computer science
 more accessible to beginners and non-expert programmers. I believe
-passionately that the technologies created by humanity should be
-programmable by all.
+that the technologies created by humanity should be programmable by all.
 
 ## Background
 
@@ -119,6 +117,8 @@ from Cornell, and an A.B. in Mathematics from Harvard.
 </table>
 
 ## Publications
+
+Bau D, Gray J, Kelleher K, Sheldon J, Turbak F. 2016. Learnable Programming: Blocks and Beyond. Communications of the ACM, <em>in press</em>.
 
 Saskham Aggarwal, D. Anthony Bau, and David Bau. 2015. A blocks-based editor for HTML code. In Blocks and Beyond Workshop (Blocks and Beyond), 2015 IEEE (pp. 83-85).
 
