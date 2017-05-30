@@ -1,6 +1,6 @@
 Title: Seeing Dandelions
 Date: 2016-04-24 13:29
-Category: Blog
+Category: Research Notes
 
 I spent the morning with my son Cody digging dandelions out of our lawn.
 Some dandelions are easy to spot since they are sprouting yellow flowers,

@@ -1,6 +1,6 @@
 Title: The Purpose of a Neuron
 Date: 2016-06-17 15:29
-Category: Blog
+Category: Research Notes
 
 <video width="960" height="540" controls>
 <source src="/davidbau/movies/syn/composite.mov" type="video/mp4">

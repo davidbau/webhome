@@ -1,6 +1,6 @@
 Title: Norvig on Debugging with Machine Learining
 Date: 2016-06-01 14:29
-Category: Blog
+Category: Research Notes
 
 At an EmTech digital talk last week, [Peter Norvig spoke](http://events.technologyreview.com/emtech/digital/16/video/watch/peter-norvig-state-of-the-art-ai/)
 about the challenges presented by using machine learning.  He talked

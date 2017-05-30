@@ -1,6 +1,6 @@
 Title: Choosing a Research Path
 Date: 2016-03-25 13:29
-Category: Blog
+Category: Research Notes
 
 I am approaching the end of my first year of my EECS graduate program at
 MIT, and although a PhD typically stretches for years, I feel how acutely

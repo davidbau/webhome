@@ -1,6 +1,6 @@
 Title: Neuron Specialization
 Date: 2016-06-17 15:29
-Category: Blog
+Category: Research Notes
 
 <video width="960" height="540" controls>
 <source src="/davidbau/movies/syn/lenet_gradient_and_activation.mov" type="video/mp4">
@@ -60,10 +60,14 @@ does not fire, we zero non-firing contributions.  As you can see, the
 average "7" which activates this neuron does indeed have a crossbar.
 This differs from most other neurons that fire on 7.
 
+![unit linear-0-58 showing a crossed 7](/davidbau/home/img/linear_0-58-crossed-7.png)
+
 The phenomenon of a neuron on which the gradient is strong but the activation
 is not strong seem to be interesting.  Here is another such neuron, unit 28
 of the linear_0 layer.  This one shows yet another way to draw a 7, which
 is with a vertical hook overhanging the left end of the horizontal bar.
+
+![unit linear-0-28 showing a crossed 7](/davidbau/home/img/linear_0-28-hooked-7.png)
 
 cannot discern any particular kind of specialization.  For example,
 unit 8 in linear-0 learns with very strong gradient for 8, but it
@@ -73,4 +77,5 @@ that activate it: perhaps this neuron specializes in something negative,
 for example, its ability to fire on 8 while not firing on any other
 digit other than 1.
 
+![unit linear-0-8 showing a low-activation 8](/davidbau/home/img/linear_0-8-unknown-8.png)
 
