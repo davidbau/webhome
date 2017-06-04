@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>David Bau</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<style>
+body, td, th {
+  font-family: 'Open Sans', sans-serif;
+}
+.prologue {
+  margin-bottom: 1rem;
+}
+p.linger .more {
+  font-size: 0;
+}
+p .more::before {
+  content: 'more\25B8';
+  padding-right: .2em;
+  font-style: italic;
+  color: #0275d8;
+  cursor: pointer;
+  transition: font-size 0.2s;
+}
+p .more:hover::before {
+  color: red;
+  text-decoration: underline;
+}
+p .extra {
+  font-size: 0;
+  opacity: 0;
+  transition: opacity 0.5s, font-size 0.2s;
+}
+p.linger .extra {
+  font-size: 16px;
+  opacity: 1;
+}
+span.me {
+  font-weight: bold;
+  white-space: nowrap;
+}
+.publications p::after {
+  content: '';
+  display: block;
+  clear: both;
+  padding: 0;
+  margin: 0;
+}
+.publications p {
+  background-color: #e4f1fe;
+  padding: 30px;
+  border-radius: 10px
+}
+
+.color-primary-0 { color: #2E4272 }  /* Main Primary color */
+.color-primary-1 { color: #858890 }
+.color-primary-2 { color: #556281 }
+.color-primary-3 { color: #0E2863 }
+.color-primary-4 { color: #021B54 }
+
+.nd-pageheader {
+  padding: 1rem 15px;
+  /* margin-bottom: 1.5rem; */
+  text-align: center;
+  color: black;
+  /* background-color: #e4f1fe; */
+}
+
+.nd-pageheader a {
+  color: black;
+}
+
+.nd-pageheader .container {
+  position: relative
+}
+
+.nd-pageheader h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  color: black;
+}
+
+.nd-pageheader address {
+  font-weight: 300;
+}
+
+.nd-pageheader p {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 300
+}
+
+.selfpic {
+  width: 300px;
+  display: none;
+}
+
+.projpic {
+  width: 300px;
+  float: left;
+  display: none;
+  margin-right: 1em;
+}
+
+figcaption {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.highlight {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  background: gainsboro;
+}
+
+.smallfig {
+  width: 80%;
+}
+
+.modal .big-modal {
+  width:auto;
+  max-width:90%;
+  max-height:80%;
+}
+
+.img-wrapper {
+  text-align: center;
+}
+
+.big-modal img {
+  max-height: 60vh;
+}
+
+.img-scroller {
+  overflow-x: scroll;
+}
+
+.img-scroller .img-fluid {
+  max-width: initial;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .nd-pageheader {
+    padding-top:1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .smallfig {
+    width: 60%;
+  }
+  .nd-pageheader h1 {
+    font-size:3rem
+  }
+
+  .nd-pageheader p {
+    font-size: 1.5rem
+  }
+  .twocol-md {
+     column-count: 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .smallfig {
+    width: 45%;
+  }
+  #fig-arch-compare {
+    width: 49%;
+  }
+}
+.best { font: 12.5px Helvetica; }
+.best { border-collapse: collapse; border-spacing: 0; }
+.best td { position: relative; }
+.best td img { margin-top: 15px; }
+.best td .unit { font-size: 10px; position: absolute; top: 0; left: 3px; white-space: nowrap; width: 100%; text-overflow: clip; overflow: hidden; }
+.best td .score { display: none; position: absolute; top: 0; right: 3px; white-sapce: nowrap; }
+.best td:nth-child(1) {
+  min-width: 28px;
+  border-right: 3px solid transparent;
+}
+.best td .netname {
+	transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	font: 12px helvetica;
+	white-space: nowrap;
+	padding: 4px;
+}
+.best th, .best td {
+  padding-left: 3px;
+}
+.best img {
+  width: 100%;
+}
+.best .concept {
+	color: black;
+	font: 14px helvetica;
+  padding-bottom: 2px;
+  text-transform: capitalize;
+  text-align: left;
+  margin-right: 1px;
+}
+
+@media (min-width: 576px) {
+  .best td .unit { font-size: inherit; }
+  .best td .netname { font-size: 14px; }
+  .best .concept { font-size: 20px; }
+}
+
+@media (min-width: 768px) {
+  .best td .netname { font-size: 17px; }
+  .selfpic { display: inline-block; }
+  .projpic { display: block; }
+}
+
+@media (min-width: 1200px) {
+  .best td .score { display: block; }
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 80%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+</style>
+</head>
+<body class="nd-docs">
+<div class="nd-pageheader">
+ <div class="container">
+ <h1><nobr>David Bau</nobr></h1>
+ <p class="lead">
+ <nobr>Preserving Programmability</nobr> in a
+ <nobr>World of Complexity</nobr>
+<address>
+ <nobr>Computer Science</nobr> and
+ <nobr>Artificial Intelligence Laboratory</nobr><br>
+ <nobr>Massachusetts Institute of Technology</nobr><br>
+ <nobr><script>
+var emn = 'davidbau' + ''.constructor.fromCharCode(1<<6) + 'csail.mit.edu';
+document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
+ </script></nobr><br>
+</address>
+ </p>
+ </div>
+</div><!-- end nd-pageheader -->
+<div class="container">
+<div class="row">
+<div class="col">
+<figure class="float-right ml-4 selfpic">
+<img src="family.jpg" class="selfpic">
+<figcaption>David Bau (center) and family:<br>(clockwise) Heidi, Cody, Piper, and Anthony</figcaption>
+</figure>
+<div class="prologue clearfix">
+<p>In our quest to invent and improve automation,
+computer scientists must not relinquish humanity's ability to
+program computers. Our reaction to a complex world
+should be to create transparency.</p>
+<p>As a PhD student in <a href="http://web.mit.edu/torralba/www/"
+>Antonio Torralba's lab</a>, I develop techniques that increase
+interpretability
+of deep neural networks. I have found evidence that the
+representations learned by deep networks are not always
+monolithic: they can have a simple underlying
+structure. The focus of my research at MIT is therefore to
+find ways to enhance and exploit this structure
+to make these systems more transparent.</p>
+<p>I also work on programmability as seen as a
+broader human-computer interaction problem. I develop
+novice programming interfaces, introductory lessons, open standards,
+and libraries that make computer systems more broadly programmable.
+</div>
+<div class="publications">
+<h2>Publications and Projects</h2>
+<p><a href="http://netdissect.csail.mit.edu/">
+<img src="netdissect.png" class="projpic">
+Network Dissection</a>
+is a technique for quantifying and automatically
+estimating the human interpretability (and interpretation) of units
+within any deep neural network for vision.
+<span class="more"></span>
+<span class="extra">
+Building upon a surprising
+<a href="https://arxiv.org/abs/1412.6856">2014 finding by Bolei Zhou</a>,
+network dissection defines a dictionary of 1197 human-labeled
+visual concepts, each represented as a segmentation problem, then
+it estimates interpretability by evaluating each hidden convolutional
+unit as a solution to those problems.
+I have used network dissection to reveal that representation space is
+not isotropic: learned representations have an unusually high agreement
+with human-labeled concepts that vanishes under a change in basis.
+We will be giving an oral presentation about
+the technique and the insights it provides at the July 2017 CVPR conference.
+</span>
+<a href="http://netdissect.csail.mit.edu/final-network-dissection.pdf"
+><span class="me">D Bau</span>, B Zhou, A Khosla, A Oliva, and A Torralba. <em>Network Dissection:
+Quantifying the Intepretability of Deep Visual Representations.</em>
+In Computer Vision and Patern Recognition 2017</a>.
+</p>
+<p><a href="https://arxiv.org/pdf/1705.09413.pdf">
+<img src="bbchunking.png" class="projpic"></a>
+<a href="http://cs.wellesley.edu/~blocks-and-beyond/1/">
+Blocks and Beyond</a>
+is a workshop I helped organize to bring together researchers who are
+investigating blocked-based interfaces to simplify programming for
+novices and casual programmers.
+<span class="more"></span>
+<span class="extra"> After a fascinating and oversubscribed
+workshop, we wrote a review paper to
+survey the state-of-the-art in block-based programming research.
+The review appears in the June 2017 Communications of the ACM.</span>
+<a href="https://arxiv.org/abs/1705.09413"><span class="me">D Bau</span>, J Gray, C Kelleher, J Sheldon, F Turbak. <em>Learnable Programming: Blocks and Beyond.</em> Communications of the ACM, pp. 72-80. June 2017</a>.</p>
+<p><a href="https://pencilcode.net">
+<img src="pencilgym.png" class="projpic">
+Pencil Code</a> is an open-source
+project that bridges the gap between novice programming idioms and
+professional languages.
+<span class="more"></span>
+<span class="extra">Developed together with my son and with the generous
+support of Google, this system provides a blocks-based editing environment
+with turtle graphics on a canvas that smoothly transitions to text-based
+editing of web applications using jQuery. Two thousand students use the
+system each day. A study of middle-school
+students using the environment suggests suggests the block-and-text
+transitions are an aid to learning.</span>
+<a href="http://dl.acm.org/citation.cfm?id=2771875"><span class="me">D Bau</span>, D A Bau, M Dawson, C S Pickens. <em>Pencil code: block code for a text world.</em> In Proceedings of the 14th International Conference on Interaction Design and Children, pp. 445-448. ACM, 2015.</a>
+</p>
+<p><a href="https://images.google.com/">
+<img src="freshimage.png" class="projpic">
+Google Image Search</a> is the world's largest searchable index of images.
+<span class="more"></span>
+<span class="extra">While at Google I contributed several improvements to this product, including improved <a href="https://search.googleblog.com/2011/12/search-quality-highlights-new-monthly.html">ranking for recent images</a>, a <a href="https://googlesystem.blogspot.com/2013/06/new-ui-for-related-searches-in-google.html#gsc.tab=0">clustered broswing interface for discovering images</a> using related searches, a rollout of the complex infrastructure to support <a href="https://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html">a long-scrolling result page</a>
+ serving one thousand image results at a time, and improvements in the understanding of person entities on the web.</span>
+<a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.722.1005">M Zhao, J Yagnik, H Adam, <span class="me">D Bau</span>, Large scale learning and recognition of faces in web videos. In Automatic Face & Gesture Recognition, 2008. FG'08. 8th IEEE International Conference on (pp. 1-7). IEEE, September 2008.</a>
+<p><a href="https://en.wikipedia.org/wiki/Google_Talk">
+<img src="gmailchat.png" class="projpic">
+Google Talk</a>
+is a web-based chat solution that was built-in to GMail.
+<span class="more"></span>
+<span class="extra">I led the team to create Google Talk in an (ultimately unsuccessful) attempt to establish a universal federated open realtime communication ecosystem for the internet.  Our messaging platform provided full-scale support for XMPP and Jingle, which are open standards for federating real-time chat and voice that are analogous to the open-for-all SMTP system for email. To this day, open realtime communications remains an unfulfilled dream for the internet.</span>
+<a href="https://googleblog.blogspot.com/2005/08/google-gets-to-talking.html"><span class="me">D Bau</span>. <em>Google Gets to Talking</em>. Google Official Blog, August 2005.
+<p><a href="https://en.wikipedia.org/wiki/XMLBeans">
+<img src="xmlbeans.png" class="projpic">
+Apache XML Beans</a> is an open-source implementation of the XML Schema specification as a compiler from schema types to Java classes.
+<span class="more"></span>
+<span class="extra">While no longer widely used, my team's implementation of this standard is still a good example of an important approach that continues to be a key technique for the creation of understandably complex systems: the prioritization of faithful and transparent data representations over simplified but opaque functional encapsulations.</span>
+<a href="http://davidbau.com/archives/2003/11/14/the_design_of_xmlbeans_part_1.html"><span class="me">D Bau</span>. <em>The Design of XML Beans</em>, davidbau.com, a dabbler's weblog, November 2003.</a>
+<p><a href="https://en.wikipedia.org/wiki/Internet_Explorer_4">
+<img src="ie4logo.png" class="projpic">
+Microsoft Internet Explorer 4</a> was the first AJAX web browser.
+<span class="more"></span>
+<span class="extra">As part of the <a href="https://en.wikipedia.org/wiki/Trident_(layout_engine)">Trident</a> team led by <a href="https://en.wikipedia.org/wiki/Adam_Bosworth">Adam Bosworth</a>, I helped create the first fully mutable HTML DOM by defining its asynchronous loading model. My contribution was to implement an incremental HTML parser and fast multithreaded preloader for linked resources that was able to co-exist with single-threaded script execution.</span>
+The design of the system resolved tensions between performance, flexiblity, and programmability, and contributed to the strength of the modern web platform.</p>
+<p><a href="http://people.maths.ox.ac.uk/~trefethen/text.html">
+<img src="linalg.png" class="projpic">
+Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I wrote with my advisor <a href="http://people.maths.ox.ac.uk/~trefethen/">Nick Trefethen</a> while at Cornell.
+<span class="more"></span>
+<span class="extra">The book began as a detailed set of notes that I took while attending Nick's course. The writing is intended to capture the spirit of his teaching: succinct and insightful.  The hope is to reveal the elegance of this family of fundamental algorithms and dispel the myth that finite-precision arithmetic means imprecise thinking.</span>
+<a href="https://scholar.google.com/scholar?cluster=4058884683459283601">L N Trefethen, <span class="me">D Bau</span>. Numerical linear algebra. Vol. 50. Siam, 1997.</a></p>
+</div>
+</div>
+</div>
+</div>
+<script>
+$(document).on('click', '.more', function(ev) {
+  $(this).closest('p').addClass('linger');
+});
+</script>
+</body>
+</html>
