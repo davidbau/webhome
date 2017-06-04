@@ -31,11 +31,11 @@ AUTHOR_FEED_RSS = None
 
 HIDE_SIDEBAR = True
 # Blogroll
-#LINKS = (
-#  ('davidbau@github', 'https://github.com/davidbau'),
+MENUITEMS = (
+  ('Blog', 'http://davidbau.com/'),
+  ('Github', 'https://github.com/davidbau'),
 #  ('pencilcode.net', 'https://pencilcode.net/'),
-#  ('davidbau.com', 'http://davidbau.com/'),
-#)
+)
 
 # Social widget
 SOCIAL = ()
