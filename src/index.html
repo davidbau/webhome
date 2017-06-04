@@ -12,6 +12,7 @@
 <style>
 body, td, th {
   font-family: 'Open Sans', sans-serif;
+  background-color: #e4f1fe;
 }
 .prologue {
   margin-bottom: 1rem;
@@ -24,11 +25,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   text-align: center;
 }
-.publication p {
+.publication p, .prologue {
   cursor: default;
+  background-color: white;
+  /*
   background-color: #e4f1fe;
-  padding: 30px;
   border-radius: 10px;
+  */
+  padding: 30px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -175,11 +179,11 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
 <div class="container">
 <div class="row">
 <div class="col">
-<figure class="float-right ml-4 selfpic">
+<div class="prologue clearfix">
+<figure class="float-right ml-2 selfpic">
 <img src="family.jpg" class="selfpic">
 <figcaption>David Bau (center) and family:<br>(clockwise) Heidi, Cody, Piper, and Anthony</figcaption>
 </figure>
-<div class="prologue clearfix">
 <p>In our quest to invent and improve automation,
 computer scientists must not relinquish humanity's ability to
 program computers. Our reaction to a complex world
@@ -199,7 +203,7 @@ novice programming interfaces, introductory lessons, open standards,
 and libraries that make computer systems more broadly programmable.
 </div>
 <div class="publication">
-<h2>Publications and Projects</h2>
+<h2 class="mt-4 mb-3">Publications and Projects</h2>
 <p><a href="http://netdissect.csail.mit.edu/">
 <img src="netdissect.png" class="projpic">
 Network Dissection</a>
@@ -225,17 +229,18 @@ the technique and the insights it provides at the July 2017 CVPR conference.
 Quantifying the Intepretability of Deep Visual Representations.</em>
 In Computer Vision and Patern Recognition 2017</a>.
 </p>
-<p><a href="https://arxiv.org/pdf/1705.09413.pdf">
-<img src="bbchunking.png" class="projpic"></a>
+<p>
 <a href="http://cs.wellesley.edu/~blocks-and-beyond/1/">
+<img src="bbchunking.png" class="projpic">
 Blocks and Beyond</a>
 is a workshop I helped organize to bring together researchers who are
 investigating blocked-based interfaces to simplify programming for
 novices and casual programmers.
 <span class="more"></span>
-<span class="extra"> After a fascinating and oversubscribed
-workshop, we wrote a review paper to
-survey the state-of-the-art in block-based programming research.
+<span class="extra"> The workshop was oversubscribed, and the presented
+work was interesting both for its breadth and depth.  Afterwards, we
+wrote a review paper to survey the history, foundations, and
+state-of-the-art in the field.
 The review appears in the June 2017 Communications of the ACM.</span>
 <a href="https://arxiv.org/abs/1705.09413"><span class="me">D Bau</span>, J Gray, C Kelleher, J Sheldon, F Turbak. <em>Learnable Programming: Blocks and Beyond.</em> Communications of the ACM, pp. 72-80. June 2017</a>.</p>
 <p><a href="https://pencilcode.net">
