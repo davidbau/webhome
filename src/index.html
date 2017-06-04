@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>David Bau</title>
+<meta name="description" content="David Bau is a PhD student in Antonio Torralba's lab who develops techniques that increase interpretability of deep neural networks.">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
@@ -15,10 +16,32 @@ body, td, th {
 .prologue {
   margin-bottom: 1rem;
 }
-p.linger .more {
+span.me {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.publication p {
+  cursor: default;
+  background-color: #e4f1fe;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.publication p:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.publication p.linger:hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.publication p.linger {
+  cursor: auto;
+}
+.publication p.linger .more {
   font-size: 0;
 }
-p .more::before {
+.publication p .more::before {
   content: 'more\25B8';
   padding-right: .2em;
   font-style: italic;
@@ -26,69 +49,53 @@ p .more::before {
   cursor: pointer;
   transition: font-size 0.2s;
 }
-p .more:hover::before {
+.publication p .more:hover::before {
   color: red;
   text-decoration: underline;
 }
-p .extra {
+.publication p .extra {
   font-size: 0;
   opacity: 0;
   transition: opacity 0.5s, font-size 0.2s;
 }
-p.linger .extra {
+.publication p.linger .extra {
   font-size: 16px;
   opacity: 1;
 }
-span.me {
-  font-weight: bold;
-  white-space: nowrap;
-}
-.publications p::after {
+.publication p::after {
   content: '';
   display: block;
   clear: both;
   padding: 0;
   margin: 0;
 }
-.publications p {
-  background-color: #e4f1fe;
-  padding: 30px;
-  border-radius: 10px
-}
 
-.color-primary-0 { color: #2E4272 }  /* Main Primary color */
-.color-primary-1 { color: #858890 }
-.color-primary-2 { color: #556281 }
-.color-primary-3 { color: #0E2863 }
-.color-primary-4 { color: #021B54 }
 
-.nd-pageheader {
+.db-pageheader {
   padding: 1rem 15px;
-  /* margin-bottom: 1.5rem; */
   text-align: center;
   color: black;
-  /* background-color: #e4f1fe; */
 }
 
-.nd-pageheader a {
+.db-pageheader a {
   color: black;
 }
 
-.nd-pageheader .container {
+.db-pageheader .container {
   position: relative
 }
 
-.nd-pageheader h1 {
+.db-pageheader h1 {
   font-size: 3rem;
   font-weight: 300;
   color: black;
 }
 
-.nd-pageheader address {
+.db-pageheader address {
   font-weight: 300;
 }
 
-.nd-pageheader p {
+.db-pageheader p {
   margin-bottom: 0;
   font-size: 1.25rem;
   font-weight: 300
@@ -101,9 +108,9 @@ span.me {
 
 .projpic {
   width: 300px;
-  float: left;
-  display: none;
-  margin-right: 1em;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 15px auto;
 }
 
 figcaption {
@@ -120,37 +127,6 @@ figcaption {
   background: gainsboro;
 }
 
-.smallfig {
-  width: 80%;
-}
-
-.modal .big-modal {
-  width:auto;
-  max-width:90%;
-  max-height:80%;
-}
-
-.img-wrapper {
-  text-align: center;
-}
-
-.big-modal img {
-  max-height: 60vh;
-}
-
-.img-scroller {
-  overflow-x: scroll;
-}
-
-.img-scroller .img-fluid {
-  max-width: initial;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  text-align: center;
-}
-
 @media (min-width: 576px) {
   .nd-pageheader {
     padding-top:1rem;
@@ -159,103 +135,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
-  .smallfig {
-    width: 60%;
-  }
   .nd-pageheader h1 {
     font-size:3rem
   }
-
   .nd-pageheader p {
     font-size: 1.5rem
   }
-  .twocol-md {
-     column-count: 2;
-  }
-}
-
-@media (min-width: 992px) {
-  .smallfig {
-    width: 45%;
-  }
-  #fig-arch-compare {
-    width: 49%;
-  }
-}
-.best { font: 12.5px Helvetica; }
-.best { border-collapse: collapse; border-spacing: 0; }
-.best td { position: relative; }
-.best td img { margin-top: 15px; }
-.best td .unit { font-size: 10px; position: absolute; top: 0; left: 3px; white-space: nowrap; width: 100%; text-overflow: clip; overflow: hidden; }
-.best td .score { display: none; position: absolute; top: 0; right: 3px; white-sapce: nowrap; }
-.best td:nth-child(1) {
-  min-width: 28px;
-  border-right: 3px solid transparent;
-}
-.best td .netname {
-	transform: translateX(-50%) translateY(-50%) rotate(-90deg);
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	text-align: center;
-	font: 12px helvetica;
-	white-space: nowrap;
-	padding: 4px;
-}
-.best th, .best td {
-  padding-left: 3px;
-}
-.best img {
-  width: 100%;
-}
-.best .concept {
-	color: black;
-	font: 14px helvetica;
-  padding-bottom: 2px;
-  text-transform: capitalize;
-  text-align: left;
-  margin-right: 1px;
-}
-
-@media (min-width: 576px) {
-  .best td .unit { font-size: inherit; }
-  .best td .netname { font-size: 14px; }
-  .best .concept { font-size: 20px; }
-}
-
-@media (min-width: 768px) {
-  .best td .netname { font-size: 17px; }
   .selfpic { display: inline-block; }
-  .projpic { display: block; }
-}
-
-@media (min-width: 1200px) {
-  .best td .score { display: block; }
-}
-
-.modal {
-  text-align: center;
-  padding: 0!important;
-}
-
-.modal:before {
-  content: '';
-  display: inline-block;
-  height: 80%;
-  vertical-align: middle;
-  margin-right: -4px;
-}
-
-.modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
+  .projpic {
+      float: left;
+      margin: 0 1rem 0 0;
+  }
 }
 
 </style>
 </head>
-<body class="nd-docs">
-<div class="nd-pageheader">
+<body class="db-page">
+<div class="db-pageheader">
  <div class="container">
  <h1><nobr>David Bau</nobr></h1>
  <p class="lead">
@@ -289,17 +185,17 @@ should be to create transparency.</p>
 >Antonio Torralba's lab</a>, I develop techniques that increase
 interpretability
 of deep neural networks. I have found evidence that the
-representations learned by deep networks are not always
-monolithic: they can have a simple underlying
-structure. The focus of my research at MIT is therefore to
+representations learned by deep networks can have a
+simple underlying structure.
+The focus of my research at MIT is therefore to
 find ways to enhance and exploit this structure
-to make these systems more transparent.</p>
+to make deep networks more transparent.</p>
 <p>I also work on programmability as seen as a
 broader human-computer interaction problem. I develop
 novice programming interfaces, introductory lessons, open standards,
 and libraries that make computer systems more broadly programmable.
 </div>
-<div class="publications">
+<div class="publication">
 <h2>Publications and Projects</h2>
 <p><a href="http://netdissect.csail.mit.edu/">
 <img src="netdissect.png" class="projpic">
@@ -358,7 +254,7 @@ transitions are an aid to learning.</span>
 <img src="freshimage.png" class="projpic">
 Google Image Search</a> is the world's largest searchable index of images.
 <span class="more"></span>
-<span class="extra">While at Google I contributed several improvements to this product, including improved <a href="https://search.googleblog.com/2011/12/search-quality-highlights-new-monthly.html">ranking for recent images</a>, a <a href="https://googlesystem.blogspot.com/2013/06/new-ui-for-related-searches-in-google.html#gsc.tab=0">clustered broswing interface for discovering images</a> using related searches, a rollout of the complex infrastructure to support <a href="https://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html">a long-scrolling result page</a>
+<span class="extra">I contributed several improvements to this product, including improved <a href="https://search.googleblog.com/2011/12/search-quality-highlights-new-monthly.html">ranking for recent images</a>, a <a href="https://googlesystem.blogspot.com/2013/06/new-ui-for-related-searches-in-google.html#gsc.tab=0">clustered broswing interface for discovering images</a> using related searches, a rollout of new serving infrastructure to support <a href="https://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html">a long-scrolling result page</a>
  serving one thousand image results at a time, and improvements in the understanding of person entities on the web.</span>
 <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.722.1005">M Zhao, J Yagnik, H Adam, <span class="me">D Bau</span>, Large scale learning and recognition of faces in web videos. In Automatic Face & Gesture Recognition, 2008. FG'08. 8th IEEE International Conference on (pp. 1-7). IEEE, September 2008.</a>
 <p><a href="https://en.wikipedia.org/wiki/Google_Talk">
@@ -391,7 +287,10 @@ Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I 
 </div>
 </div>
 <script>
-$(document).on('click', '.more', function(ev) {
+$(document).on('click', '.more, .publication p', function(ev) {
+  if (!$(ev.target).is('.more, .publication p')) {
+    return;
+  }
   $(this).closest('p').addClass('linger');
 });
 </script>
