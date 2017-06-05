@@ -77,70 +77,73 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
 }
-
+.footer {
+  margin-top: 8px;
+  text-align: justify;
+  /*word-spacing: 10px; */
+  width: 100%;
+}
+.footer::after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+.footer a {
+  word-spacing: initial;
+  display: inline-block;
+}
 .db-pageheader {
   padding: 1rem 15px;
   text-align: center;
   color: black;
 }
-
 .db-pageheader a {
   color: black;
 }
-
 .db-pageheader .container {
   position: relative
 }
-
 .db-pageheader h1 {
   font-size: 3rem;
   font-weight: 300;
   color: black;
 }
-
 .db-pageheader address {
   font-weight: 300;
 }
-
 .db-pageheader p {
   margin-bottom: 0;
   font-size: 1.25rem;
   font-weight: 300
 }
-
 .selfpic {
   width: 288px;
   display: none;
 }
-
 .projpic {
   width: 288px;
   max-width: 100%;
   display: block;
   margin: 0 auto 15px auto;
 }
-
 figcaption {
   display: block;
   text-align: center;
   font-size: 12px;
   margin-top: 3px;
 }
-
 .highlight {
   padding: 1.5rem;
   margin-right: 0;
   margin-left: 0;
   background: gainsboro;
 }
-
 @media (min-width: 576px) {
   .nd-pageheader {
     padding-top:1rem;
     padding-bottom: 1rem;
   }
 }
-
 @media (min-width: 768px) {
   .nd-pageheader h1 {
     font-size:3rem
@@ -148,13 +151,14 @@ figcaption {
   .nd-pageheader p {
     font-size: 1.5rem
   }
-  .selfpic { display: inline-block; }
+  .selfpic {
+    display: inline-block;
+  }
   .projpic {
-      float: left;
-      margin: 0 1rem 0 0;
+    float: left;
+    margin: 0 1rem 0 0;
   }
 }
-
 </style>
 </head>
 <body class="db-page">
@@ -201,7 +205,11 @@ to make deep networks more transparent.</p>
 broader human-computer interaction problem. I develop
 novice programming interfaces, introductory lessons, open standards,
 and libraries that make computer systems more broadly programmable.
+</div> <!-- prologue -->
 </div>
+</div>
+<div class="row">
+<div class="col">
 <div class="publication">
 <h2 class="mt-4 mb-3">Publications and Projects</h2>
 <p><a href="http://netdissect.csail.mit.edu/">
@@ -241,7 +249,7 @@ novices and casual programmers.
 work was interesting both for its breadth and depth.  Afterwards, we
 wrote a review paper to survey the history, foundations, and
 state-of-the-art in the field.
-The review appears in the June 2017 Communications of the ACM.</span>
+The review appears in the June 2017 Communications of the ACM; Caitlin also made a <a href="https://vimeo.com/216045469">video for the review</a>.</span>
 <a href="https://arxiv.org/abs/1705.09413"><span class="me">D Bau</span>, J Gray, C Kelleher, J Sheldon, F Turbak. <em>Learnable Programming: Blocks and Beyond.</em> Communications of the ACM, pp. 72-80. June 2017</a>.</p>
 <p><a href="https://pencilcode.net">
 <img src="pencilgym.png" class="projpic">
@@ -290,6 +298,17 @@ Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I 
 <span class="more"></span>
 <span class="extra">The book began as a detailed set of notes that I took while attending Nick's course. The writing is intended to capture the spirit of his teaching: succinct and insightful.  The hope is to reveal the elegance of this family of fundamental algorithms and dispel the myth that finite-precision arithmetic means imprecise thinking.</span>
 <a href="https://scholar.google.com/scholar?cluster=4058884683459283601">L N Trefethen, <span class="me">D Bau</span>. Numerical linear algebra. Vol. 50. Siam, 1997.</a></p>
+</div> <!-- publication -->
+</div>
+</div>
+<div class="row">
+<div class="col">
+<div class="footer">
+<a href="https://scholar.google.com/citations?user=CYI6cKgAAAAJ&hl=en">Google Scholar</a>
+<a href="https://github.com/davidbau">Github Page</a>
+<a href="https://www.linkedin.com/in/david-bau-4b8130/">LinkedIn</a>
+<a href="http://davidbau.com">Personal Blog</a>
+<a href="https://whereis.mit.edu/?zoom=16&lat=42.361612839999985&lng=-71.09056785999995&maptype=mit&q=32-D475D&open=object-32">Office: 32-D475-D</a>
 </div>
 </div>
 </div>
