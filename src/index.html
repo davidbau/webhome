@@ -26,33 +26,40 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 .publication p, .prologue {
-  cursor: default;
   background-color: white;
   position: relative;
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+.publication h2, .namecard {
+  background-color: #0E2863;
+  color: #e4f1fe;
+  position: relative;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
 .publication p:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  cursor: default;
 }
 .publication p.linger:hover {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-.publication p.linger {
   cursor: auto;
 }
 .publication p .more::before {
   content: 'more\25B9';
   padding-right: .2em;
-  font-style: italic;
   color: #0275d8;
   cursor: pointer;
   transition: font-size 0.2s;
 }
+.publication p:hover .more::before {
+  color: seagreen;
+}
 .publication p .more:hover::before {
-  color: red;
-  content: 'more\25B8';
+  color: lightseagreen;
 }
 .publication p.linger .more::before {
   content: '\25C3';
@@ -92,29 +99,18 @@ h1, h2, h3, h4, h5, h6 {
   word-spacing: initial;
   display: inline-block;
 }
-.db-pageheader {
-  padding: 1rem 15px;
+.namecard {
+  padding: 2rem 15px 1rem;
   text-align: center;
-  color: black;
+  font-weight: 300;
 }
-.db-pageheader a {
-  color: black;
+.namecard a {
+  color: inherit;
 }
-.db-pageheader .container {
-  position: relative
-}
-.db-pageheader h1 {
+.namecard h1 {
   font-size: 3rem;
   font-weight: 300;
-  color: black;
-}
-.db-pageheader address {
-  font-weight: 300;
-}
-.db-pageheader p {
-  margin-bottom: 0;
-  font-size: 1.25rem;
-  font-weight: 300
+  color: inherit;
 }
 .selfpic {
   width: 288px;
@@ -162,8 +158,10 @@ figcaption {
 </style>
 </head>
 <body class="db-page">
-<div class="db-pageheader">
- <div class="container">
+<div class="container">
+<div class="row">
+<div class="col">
+ <div class="namecard">
  <h1><nobr>David Bau</nobr></h1>
  <p class="lead">
  <nobr>Preserving Programmability</nobr> in a
@@ -179,10 +177,6 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
 </address>
  </p>
  </div>
-</div><!-- end nd-pageheader -->
-<div class="container">
-<div class="row">
-<div class="col">
 <div class="prologue clearfix">
 <figure class="float-right ml-3 selfpic">
 <img src="family.jpg" class="selfpic">
@@ -230,12 +224,12 @@ I have used network dissection to reveal that representation space is
 not isotropic: learned representations have an unusually high agreement
 with human-labeled concepts that vanishes under a change in basis.
 We will be giving an oral presentation about
-the technique and the insights it provides at the July 2017 CVPR conference.
+the technique and the insights it provides at CVPR 2017.
 </span>
 <a href="http://netdissect.csail.mit.edu/final-network-dissection.pdf"
 ><span class="me">D Bau</span>, B Zhou, A Khosla, A Oliva, and A Torralba. <em>Network Dissection:
 Quantifying the Intepretability of Deep Visual Representations.</em>
-In Computer Vision and Patern Recognition 2017</a>.
+In Computer Vision and Pattern Recognition 2017</a>.
 </p>
 <p>
 <a href="http://cs.wellesley.edu/~blocks-and-beyond/1/">
@@ -304,8 +298,9 @@ Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I 
 <div class="row">
 <div class="col">
 <div class="footer">
-<a href="https://scholar.google.com/citations?user=CYI6cKgAAAAJ&hl=en">Google Scholar</a>
-<a href="https://github.com/davidbau">Github Page</a>
+<a href="http://dblp.uni-trier.de/pers/hd/b/Bau:David">Dblp</a>
+<a href="https://scholar.google.com/citations?hl=en&user=CYI6cKgAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a>
+<a href="https://github.com/davidbau">Github</a>
 <a href="https://www.linkedin.com/in/david-bau-4b8130/">LinkedIn</a>
 <a href="http://davidbau.com">Personal Blog</a>
 <a href="https://whereis.mit.edu/?zoom=16&lat=42.361612839999985&lng=-71.09056785999995&maptype=mit&q=32-D475D&open=object-32">Office: 32-D475-D</a>
@@ -315,7 +310,9 @@ Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I 
 </div>
 <script>
 $(document).on('click', '.more, .publication p', function(ev) {
-  if (!$(ev.target).is('.more, .publication p:not(.linger)')) {
+  if ($(ev.target).closest('a').length ||
+          getSelection().type == 'Range' || ev.shiftKey || ev.ctrlKey) {
+    // Do not expand text if it is being linked or selected.
     return;
   }
   $(this).closest('p').toggleClass('linger');
