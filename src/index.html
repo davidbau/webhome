@@ -25,59 +25,58 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   text-align: center;
 }
-.publication p, .prologue {
-  background-color: white;
-  position: relative;
-  padding: 30px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+input.collapse {
+  display: none;
 }
-.publication h2, .namecard {
+h2, .namecard {
   background-color: #0E2863;
   color: #e4f1fe;
   position: relative;
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-
-.publication p:hover {
+.collapse + p, .prologue {
+  background-color: white;
+  position: relative;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.collapse + p:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   cursor: default;
 }
-.publication p.linger:hover {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  cursor: auto;
-}
-.publication p .more::before {
+.collapse + p .more::before {
   content: 'more\25B9';
   padding-right: .2em;
   color: #0275d8;
   cursor: pointer;
   transition: font-size 0.2s;
 }
-.publication p:hover .more::before {
+.collapse + p:hover .more::before {
   color: seagreen;
 }
-.publication p .more:hover::before {
-  color: lightseagreen;
-}
-.publication p.linger .more::before {
+.collapse:checked + p .more::before {
   content: '\25C3';
+  color: lightgray;
   position: absolute;
   font-style: normal;
   right: 3px;
   bottom: 0;
 }
-.publication p .extra {
+.collapse + p .more:hover::before {
+  color: lightseagreen;
+}
+.collapse + p .extra {
   font-size: 0;
   opacity: 0;
   transition: opacity 0.5s, font-size 0.2s;
 }
-.publication p.linger .extra {
+.collapse:checked + p .extra {
   font-size: 16px;
   opacity: 1;
 }
-.publication p::after {
+.collapse + p::after {
   content: '';
   display: block;
   clear: both;
@@ -108,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 .namecard h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
   color: inherit;
 }
@@ -195,10 +194,10 @@ simple underlying structure.
 The focus of my research at MIT is therefore to
 find ways to enhance and exploit this structure
 to make deep networks more transparent.</p>
-<p>I also work on programmability as a
-broader human-computer interaction problem. I develop
-novice programming interfaces, introductory lessons, open standards,
-and libraries that make computer systems more broadly programmable.
+<p>I also work on the wider human-computer interaction problem
+of programmability. I develop
+novice programming interfaces, lessons, standards,
+and libraries that make systems more programmable.
 </div> <!-- prologue -->
 </div>
 </div>
@@ -206,6 +205,7 @@ and libraries that make computer systems more broadly programmable.
 <div class="col">
 <div class="publication">
 <h2 class="mt-4 mb-3">Publications and Projects</h2>
+<input class="collapse" type="checkbox">
 <p><a href="http://netdissect.csail.mit.edu/">
 <img src="netdissect.png" class="projpic">
 Network Dissection</a>
@@ -231,6 +231,7 @@ the technique and the insights it provides at CVPR 2017.
 Quantifying the Intepretability of Deep Visual Representations.</em>
 In Computer Vision and Pattern Recognition 2017</a>.
 </p>
+<input class="collapse" type="checkbox">
 <p>
 <a href="http://cs.wellesley.edu/~blocks-and-beyond/1/">
 <img src="bbchunking.png" class="projpic">
@@ -245,6 +246,7 @@ wrote a review paper to survey the history, foundations, and
 state-of-the-art in the field.
 The review appears in the June 2017 Communications of the ACM; <a href="https://vimeo.com/216045469">also see the video overview</a>.</span>
 <a href="http://dl.acm.org/authorize?N38021" title="Learnable programming: blocks and beyond"><span class="me">D Bau</span>, J Gray, C Kelleher, J Sheldon, F Turbak. <em>Learnable Programming: Blocks and Beyond.</em> Communications of the ACM, pp. 72-80. June 2017</a>.</p>
+<input class="collapse" type="checkbox">
 <p><a href="https://pencilcode.net">
 <img src="pencilgym.png" class="projpic">
 Pencil Code</a> is an open-source
@@ -260,6 +262,7 @@ students using the environment suggests suggests the block-and-text
 transitions are an aid to learning.</span>
 <a href="http://dl.acm.org/authorize?N38022"><span class="me">D Bau</span>, D A Bau, M Dawson, C S Pickens. <em>Pencil code: block code for a text world.</em> In Proceedings of the 14th International Conference on Interaction Design and Children, pp. 445-448. ACM, 2015.</a>
 </p>
+<input class="collapse" type="checkbox">
 <p><a href="https://images.google.com/">
 <img src="freshimage.png" class="projpic">
 Google Image Search</a> is the world's largest searchable index of images.
@@ -267,13 +270,17 @@ Google Image Search</a> is the world's largest searchable index of images.
 <span class="extra">I contributed several improvements to this product, including improved <a href="https://search.googleblog.com/2011/12/search-quality-highlights-new-monthly.html">ranking for recent images</a>, a <a href="https://googlesystem.blogspot.com/2013/06/new-ui-for-related-searches-in-google.html#gsc.tab=0">clustered broswing interface for discovering images</a> using related searches, a rollout of new serving infrastructure to support <a href="https://googleblog.blogspot.com/2010/07/ooh-ahh-google-images-presents-nicer.html">a long-scrolling result page</a>
  serving one thousand image results at a time, and improvements in the understanding of person entities on the web.</span>
 <a href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.722.1005">M Zhao, J Yagnik, H Adam, <span class="me">D Bau</span>, Large scale learning and recognition of faces in web videos. In Automatic Face & Gesture Recognition, 2008. FG'08. 8th IEEE International Conference on (pp. 1-7). IEEE, September 2008.</a>
+</p>
+<input class="collapse" type="checkbox">
 <p><a href="https://en.wikipedia.org/wiki/Google_Talk">
 <img src="gmailchat.png" class="projpic">
 Google Talk</a>
 is a web-based chat solution that was built-in to GMail.
 <span class="more"></span>
 <span class="extra">I led the team to create Google Talk in an (ultimately unsuccessful) attempt to establish a universal federated open realtime communication ecosystem for the internet.  Our messaging platform provided full-scale support for XMPP and Jingle, which are open standards for federating real-time chat and voice that are analogous to the open-for-all SMTP system for email. When these open protocols came under asymmetric attack by Microsoft (they provided only one-way compatibility), Google relented and reverted to a closed network. To this day, open realtime communications remains an unfulfilled dream for the internet.</span>
-<a href="https://googleblog.blogspot.com/2005/08/google-gets-to-talking.html"><span class="me">D Bau</span>. <em>Google Gets to Talking</em>. Google Official Blog, August 2005.
+<a href="https://googleblog.blogspot.com/2005/08/google-gets-to-talking.html"><span class="me">D Bau</span>. <em>Google Gets to Talking</em>. Google Official Blog, August 2005.</a>
+<p>
+<input class="collapse" type="checkbox">
 <p><a href="https://en.wikipedia.org/wiki/XMLBeans">
 <img src="xmlbeans.png" class="projpic">
 Apache XML Beans</a> is an open-source implementation of the XML Schema specification as a compiler from schema types to Java classes.
@@ -286,6 +293,7 @@ Microsoft Internet Explorer 4</a> was the first AJAX web browser.
 <span class="more"></span>
 <span class="extra">As part of the <a href="https://en.wikipedia.org/wiki/Trident_(layout_engine)">Trident</a> team led by <a href="https://en.wikipedia.org/wiki/Adam_Bosworth">Adam Bosworth</a>, I helped create the first fully mutable HTML DOM by defining its asynchronous loading model. My contribution was to implement an incremental HTML parser and fast multithreaded preloader for linked resources that was able to co-exist with single-threaded script execution.</span>
 The design of the system resolved tensions between performance, flexiblity, and programmability, and contributed to the strength of the modern web platform.</p>
+<input class="collapse" type="checkbox">
 <p><a href="http://people.maths.ox.ac.uk/~trefethen/text.html">
 <img src="linalg.png" class="projpic">
 Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I wrote with my advisor <a href="http://people.maths.ox.ac.uk/~trefethen/">Nick Trefethen</a> while at Cornell.
@@ -310,12 +318,14 @@ Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I 
 </div>
 <script>
 $(document).on('click', '.more, .publication p', function(ev) {
+  // Do not collapse a card if the click is for a hyperlink or selection.
   if ($(ev.target).closest('a').length ||
           getSelection().type == 'Range' || ev.shiftKey || ev.ctrlKey) {
-    // Do not expand text if it is being linked or selected.
     return;
   }
-  $(this).closest('p').toggleClass('linger');
+  // Use the hidden checkbox technique to preserve collapse-state on "back"
+  var collapse = $(this).closest('p').prev('input.collapse');
+  collapse.prop('checked', !collapse.prop('checked'));
   ev.stopPropagation();
 });
 </script>
