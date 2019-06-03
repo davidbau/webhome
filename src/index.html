@@ -205,7 +205,33 @@ and libraries that make complex systems easier to understand.
 <div class="row">
 <div class="col">
 <div class="publication">
-<h2 class="mt-4 mb-3">Publications and Projects</h2>
+<h2 class="mt-4 mb-3">Selected Publications and Projects</h2>
+<input class="collapse" type="checkbox">
+<p>
+<img src="seeing.png" class="projpic">
+<a href="http://gandissect.csail.mit.edu/papers/Seeing_What_a_GAN_Cannot_Generate.pdf">Seeing what a GAN Cannot Generate</a>
+studies mode dropping by asking the inverse question:
+how can we decompose and understand what a GAN <em>cannot</em> do?
+<span class="more"></span>
+<span class="extra">A core challenge faced by GANs is <em>mode dropping</em>
+or <em>mode collapse</em>, which is the tendendency for a GAN generator to
+focus on a few modes and omit other parts of the distribution.
+State-of-the-art GANs have several methods for reducing the problem,
+but analyzing mode dropping remains difficult for large distributions:
+examination of output samples reveals what a GAN <em>can</em> do,
+not what it <em>cannot</em> do.  So in this paper we
+develop a pair of complementary methods for decomposing what GAN omits,
+looking at segmentation statistics over a distribution, and also visualizing
+omissions in specific instances by calculating inversions of a GAN generator.
+Surprisingly, we find that a state-of-the-art GAN will sometimes cleanly
+omit whole classes of objects from its output, hiding these omissions
+by creating realistic instances without those objects.
+</span>
+<a href="http://gandissect.csail.mit.edu/papers/Seeing_What_a_GAN_Cannot_Generate.pdf"
+><span class="me">D Bau</span>, JY Zhu, J Wulff, W Peebles, H Strobelt,
+B Zhou, A Torralba. <em>Seeing What a GAN Cannot Generate</em>,
+  (Preprint, in submission)</a>.
+</p>
 <input class="collapse" type="checkbox">
 <p>
 <span class="projpic" style="max-height:156px;overflow:hidden;">
@@ -228,11 +254,11 @@ The work shows how to find such neurons, and shows that by forcing
 the neurons on and off, you can cause a generator to draw or remove
 specific types of objects in a scene.
 </span>
-<a href="http://netdissect.csail.mit.edu/final-network-dissection.pdf"
+<a href="https://openreview.net/pdf?id=Hyg_X2C5FX"
 ><span class="me">D Bau</span>, JY Zhu, H Strobelt, B Zhou, JB Tenenbaum,
 WT Freeman, A Torralba. <em>GAN Dissection: 
-  Visualizing and Understanding Generative Adversarial Networks</em>
-  in International Conference on Learning Representations 2019</a>.
+  Visualizing and Understanding Generative Adversarial Networks</em>.
+  In International Conference on Learning Representations 2019</a>.
 </p>
 <input class="collapse" type="checkbox">
 <p>
