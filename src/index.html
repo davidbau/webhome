@@ -197,7 +197,7 @@ find ways to enhance and exploit this structure
 to make deep networks more transparent.</p>
 <p>I also have a long interest on the wider problem of making all
 computer systems more transparent and programmable. I develop
-novice programming interfaces, lessons, standards,
+novice programming interfaces, open standards, tools
 and libraries that make complex systems easier to understand.
 </div> <!-- prologue -->
 </div>
@@ -206,6 +206,34 @@ and libraries that make complex systems easier to understand.
 <div class="col">
 <div class="publication">
 <h2 class="mt-4 mb-3">Publications and Projects</h2>
+<input class="collapse" type="checkbox">
+<p>
+<span class="projpic" style="max-height:156px;overflow:hidden;">
+  <img src="gandissect.gif" class="projpic" style="margin-top:-27px;">
+</span>
+<a href="http://gandissect.csail.mit.edu/">
+GAN Dissection</a>
+investigates the internals of a GAN, and shows how neurons can be
+<a href="http://gandissect.res.ibm.com/ganpaint.html">directly manipulated</a>
+to change the behavior of a generator.
+<span class="more"></span>
+<span class="extra">
+Here we ask whether the apparent
+structure that we found in classifiers also appears in a setting with
+no supervision from labels.  Strikingly, we find that a state-of-the-art
+GAN trained to generate complex scenes will learn neurons that are
+specific to types of objects in the scene, such as neurons for trees,
+doors, windows, and rooftops.
+The work shows how to find such neurons, and shows that by forcing
+the neurons on and off, you can cause a generator to draw or remove
+specific types of objects in a scene.
+</span>
+<a href="http://netdissect.csail.mit.edu/final-network-dissection.pdf"
+><span class="me">D Bau</span>, JY Zhu, H Strobelt, B Zhou, JB Tenenbaum,
+WT Freeman, A Torralba. <em>GAN Dissection: 
+  Visualizing and Understanding Generative Adversarial Networks</em>
+  in International Conference on Learning Representations 2019</a>.
+</p>
 <input class="collapse" type="checkbox">
 <p>
 <img src="netdissect.png" class="projpic">
@@ -306,7 +334,7 @@ The design of the system resolved tensions between performance, flexiblity, and 
 <p>
 <img src="linalg.png" class="projpic">
 <a href="http://people.maths.ox.ac.uk/~trefethen/text.html">
-Numerical Linear Algebra</a> is graduate textbook on numerical linear algebra I wrote with my advisor <a href="http://people.maths.ox.ac.uk/~trefethen/">Nick Trefethen</a> while at Cornell.
+Numerical Linear Algebra</a> is the graduate textbook on numerical linear algebra I wrote with my advisor <a href="http://people.maths.ox.ac.uk/~trefethen/">Nick Trefethen</a> while at Cornell.
 <span class="more"></span>
 <span class="extra">The book began as a detailed set of notes that I took while attending Nick's course. The writing is intended to capture the spirit of his teaching: succinct and insightful.  The hope is to reveal the elegance of this family of fundamental algorithms and dispel the myth that finite-precision arithmetic means imprecise thinking.</span>
 <a href="https://scholar.google.com/scholar?cluster=4058884683459283601">L N Trefethen, <span class="me">D Bau</span>. Numerical linear algebra. Vol. 50. Siam, 1997.</a></p>
