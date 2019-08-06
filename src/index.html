@@ -234,6 +234,37 @@ B Zhou, A Torralba. <em>Seeing What a GAN Cannot Generate</em>,
 </p>
 <input class="collapse" type="checkbox">
 <p>
+<img src="parliament.gif" class="projpic">
+<a href="http://ganpaint.io/">
+GAN Paint</a>
+applies <a href="http://gandissect.csail.mit.edu/">
+GAN dissection</a> to the manipulation of user-provided real
+photographs instead of synthetic GAN-generated images.  This
+allows a user to paint objects such as doors, windows,
+trees, and domes in plausible configurations on real scenes
+by exploiting the representations learned by a GAN.
+<span class="more"></span>
+<span class="extra">
+To manipulate a real photograph <em>X</em> using an unconditional GAN,
+the generator must be guided to reproduce the photograph faithfully.
+While <a href="https://github.com/junyanz/iGAN">previous work</a>
+has investigated finding the best input <em>z</em>
+so that <em>G(z)&asymp;X</em>, we show that it is useful to also optimize
+over perturbations of <em>G</em>.  Even in cases where the GAN is not
+capable of rendering the details of the user-provided photo, a nearby
+GAN generator can be found that does. We
+implemented our algorithm using an interactive painting app at
+<a href="http://ganpaint.io/">ganpaint.io</a>.
+</span>
+<a href="https://dl.acm.org/citation.cfm?id=3323023"
+><span class="me">D Bau</span>, H Strobelt, W Peebles, J Wulff, B Zhou,
+JY Zhu, A Torralba. <em>Semantic Photo Manipulation
+  with a Generative Image Prior</em>.
+  In SIGGRAPH 2019</a>.
+</p>
+<input class="collapse" type="checkbox">
+<input class="collapse" type="checkbox">
+<p>
 <img src="gandissect.png" class="projpic">
 <a href="http://gandissect.csail.mit.edu/">
 GAN Dissection</a>
@@ -256,7 +287,7 @@ specific types of objects in a scene.
 ><span class="me">D Bau</span>, JY Zhu, H Strobelt, B Zhou, JB Tenenbaum,
 WT Freeman, A Torralba. <em>GAN Dissection: 
   Visualizing and Understanding Generative Adversarial Networks</em>.
-  In International Conference on Learning Representations 2019</a>.
+  In ICLR 2019</a>.
 </p>
 <input class="collapse" type="checkbox">
 <p>
@@ -283,7 +314,7 @@ the technique and the insights it provides at CVPR 2017.
 <a href="http://netdissect.csail.mit.edu/final-network-dissection.pdf"
 ><span class="me">D Bau</span>, B Zhou, A Khosla, A Oliva, and A Torralba. <em>Network Dissection:
 Quantifying the Intepretability of Deep Visual Representations.</em>
-In Computer Vision and Pattern Recognition 2017</a>.
+In CVPR 2017</a>.
 </p>
 <input class="collapse" type="checkbox">
 <p>
