@@ -112,7 +112,7 @@ h2, .namecard {
   color: inherit;
 }
 .selfpic {
-  width: 288px;
+  width: 448px;
   display: none;
 }
 .projpic {
@@ -179,8 +179,10 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
  </div>
 <div class="prologue clearfix">
 <figure class="float-right ml-3 selfpic">
-<img src="family.jpg" class="selfpic">
-<figcaption>David Bau (center) and family:<br>(clockwise) Heidi, Cody, Piper, and Anthony</figcaption>
+  <!--<img src="family.jpg" class="selfpic">
+  <figcaption>David Bau (center) and family:<br>(clockwise) Heidi, Cody, Piper, and Anthony</figcaption>-->
+<iframe id="selfpic-video" width="448" height="252" src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<figcaption>Why we study deep network internals.  <nobr>David Bau (narrates),</nobr> with Antonio Torralba, Jun-Yan Zhu, Hendrik Strobelt, Jonas Wulff, and William Peebles. <nobr>Video by Lillie Paquette,</nobr> MIT School of Engineering.</figcaption>
 </figure>
 <p>It is crucial for humans to understand the algorithms
 discovered by machine-learning systems so we can explain,
@@ -190,7 +192,7 @@ As our sophisticated systems exhibit more unexpected and emergent
 behavior, I believe the focus of machine learning should shift to
 <em>machine explanation</em>: the development of methods that reveal
 the patterns and strategies our algorithms find, so that
-both programmers and users can retain agency.
+programmers and users can retain agency.
 </p>
 <p>As a PhD student in <a href="http://web.mit.edu/torralba/www/"
 >Antonio Torralba's lab</a>, I develop techniques that increase
@@ -222,10 +224,10 @@ how can we decompose and understand what a GAN <em>cannot</em> do?
 <span class="extra">A core challenge faced by GANs is <em>mode dropping</em>
 or <em>mode collapse</em>, which is the tendendency for a GAN generator to
 focus on a few modes and omit other parts of the distribution.
-State-of-the-art GANs have several methods for reducing the problem,
-but analyzing mode dropping remains difficult for large distributions:
-examination of output samples reveals what a GAN <em>can</em> do,
-not what it <em>cannot</em> do.  So in this paper we
+State-of-the-art GANs apply training methods designed to reduce
+mode collapse, but analyzing the phenomenon remains difficult for large
+distributions: examination of output samples reveals what a GAN <em>can</em>
+do, not what it <em>cannot</em> do.  So in this paper we
 develop a pair of complementary methods for decomposing what GAN omits,
 looking at segmentation statistics over a distribution, and also visualizing
 omissions in specific instances by calculating inversions of a GAN generator.
@@ -235,8 +237,8 @@ by creating realistic instances without those objects.
 </span>
 <a href="http://gandissect.csail.mit.edu/papers/Seeing_What_a_GAN_Cannot_Generate.pdf"
 ><span class="me">D Bau</span>, JY Zhu, J Wulff, W Peebles, H Strobelt,
-B Zhou, A Torralba. <em>Seeing What a GAN Cannot Generate</em>,
-  (To appear at ICCV 2019)</a>.
+B Zhou, A Torralba. <em>Seeing What a GAN Cannot Generate</em>.
+ICCV 2019 oral</a>.
 </p>
 <input class="collapse" type="checkbox">
 <p>
@@ -260,7 +262,7 @@ the generator must be guided to reproduce the photograph faithfully.
 While <a href="https://github.com/junyanz/iGAN">previous work</a>
 has investigated finding the best input <em>z</em>
 so that <em>G(z)&asymp;X</em>, we show that it is useful to also optimize
-over perturbations of <em>G</em>.  Even in cases where the GAN is not
+the parameters of <em>G</em> itself.  Even in cases where the GAN is not
 capable of rendering the details of the user-provided photo, a nearby
 GAN generator can be found that does. We
 implemented our algorithm using an interactive painting app at
@@ -324,7 +326,7 @@ the technique and the insights it provides at CVPR 2017.
 <a href="http://netdissect.csail.mit.edu/final-network-dissection.pdf"
 ><span class="me">D Bau</span>, B Zhou, A Khosla, A Oliva, and A Torralba. <em>Network Dissection:
 Quantifying the Intepretability of Deep Visual Representations.</em>
-In CVPR 2017</a>.
+CVPR 2017 oral</a>.
 </p>
 <input class="collapse" type="checkbox">
 <p>
@@ -399,7 +401,7 @@ The design of the system resolved tensions between performance, flexiblity, and 
 <p>
 <img src="linalg.png" class="projpic">
 <a href="http://people.maths.ox.ac.uk/~trefethen/text.html">
-Numerical Linear Algebra</a> is the graduate textbook on numerical linear algebra I wrote with my advisor <a href="http://people.maths.ox.ac.uk/~trefethen/">Nick Trefethen</a> while at Cornell.
+Numerical Linear Algebra</a> is the graduate textbook on numerical linear algebra I wrote with my advisor <a href="http://people.maths.ox.ac.uk/~trefethen/">Nick Trefethen</a> while earning a Masters at Cornell.
 <span class="more"></span>
 <span class="extra">The book began as a detailed set of notes that I took while attending Nick's course. The writing is intended to capture the spirit of his teaching: succinct and insightful.  The hope is to reveal the elegance of this family of fundamental algorithms and dispel the myth that finite-precision arithmetic means imprecise thinking.</span>
 <a href="https://scholar.google.com/scholar?cluster=4058884683459283601">L N Trefethen, <span class="me">D Bau</span>. Numerical linear algebra. Vol. 50. Siam, 1997.</a></p>
@@ -434,4 +436,15 @@ Numerical Linear Algebra</a> is the graduate textbook on numerical linear algebr
         });
         </script>
         </body>
+<script type="text/javascript">
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('selfpic-video', { events: {
+     'onStateChange': function() {
+        player.setOption('captions', 'fontSize', 2);
+      },
+    }});
+  }
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
 </html>
