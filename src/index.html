@@ -113,7 +113,11 @@ h2, .namecard {
 }
 .selfpic {
   width: 448px;
-  display: none;
+  max-width: 100%;
+  display: block;
+}
+.selfpic iframe {
+  max-width: 100%;
 }
 .projpic {
   width: 288px;
@@ -181,8 +185,8 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
 <figure class="float-right ml-3 selfpic">
   <!--<img src="family.jpg" class="selfpic">
   <figcaption>David Bau (center) and family:<br>(clockwise) Heidi, Cody, Piper, and Anthony</figcaption>-->
-<iframe id="selfpic-video" width="448" height="252" src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&enablejsapi=1" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<figcaption>Why we study deep network internals.  <nobr>David Bau (narrates),</nobr> with Antonio Torralba, Jun-Yan Zhu, Hendrik Strobelt, Jonas Wulff, and William Peebles. <nobr>Video by Lillie Paquette,</nobr> MIT School of Engineering.</figcaption>
+<iframe id="selfpic-video" width="448" height="252" src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&enablejsapi=1&origin=https://people.csail.mit.edu" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<figcaption>Why we study deep network internals.  <nobr>David Bau</nobr> (narrates), with Antonio Torralba, Jun-Yan Zhu, Hendrik Strobelt, Jonas Wulff, and William Peebles. <nobr>Video by Lillie Paquette,</nobr> MIT School of Engineering.</figcaption>
 </figure>
 <p>It is crucial for humans to understand the algorithms
 discovered by machine-learning systems so we can explain,
@@ -247,10 +251,10 @@ ICCV 2019 oral</a>.
 GAN Paint</a>
 applies <a href="http://gandissect.csail.mit.edu/">
 GAN dissection</a> to the manipulation of user-provided real
-photographs.  By encoding a real scene into a high-level
-representation that can be rendered by the generator
-network and altered by the user, a user can manipulate
-photo semantics, painting objects such as doors, windows, trees,
+photographs.  By encoding a scene into a representation that can
+be rendered by a generator network derived from a GAN, a user
+can manipulate photo semantics, painting objects such as doors,
+windows, trees,
 and domes.  The details of rendering objects in plausible
 configurations is left to the network.
 <span class="more"></span>
