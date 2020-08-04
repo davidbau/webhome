@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<html>
+<!--
+  cv.html formats my CV using Vue.
+-->
+<head>
+<title>CV for David Bau</title>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"
+  integrity="sha256-CMMTrj5gGwOAXBeFi7kNokqowkzbeL8ydAJy39ewjkQ="
+  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.js"
+  integrity="sha256-qwbDmNVLiCqkqRBpF46q5bjYH11j5cd+K+Y6D3/ja28="
+  crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<style>
+@media print {
+@page { 
+  size: 8.5in 11in;
+  margin-top: 0.75in;
+  margin-bottom: 0.75in;
+  margin-left: 0.75in;
+  margin-right: 0.75in;
+} 
+}
+body, td, th { font-family: 'Times New Roman', serif; font-weight: 400;
+  font-size: 11pt; line-height: 1.3; }
+h1 { font-weight: 700; word-spacing: 5pt; letter-spacing: 1pt;
+  font-size: 18pt; margin-bottom: 1pt; text-transform: uppercase;
+}
+h2 { font-weight: 400; font-size: 15pt;
+  font-variant: small-caps;
+  margin-bottom: 5pt;
+  page-break-inside: avoid;  }
+h2::after { content: ""; display: block; height: 30pt; margin-bottom: -30pt; }
+h3 { font-variant: small-caps; page-break-inside: avoid; }
+h3::after { content: ""; display: block; height: 30pt; margin-bottom: -30pt; }
+hr { border-top: 2pt solid black; height: 0; margin: 0; }
+.main { margin-left: 90pt; display: block; }
+.item { margin-bottom: 5pt; }
+.pub { margin-bottom: 5pt; padding-left: 3em; text-indent: -3em }
+.item ul { margin: 0; padding: 0; list-style-type: none; }
+.item li { margin: 0; padding-left: 3em; text-indent: -3em; }
+.index { vertical-align: baseline; float: left; font-weight: 200; font-variant: small-caps;  }
+table { border-spacing: 0; border-collapse: collapse; }
+table.references { min-width: 80%; }
+table.references td { width: 50%; vertical-align: top; padding-bottom: 18pt; }
+td { padding:0; margin:0; }
+p { margin-top: 8pt; margin-bottom: 8pt; }
+</style>
+</head>
+<body>
+<div id="cv">
+<h1>David Bau</h1>
+<hr>
+<div class="main" style="margin-top: 18pt;">
+<table style="width:80%"><tr>
+<td style="width:50%">
+MIT CSAIL<br>
+32 Vassar Street, 32-383<br>
+Cambridge, MA 02139
+</td>
+<td>
+<a href="https://people.csail.mit.edu/davidbau/home/">people.csail.mit.edu/davidbau</a><br>
+<a href="mailto:davidbau@csail.mit.edu">davidbau@csail.mit.edu</a><br>
++1-781-296-9825
+</td>
+</tr>
+</table>
+</div>
+<h2 class="main">Research Interests</h2>
+<div class="main item">
+Computer vision, Explanation of deep networks, HCI.
+</div>
+
+<h2 class="main">Research Projects</h2>
+
+<div class="main item">
+<strong>Model Rewriting, <a href="http://rewriting.csail.mit.edu/">rewriting.csail.mit.edu</a>.</strong> I investigate how a user can directly change the parameters of a deep model according to their own intentions, rather than using a data set for retraining.  I find that the weights of a model are organized like an optimal linear associative memory, so rules can be changed by rewriting individual lines of memory. Using this insight, I demonstrate an interactive application for novice users to visually reprogram the rules of state-of-the-art StyleGANv2 models.
+</div>
+
+<div class="main item">
+<strong>GAN Omissions, <a href="http://ganseeing.csail.mit.edu/">ganseeing.csail.mit.edu</a>.</strong>  A method for measuring and visualizing mode dropping in state-of-the-art GANs.  This work reveals that GANs omissions can drop object classes when synthesizing a scene.
+</div>
+
+<div class="main item">
+<strong>GAN Dissection, <a href="http://gandissect.csail.mit.edu/">gandissect.csail.mit.edu</a>.</strong>  An analysis method that revals emergent object concepts represented in the middle layers of a GAN (trained without supervision of labels).  The encoding of objects is simple enough that objects can be added or removed from a scene by activating or silencing units in the GAN directly. I apply this technique to semantic photo manipulation in GAN Paint, <a href="http://ganpaint.io/">ganpaint.io</a>.
+</div>
+
+<div class="main item">
+<strong>Network Dissection, <a href="http://netdissect.csail.mit.edu/">netdissect.csail.mit.edu</a>.</strong>  A system that quantifies human-interpretable concept detectors within representations of deep networks for vision.  This work was used to identify emergent semantics in a range of settings, and to quantify the disentanglement of meaningful individual units in vision networks.
+</div>
+
+<!--
+<div class="main item">
+<strong>Self-explaining deep networks.</strong>
+Visualizing and understanding the
+sparse logic learned by deep networks, and regularizing training
+to further disentangle learned representations.
+</div>
+<div class="main item">
+<strong>Collaborative human-machine learning.</strong>
+Developing analysis methods
+and interfaces to allow a programmer to productively inspect
+and modify the model learned by a deep network.
+</div>
+<div class="main item">
+<strong>Analysis of self-supervised networks.</strong>
+Analyzing state-of-the
+art models trained with self-supervision and with reinforcement learning,
+to understand what deep networks represent when they learn how to learn.
+</div>
+-->
+
+<h2 class="main">Education</h2>
+
+<div class="index">2015-present</div>
+<div class="main item">
+<strong>Massachusetts Institute of Technology</strong>, Cambridge, MA<br>
+Ph.D. Candidate in Electrical Engineering and Computer Science<br>
+Thesis topic: The Representation of Visual Concepts
+in Deep Networks for Vision<br>
+Advisor: Antonio Torralba<br>
+Anticipated graduation: June 2021
+</div>
+
+<div class="index">1992-1994</div>
+<div class="main item">
+<strong>Cornell University</strong>, Ithaca, NY<br>
+M.S. in Computer Science<br>
+Book coauthored: <em>Numerical Linear Algebra</em><br>
+Advisor: Lloyd N. Trefethen
+</div>
+
+<div class="index">1988-1992</div>
+<div class="main item">
+<strong>Harvard College</strong>, Cambridge, MA<br>
+A.B. in Mathematics
+</div>
+
+<h2 class="main">Awards</h2>
+
+<div class="main">MIT EECS Great Educators Fellowship, 2015</div>
+
+<div class="main">NSF Graduate Research Fellowship, 1992</div>
+
+<h2 class="main">Employment</h2>
+
+<div class="index">2013-2015</div>
+<div class="main item">
+<strong>Pencil Code.</strong>
+<a href="https://pencilcode.net/">pencilcode.net</a>.
+With Google and open-source contributors.
+<ul>
+<li>Created an educational programming system and curriculum
+for beginners, with 107,000 active accounts and 2,000 users
+every school day.
+</ul>
+</div>
+
+<div class="index">2009-2014</div>
+<div class="main item">
+<strong>Google Image Search.</strong>
+<a href="http://images.google.com/">images.google.com</a>.
+Staff software engineer.
+<ul>
+<li><em>Image Search Freshness.</em>
+Led a team of engineers to improve freshness of Google Image Search: 
+added the ability to satisfy queries for new events and new concepts with
+new and newsworthy results within minutes of their publication on the web.
+<li><em>Image Search Visual Redesign.</em>
+Led a team to prototype and implement a major image search redesign,
+providing a long scrolling page of results. Solved infrastructure
+challenges posed by serving results so quickly at Google's enormous scale.
+<li><em>Facets for Images.</em>
+Led a team of engineers and designers to implement an image
+clustering feature at the top of Google Image search.
+</ul>
+</div>
+
+<div class="index">2007-2008</div>
+<div class="main item">
+<strong>Google Search.</strong>
+<a href="http://google.com/">www.google.com</a>.
+Staff software engineer.
+<ul>
+<li>Developed algorithms for Google's
+processing of queries and web pages about people.
+</ul>
+</div>
+
+<div class="index">2004-2007</div>
+<div class="main item"><strong>Google Talk.</strong>
+<a href="http://talk.google.com/">talk.google.com</a>
+(now known as Hangouts). Staff software engineer.
+<ul>
+<li>Created Google's realtime communications product, including
+text chat, streaming voice over ip, and integration into Gmail.
+Created the team, recruited engineers, and contributed to all
+aspects of the technology.
+</ul>
+</div>
+
+<div class="index">2003</div>
+<div class="main item">
+<strong>XML Beans.</strong>  Contributor to the Apache Foundation.
+<ul>
+<li>Created an open-source compiler for the XML
+Schema standard in Java.
+</ul>
+</div>
+
+<div class="index">2000-2003</div>
+<div class="main item">
+<strong>Weblogic Workshop</strong>.  Crossgain and BEA Systems.
+<ul>
+<li>Lead the design of a development tool
+to simplify the creation of cloud services for Java programmers.
+Acquired by BEA Systems.
+</ul>
+</div>
+
+<div class="index">1993-2000</div>
+<div class="main item">
+<strong>Microsoft</strong>.  Several projects:
+<ul>
+<li><em>.Net Platform.</em> Specified and
+implemented aspects of the Common Language Runtime.
+<li><em>Trident project.</em> Defined and implemented
+core aspects of the programmable engine for the first Ajax
+web browser (Internet Explorer 4, 5, 6).
+<li><em>Blackbird platform.</em> Designed
+features for a network media platform for MSN.
+<li><em>Intentional Programming.</em> Intern on Charles Simonyi's
+project to build a new type of programming tool.
+</ul>
+</div>
+
+
+<h2 class="main">Peer-Reviewed Publications</h2>
+
+<!--<div class="index">Computer Vision</div>-->
+<h3 class="main">Conference papers</h3>
+
+<div class="main pub">
+<strong>David Bau</strong>, Steven Liu, Tongzhou Wang, Jun-Yan Zhu, and Antonio Torralba. <a href="https://rewriting.csail.mit.edu/">Rewriting a Deep Generative Model.</a> <em>Proceedings of the European Conference on Computer Vision.</em> (ECCV 2020 oral)
+</div>
+
+<div class="main pub">
+Lucy Chai, <strong>David Bau</strong>, Ser-Nam Lim, and Phillip Isola. What makes fake images detectable? Understanding properties that generalize. <em>Proceedings of the European Conference on Computer Vision.</em> (ECCV 2020)
+</div>
+
+<div class="main pub">
+Steven Liu, Tongzhou Wang, <strong>David Bau</strong>, Jun-Yan Zhu, and Antonio Torralba. <a href="http://selfcondgan.csail.mit.edu/">Diverse Image Generation via Self-Conditioned GANs.</a> <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.</em> (CVPR 2020)
+</div>
+
+<div class="main pub">
+<strong>David Bau</strong>, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, and Antonio Torralba. <a href="http://ganseeing.csail.mit.edu/">Seeing What a GAN Cannot Generate.</a>  <em>Proceedings of the IEEE International Conference on Computer Vision, pp. 4502-4511.</em> (ICCV 2019 oral presentation)
+</div>
+<div class="main pub">
+<strong>David Bau</strong>, Hendrik Strobelt, William Peebles, Jonas Wulff, Bolei Zhou, Jun-Yan Zhu, and Antonio Torralba. <a href="http://ganpaint.io/">Semantic Photo Manipulation with a Generative Image Prior.</a> <em>ACM Transactions on Graphics (TOG) 38, no. 4.</em> <nobr>(SIGGRAPH 2019)</nobr>
+</div>
+<div class="main pub">
+  Didac Suris, Adria Recasens, <strong>David Bau</strong>, David Harwath, James Glass, and Antonio Torralba. <a href="">Learning words by drawing images.</a> <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.</em>  <nobr>(CVPR 2019)</nobr>
+</div>
+<div class="main pub">
+<strong>David Bau</strong>, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman, and Antonio Torralba. <a href="http://gandissect.csail.mit.edu/">GAN Dissection: Visualizing and Understanding Generative Adversarial Networks.</a> <em>Proceedings of the Seventh International Conference on Learning Representations.</em> <nobr>(ICLR 2019)</nobr>
+</div>
+<div class="main pub">
+Leilani H. Gilpin, <strong>David Bau</strong>, Ben Z. Yuan, Ayesha Bajwa, Michael Specter, Lalana Kagal.  <a href="https://arxiv.org/pdf/1806.00069.pdf">Explaining Explanations: An Overview of Interpretability of Machine Learning.</a> <em>Proceedings of the IEEE 5th International Conference on Data Science and Advanced Analytics.</em> <nobr>(DSAA 2018)</nobr>
+</div>
+<div class="main pub">
+Bolei Zhou, Yiyou Sun, <strong>David Bau</strong>, and Antonio Torralba. <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Antonio_Torralba_Interpretable_Basis_Decomposition_ECCV_2018_paper.pdf">Interpretable Basis Decomposition for Visual Explanation.</a> <em>Proceedings of the European Conference on Computer Vision.</em> <nobr>(ECCV 2018)</nobr>
+</div>
+<div class="main pub"><strong>David Bau</strong>, Bolei Zhou, Aditya Khosla, Aude Oliva, Antonio Torralba.  <a href="http://netdissect.csail.mit.edu/">Network Dissection: Quantifying Interpretability of Deep Visual Representations</a>. <em>Proceedings of the 2017 IEEE Conference on Computer Vision and Pattern Recognition</em> <nobr>(CVPR 2017 oral presentation)</nobr></div>
+
+<div class="main pub"><strong>David Bau</strong>, Matt Dawson M, Anthony Bau, C.S. Pickens <a href="http://dl.acm.org/citation.cfm?id=2771875">Pencil Code: Block Code for a Text World</a>. <em>Proceedings of the 14th International Conference on Interaction Design and Children. pp 445-448.</em> <nobr>(IDC 2015)</nobr></div>
+
+<div class="main pub">
+Ming Zhao, Jay Yagnik, Hartwig Adam, <strong>David Bau</strong>.
+<a href="">Large Scale Learning and Recognition of Faces in Web Videos</a>. <em>8th IEEE International Conference on Automatic Face and Gesture Recognition.</em>  <nobr>(FG 2008)</nobr></div>
+
+<div class="main pub">
+<strong>David Bau</strong>, Induprakas Kodukula, Vladimir Kotlyar, Keshav Pingali, Paul Stodghill.
+<a href="http://link.springer.com/chapter/10.1007/BFb0025870">Solving Alignment Using Elementary Linear Algebra.</a> Languages and Compilers for Parallel Computing, Lecture Notes in Computer Science Volume 892, pp 46-60. <nobr>(LCPC 1994)</nobr>
+</div>
+
+<!--<div class="index">CS Education</div>
+<div class="main pub">
+David Weintrop, <strong>David Bau</strong>, and Uri Wilensky. <a href="https://ccl.northwestern.edu/2019/cloud.pdf">The cloud is the limit: A case study of programming on the web, with the web.</a> <em>International Journal of Child-Computer Interaction 20.</em> <nobr>(IJCCI 2019)</nobr>
+</div>
+-->
+
+<h3 class="main">Workshop papers</h3>
+
+<div class="main pub">
+<strong>David Bau</strong>, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, and Antonio Torralba. <a href="https://debug-ml-iclr2019.github.io/cameraready/DebugML-19_paper_18.pdf">Inverting Layers of a Large Generator.</a> <em>ICLR Debugging Machine Learning Models Workshop.</em> <nobr>(ICLR 2019 workshop)</nobr>
+</div>
+<div class="main pub">
+Jonathan Frankle, <strong>David Bau</strong>.  <a href="https://debug-ml-iclr2019.github.io/cameraready/DebugML-19_paper_15.pdf">Dissecting Pruned Neural Networks.</a> <em>ICLR Debugging Machine Learning Models Workshop.</em> <nobr>(ICLR 2019 workshop)</nobr>
+</div>
+<!--
+<div class="main pub">
+Amy Briggs, <strong>David Bau</strong>, Caroline Meeks, and Pat Yongpradit. <a href="https://dl.acm.org/citation.cfm?id=2677334">Supporting the computer science learning process.</a> <em>Proceedings of the 46th ACM Technical Symposium on Computer Science Education.</em> <nobr>(SIGCSE 2015)</nobr>
+</div>
+-->
+
+<div class="main pub">
+Saksham Aggarwal, David Anthony Bau, <strong>David Bau</strong>. <a href="https://ieeexplore.ieee.org/document/7369008">A blocks-based editor for HTML code.</a> <em>IEEE Blocks and Beyond Workshop, pp. 83-85.</em>  (VL/HCC 2015 workshop)
+</div>
+
+<div class="main pub"><strong>David Bau</strong>, Anthony Bau. <a href="http://dl.acm.org/citation.cfm?id=2688481">A Preview of Pencil Code: A Tool for Developing Mastery of Programming</a>.
+<em>Proceedings of the 2nd Workshop on Programming for Mobile & Touch.</em> <nobr>(PROMOTO 2014)</nobr></div>
+
+<h3 class="main">Journals and Magazines</h3>
+<div class="main pub">
+<strong>David Bau</strong>, Bolei Zhou, Aude Oliva, Antonio Torralba:
+<a href="http://cvcl.mit.edu/papers/interpreting-deep-visual-PAMI.pdf">Interpreting Deep Visual Representations via Network Dissection.</a> <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) Volume 41 Issue 9, September 2019, pp. 2131-2145.</em>
+</div>
+
+<div class="main pub"><strong>David Bau</strong>, Jeff Gray, Caitlin Kelleher, Josh Sheldon, Franklyn Turbak.
+<a href="http://dl.acm.org/citation.cfm?id=3015455">Learnable Programming: Blocks and Beyond</a>. 
+<em>Communications of the ACM (CACM) Volume 60 Issue 6, June 2017. pp. 72-80.</em></div>
+
+<h2 class="main">Book</h2>
+
+<div class="main pub">Lloyd N. Trefethen, <strong>David Bau</strong>. <a href="http://www.amazon.com/Numerical-Linear-Algebra-Lloyd-Trefethen/dp/0898713617"><em>Numerical Linear Algebra.</em></a>
+(373pp.) Society for Industrial and Applied Mathematics. (1997)</div>
+
+<h2 class="main">Selected Patents</h2>
+
+<div class="main pub"><strong>David Bau</strong>, Google.  <a href="https://www.google.com/patents/US8621395">Predictive hover triggering.</a> US&nbsp;Patent&nbsp;8621395. (2011)</div>
+
+<div class="main pub"><strong>David Bau</strong>, Gunes Erkan, O.A. Osman, Scott Safier, Conrad Lo, Google.
+<a href="http://www.google.com/patents/US8538943">Providing Images of Named Resources in Response to a Search Query.</a>
+US&nbsp;Patent&nbsp;8538943. (2008)</div>
+
+<div class="main pub"><strong>David Bau</strong>, Google. <a href="https://www.google.com/patents/WO2006039393A3">Determining Advertisements Using User
+Behavior Information Such as Past Navigation Information.</a>
+WO&nbsp;Patent&nbsp;2006039393. (2005)</div>
+
+<div class="main pub"><strong>David Bau</strong>. <a href="https://www.google.com/patents/US8725810">Method and System for Anonymous Login for Real Time Communications.</a> US&nbsp;Patent&nbsp;8725810. (2005)</div>
+
+<div class="main pub"><strong>David Bau</strong>, John Perlow, Google.
+<a href="https://www.google.com/patents/US8392836">Presenting Quick List of Contacts to Communication Application User</a> US&nbsp;Patent&nbsp;8392836. (2005)</div>
+
+<div class="main pub">Rod Chavez, <strong>David Bau</strong>, Gary Burd, Google.
+<a href="https://www.google.com/patents/US8577967">Method and System for Managing Real-time Communications
+in an Email Inbox</a>.   US&nbsp;Patent&nbsp;8577967. (2005)</div>
+
+<div class="main pub">Reza Behforooz, Gary Burd, <strong>David Bau</strong>, John Perlow, Google.
+<a href="https://www.google.com/patents/US8751582">Managing Presence Subscriptions for Messaging Services.</a> US&nbsp;Patent&nbsp;8751582. (2005)</div>
+
+<div class="main pub"><strong>David Bau</strong>, Google.
+<a href="https://www.google.com/patents/US8095665">User-Friendly Features for Real-Time Communications.</a> US&nbsp;Patent&nbsp;8095665. (2005)</div>
+
+<div class="main pub">Kyle Marvin, David Remy, <strong>David Bau</strong>, Rod Chavez, David Read,
+BEA Systems.  <a href="https://www.google.com/patents/US7707564?">Systems and Methods for Creating Network-Based Software Services Using Source Code Annotations.</a>  US&nbsp;Patent&nbsp;7707564. (2004)
+</div>
+
+<div class="main pub"><strong>David Bau</strong>, BEA Systems. <a href="https://www.google.com/patents/WO2004068292A3">XML Types in Java.</a>
+US&nbsp;Patent&nbsp;7650591. (2004)
+</div>
+
+<div class="main pub"><strong>David Bau</strong>, Adam Bosworth, Gary Burd, Rod Chavez, Kyle Marvin, BEA Systems.
+<a href="https://www.google.com/patents/US7356803">Annotation Based Development Platform for Asynchronous Web Services.</a>
+US&nbsp;Patent&nbsp;7356803. (2002)</div>
+
+<div class="main pub">Andrei C, Adam Bosworth, <strong>David Bau</strong>, BEA Systems. <a href="https://www.google.com/patents/US6859810">Declarative Specification and Engine for Non-Isomorphic Data Mapping.</a>
+US&nbsp;Patent&nbsp;6859810. (2001)</div>
+
+<div class="main pub">Adam Bosworth, <strong>David Bau</strong>, K. Eric Vasilik, Oracle.  <a href="https://www.google.com/patents/US8156471">Multi-Language Execution Method.</a> US&nbsp;Patent&nbsp;7266814. (2001)</div>
+
+<div class="main pub">Adam Bosworth, <strong>David Bau</strong>, K. Eric Vasilik, Oracle.  <a href="https://www.google.com/patents/US8312429">Cell Based Data Processing.</a> US&nbsp;Patent&nbsp;8312429. (2000)</div>
+
+<h2 class="main">Invited Talks</h2>
+
+<div class="main pub"><em>Semantic Photo Manipulation using a GAN.</em> RealTime Conference at SIGGRAPH, June 2020.</div>
+<div class="main pub"><em>Explaining the Units of Classifiers and Generators in Vision.</em>  Computer Vision Seminar, Brown University.  Providence, RI.  April 2020. </div>
+<div class="main pub"><em>Dissecting the Semantic Structure of Deep Networks for Vision.</em>  Explainable AI for Vision Workshop.  Seoul, Korea.  November 2019. </div>
+<div class="main pub"><em>Dissecting and Manipulating Generative Adversarial Networks.</em> Image Synthesis Workshop.  Seoul, Korea.  October 2019.</div>
+<div class="main pub"><em>Exploring a Generator with GANDissect.</em>  GANocracy Workshop. Cambridge, MA.  May 2019.</div>
+<div class="main pub"><em>Understanding the Internal Structure of a GAN.</em>  Re-Work Deep Learing Summit.  Boston, MA.  May 2019.</div>
+<div class="main pub"><em>Dissecting Artificial Neural Networks for Vision.</em>  Martinos Center for Biomedical Imaging.  Boston, MA.  April 2019.</div>
+<div class="main pub"><em>Semantic Paint using a Generative Adversarial Network.</em>  Samsung/MIT Design Workshop.  Cambridge, MA.  April 2019.</div>
+<div class="main pub"><em>Dissecting What a Generative Network Can Learn Unsupervised.</em>  DARPA XAI PI Meeting.  Berkeley, CA.  February 2019.</div>
+<div class="main pub"><em>Interpretation of Deep Networks for Vision.</em>  Trustworthy and Robust AI Initiative.  Cambridge, MA.  February 2019.</div>
+<div class="main pub"><em>On the Units of Generative Adversarial Networks.</em>  AAAI Workshop on Network Interpretability.  Honolulu, HI.  January 2019.</div>
+<div class="main pub"><em>Explaining Explanations: Interpretation of Deep Neural Networks.</em>  Trust.ML Workshop on Public Policy Aspects of ML.  Cambridge, MA. June 2018.</div>
+
+
+<h2 class="main">Organized Workshops</h2>
+
+<div class="main pub">Structure and Intpretation of Deep Networks, Workshop organizer.<br>Cambridge, MA.  January 2020.</div>
+<div class="main pub">Explainable AI for Vision Workshop, Workshop organizer.<br>Seoul Korea, November 2019.</div>
+<div class="main pub">GANocracy Workshop on the Theory, Practice, and Artistry of Deep Generative Modeling, Workshop organizer.<br>Cambridge, MA. May 2019.</div>
+<div class="main pub">Robust and Interpretable Deep Learning Symposium, Workshop organizer.<br>Cambridge, MA. November 2018.</div>
+<div class="main pub">Blocks and Beyond, Workshop organizer.<br>Memphis, TN. July 2017.</div>
+
+<div class="main pub">Coding Projects for Humanities Classes, Workshop organizer.<br>Cambridge, MA. May 2014.</div>
+<div class="main pub">Pencil Code CS Teaching Hackathon, Workshop organizer.<br>Cambridge, MA. March 2014.</div>
+<div class="main pub">Teaching with Pencil Code, Workshop organizer.<br>Cambridge, MA.  February 2014.</div>
+
+
+
+<h2 class="main">Students Supervised</h2>
+
+<h3 class="main">Masters Theses</h3>
+
+<div class="main pub">Brian Shimanuki. <em>Joint GAN generation of text and images.</em></div>
+
+<div class="main pub">Richard Yip. <em>Understanding What a Captioning Network Doesn't Know.</em></div>
+
+<h3 class="main">Undergraduate Research</h3>
+
+<div class="main pub">James Gilles.  <em>Analysis of representation similarity across vision networks.</em></div>
+
+<div class="main pub">Wendy Wei.  <em>Visualization of semantic clusters in a population of networks.</em></div>
+
+<div class="main pub">Kaveri Nadhamuni.  <em>A search for bug-causing neurons in classifiers.</em></div>
+
+<div class="main pub">William Peebles.
+<em>Semantic manipulation of a user-provided photo.</em></div>
+
+<div class="main pub">Steven Liu.
+<em>Self-conditioned Generative Adversarial Networks.</em></div>
+
+<div class="main pub">Tony Peng.  <em>Using GANs to alter the lighting in a scene.</em></div>
+
+
+<h2 class="main">Other Activities</h2>
+
+<div class="main">Lincoln Middle School Math Team Coach.  2009-2015.</div>
+<div class="main">Lincoln Gear Ticks FLL Robotics Coach.  2012-2013.</div>
+
+<h2 class="main">References</h2>
+
+<div class="main">
+<table class="references">
+<tr>
+<td>
+<em>Prof. Antonio Torralba</em><br>
+MIT CSAIL<br>
+32 Vassar Street<br>
+Cambridge, MA 02139<br>
+<tt>torralba@mit.edu</tt>
+</td>
+
+<td>
+<em>Prof. William T. Freeman</em><br>
+MIT CSAIL<br>
+32 Vassar Street<br>
+Cambridge, MA 02139<br>
+<tt>billf@mit.edu</tt>
+</td>
+</tr>
+
+<tr>
+<td>
+<em>Prof. Joshua B. Tenenbaum</em><br>
+Brain and Cognitive Sciences<br>
+MIT<br>
+77 Massachusetts Ave, 46-4015<br>
+Cambridge, MA 02139<br>
+<tt>jbt@mit.edu</tt>
+</td>
+
+<td>
+<em>Prof. Alexei Efros</em><br>
+EECS Department<br>
+UC Berkeley<br>
+395 Soda Hall #1776<br>
+Berkeley, CA 94720<br>
+<tt>efros@eecs.berkeley.edu</tt>
+</td>
+</tr>
+
+<tr>
+<td>
+<em>Prof. Phillp Isola</em><br>
+MIT CSAIL<br>
+32 Vassar Street<br>
+Cambridge, MA 02139<br>
+<tt>phillipi@mit.edu</tt>
+</td>
+
+<td>
+<em>Aude Oliva</em><br>
+Principal Research Scientist<br>
+MIT CSAIL<br>
+32 Vassar Street<br>
+Cambridge, MA 02139<br>
+<tt>oliva@mit.edu</tt>
+</td>
+</tr>
+
+</table>
+
+</div><!--cv-->
+</body>
+<script>
+var theapp = new Vue({
+  el: '#cv',
+  data: {
+    sections: null,
+    images: null
+  },
+})
+</script>
+</html>
