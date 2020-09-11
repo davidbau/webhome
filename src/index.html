@@ -188,20 +188,20 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
 <iframe id="selfpic-video" width="448" height="252" src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&enablejsapi=1&origin=https://people.csail.mit.edu" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <figcaption>Why we study deep network internals.  <nobr>David Bau</nobr> (narrates), with Antonio Torralba, Jun-Yan Zhu, Hendrik Strobelt, Jonas Wulff, and William Peebles. <nobr>Video by Lillie Paquette,</nobr> MIT School of Engineering.</figcaption>
 </figure>
-<p>It is crucial for humans to understand the algorithms
-discovered by machine-learning systems so we can explain,
-design, and control their behavior in new domains.
+<p>It is crucial to understand the algorithms
+discovered by machine-learning systems so we can explain, control, and
+design their behavior in new domains.
 <p>Artificial intelligence should create transparency in a complex world.
 As our sophisticated systems exhibit more unexpected and emergent
 behavior, I believe the focus of machine learning should shift to
 <em>machine explanation</em>: the development of methods that reveal
-the patterns and strategies our algorithms find, so that
+the patterns and strategies our models contain, so that
 programmers and users can retain agency.
 </p>
 <p>As a PhD student in <a href="http://web.mit.edu/torralba/www/"
->Antonio Torralba's lab</a>, I develop techniques that increase
-interpretability
-of deep neural networks. I have found evidence that the
+>Antonio Torralba's lab</a>, I develop techniques for
+understanding the computations of deep neural networks.
+I have found evidence that the
 representations learned by deep networks can have a
 simple underlying structure.
 The focus of my research at MIT is therefore to
@@ -258,11 +258,37 @@ ECCV 2020 oral</a>.
 
 <input class="collapse" type="checkbox">
 <p>
+<img src="individualunits.png" class="projpic">
+<a href="http://dissect.csail.mit.edu/"
+  >Understanding the Role of Individual Units in a Deep Neural Network.</a>
+The causal role of individual units within a deep network can be
+measured by directly changing those units and observing the impact.
+<span class="more"></span>
+<span class="extra">
+  In this study, we unify and extend the netdissect and gandissect methods
+  to compare and understand classifiers and generators.  Removing sets of
+  units from a classifier reveals a sparse computational structure:
+  we find that a small set of neurons is important
+  for the accuracy of an individual classifier output class, and
+  that neurons that are important for more classes also are more
+  human-interpretable.
+</span>
+<a href="https://doi.org/10.1073/pnas.1907375117"
+   ><span class="me">D Bau</span>, JY Zhu, H Strobelt, A Lapedriza,
+   B Zhou, A Torralba. <em>Understanding the Role of Individual Units in
+   a Deep Neural Network.</em>
+   Proceedings of the National Academy of Sciences. 2020</a>.
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
 <img src="sidn-thumb.png" class="projpic">
-<a href="http://sidn.csail.mit.edu/">Structure and Interpretation of Deep Networks.</a>
+<a href="http://sidn.csail.mit.edu/"
+  >Structure and Interpretation of Deep Networks.</a>
 Most introductory courses on deep networks focus on how to train models, but it
 is just as important to understand the structure and behavior of the models
-after training is done.  By bringing current research in deep network interpretation
+after training is done.  By bringing current research in deep network
+interpretation
 to students, the SIDN course is designed to start filling that gap.
 <span class="more"></span>
 <span class="extra">
