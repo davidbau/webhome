@@ -191,10 +191,10 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
 As large-scale machine learning systems exhibit
 more emergent and unexpected behavior,
 we need to know how they work.
-And for people to have real agency
+And for humans to have real agency
 in this new era of computer science,
 our understanding of large models must be
-specific and concrete.
+concrete and actionable.
 We must be able to explain behavior,
 debug internal logic, and modify hidden
 rules that govern choices.
@@ -509,6 +509,7 @@ Numerical Linear Algebra</a> is the graduate textbook on numerical linear algebr
 </div> <!-- publication -->
 </div>
 </div>
+
 <div class="row">
 <div class="col">
 <div class="footer">
@@ -517,27 +518,28 @@ Numerical Linear Algebra</a> is the graduate textbook on numerical linear algebr
         <a href="https://github.com/davidbau">Github</a>
         <a href="https://www.linkedin.com/in/david-bau-4b8130/">LinkedIn</a>
         <a href="http://davidbau.com">Personal Blog</a>
-        <a href='https://www.google.com/search?safe=off&noj=1&biw=1855&bih=917&q=david+bau+-music+-mp3+-radio+-youtube+-soundcloud+-minnesota+-tennis+-"records"+-"noah+david"+-"extension+educator"+-"bau+mann"+-"bau+man"+-"bau+telle"+-"bau+xi"+-mirador+-atticus&oq=david+bau+-music+-mp3+-radio+-youtube+-soundcloud+-minnesota+-tennis+-"records"+-"noah+david"+-"extension+educator"+-"bau+mann"+-"bau+man"+-"bau+telle"+-"bau+xi"+-mirador+-atticus'>Web</a>
+        <a href='https://www.google.com/search?safe=off&noj=1&biw=1855&bih=917&q=david+bau+-mp3+-radio+-soundcloud+-minnesota+-tennis+-mx+-romero+-techno+-remix+-spotify+-pandora+-"noah+david"+-"extension+educator"+-"bau+mann"+-"bau+man"+-"bau+mert"+-"bau+telle"+-"bau+xi"+-"behavioural analysis"+-mirador+-atticus&oq=david+bau+-music+-mp3+-radio+-youtube+-soundcloud+-minnesota+-tennis+-"records"+-"noah+david"+-"extension+educator"+-Noguer+-dgbau+-worthington+-"bau+mann"+-"bau+man"+-"bau+telle"+-"bau+xi"+-mirador+-atticus+-gmbh'>Search</a>
         <a href="https://accessibility.csail.mit.edu/">Accessibility</a>
         <a href="https://whereis.mit.edu/?zoom=16&lat=42.361612839999985&lng=-71.09056785999995&maptype=mit&q=32-383&open=object-32">Office: Stata 32-383</a>
-        </div>
-        </div>
-        </div>
-        </div>
-        <script>
-        $(document).on('click', '.more, .publication p', function(ev) {
-          // Do not collapse a card if the click is for a hyperlink or selection.
-          if ($(ev.target).closest('a').length ||
-                  getSelection().type == 'Range' || ev.shiftKey || ev.ctrlKey) {
-            return;
-          }
-          // Use the hidden checkbox technique to preserve collapse-state on "back"
-          var collapse = $(this).closest('p').prev('input.collapse');
-          collapse.prop('checked', !collapse.prop('checked'));
-          ev.stopPropagation();
-        });
-        </script>
-        </body>
+</div>
+</div>
+</div>
+
+</div>
+<script>
+$(document).on('click', '.more, .publication p', function(ev) {
+  // Do not collapse a card if the click is for a hyperlink or selection.
+  if ($(ev.target).closest('a').length ||
+          getSelection().type == 'Range' || ev.shiftKey || ev.ctrlKey) {
+    return;
+  }
+  // Use the hidden checkbox technique to preserve collapse-state on "back"
+  var collapse = $(this).closest('p').prev('input.collapse');
+  collapse.prop('checked', !collapse.prop('checked'));
+  ev.stopPropagation();
+});
+</script>
+</body>
 <script type="text/javascript">
   var player;
   function onYouTubeIframeAPIReady() {
