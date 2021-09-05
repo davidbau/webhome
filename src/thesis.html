@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<title>David Bau Thesis Defense: Dissection of Deep Networks</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="In this paper we ask if deep networks can be created in a different way. Can the rules in a network be directly rewritten?  Tutorials, videos, colab notebooks, code, and information on the ECCV 2020 paper.">
+<meta property="og:title" content="Dissection of Deep Networks" />
+<meta property="og:description" content="David Bau Thesis Defense: Dissection of Deep Networks"/>
+<meta name="twitter:card" content="summary" /> 
+<meta name="twitter:title" content="David Bau Thesis Defense" />
+<meta name="twitter:description" content="David Bau Thesis Defense: Dissection of Deep Networks"/>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+<style>
+body, td, th {
+  font-family: 'Open Sans', sans-serif;
+}
+h2 {
+  margin-top: 3ex;
+}
+.color-primary-0 { color: #2988E6 }
+.color-primary-1 { color: #6F28FA }
+.color-primary-2 { color: #00F29E }
+.color-primary-3 { color: #2134FC }
+.color-primary-4 { color: #21E9FC }
+
+.nd-pageheader {
+  padding: 2rem 15px;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-align: center;
+  background-color: #2988E6;
+}
+
+.nd-pageheader a {
+  color: #e4f1fe;
+}
+
+.nd-pagefooter {
+  color: white;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: #2988E6;
+}
+
+.nd-pagefooter a {
+  color: #e4f1fe;
+}
+
+.nd-pageheader .container {
+  position: relative
+}
+
+.nd-pageheader h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff
+}
+
+.nd-pageheader address {
+  font-weight: 300;
+}
+
+.nd-pageheader p {
+  margin-bottom: 0;
+  font-size: 2.25rem;
+  font-weight: 300
+}
+
+.citation {
+  margin-top: 15px;
+  clear: both;
+}
+.citation:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.citation img {
+  float: left;
+  margin: 0 10px 10px 0;
+  width: 150px;
+}
+
+@media (min-width: 576px) {
+  .nd-pageheader {
+    padding-top:4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 3rem;
+  }
+}
+</style>
+
+
+</head>
+<body class="nd-docs">
+<div class="nd-pageheader">
+ <div class="container">
+ <p class="lead">
+ <nobr>Dissection</nobr> of <nobr>Deep Neural Networks</nobr>
+<address>
+  <nobr><a href="https://people.csail.mit.edu/davidbau/home/"
+           >David Bau</a> PhD Thesis Defense</nobr><br>
+  <nobr><a href="https://www.csail.mit.edu/">MIT CSAIL</a></nobr>
+</address>
+ </p>
+ </div>
+</div><!-- end nd-pageheader -->
+
+<div class="container">
+<div class="row">
+<div class="col text-center">
+
+<p>
+<a href="https://www.youtube.com/watch?v=SPSobhMD7rc"
+ target="_blank" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-video-thumb.png" style="border:1px solid" data-nothumb=""><br>Defense Video</a>
+<a href="davidbau-defense-slides.pptx" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-slides-thumb.png" style="border:1px solid" data-nothumb=""><br>Defense Slides</a>
+<a href="Bau-davidbau-PhD-EECS-2021-thesis.pdf" class="d-inline-block p-3 align-middle"><img height="100" width="78" src="thesis-paper-thumb.png" style="border:1px solid" data-nothumb=""><br>Thesis PDF</a>
+</p>
+
+<div class="card" style="max-width: 1020px;">
+<div class="card-block">
+<h3>Do Deep Networks Contain Concepts?</h3>
+<p>
+A deep network learns its own computations, so we cannot ask a programmer to explain the reasons for the specific calculations that a network happens to do.  But what if we could ask the network itself what it is thinking?
+</p>
+</div>
+</div>
+</div> <!-- end row -->
+
+<div class="row">
+<div class="col">
+
+<h2>What is the big idea here?</h2>
+
+<p>One of the great challenges of neural networks is to understand how they work.  Because a deep network is trained by an optimizer, the programmer does not know why the network does what it does. So we have traditionally focused on testing a network's external behavior, ignorant of insights or flaws that may hide within the black box.</p>
+
+<p>But what if we could ask the network itself what it is thinking?  Inspired by classical neuroscience research on biological brains, I introduce methods to directly probe the internal structure of a deep convolutional neural network by testing the activity of individual neurons and their interactions.</p>
+
+<p>
+Beginning with the simple proposal that an individual neuron might represent one internal concept, we investigate the possibility of reading human-understandable concepts within a deep network in a concrete, quantitative way:  Which neurons?  Which concepts?  What role do concept neurons play?  And can we see rules governing relationships between concepts?
+</p>
+
+<p>
+Following this inquiry within state-of-the-art models in computer vision leads us to insights about the computational structure of those deep networks that enable several new applications, including "GAN Paint" semantic manipulation of objects in an image; understanding of the sare logic of a classifier; and quick, selective editing of generalizable rules within a fully trained StyleGAN network.
+</p>
+
+<p>
+In the talk, we challenge the notion that the internal calculations of a neural network must be hopelessly opaque. Instead, we strive to tear back the curtain and chart a path through the detailed structure of a deep network by which we can begin to understand its logic.
+</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<footer class="nd-pagefooter">
+  <div class="row">
+    <div class="col-6 col-md text-center">
+      <a href="https://people.csail.mit.edu/davidbau/">About David Bau</a>
+    </div>
+    <div class="col-6 col-md text-center">
+      <a href="https://groups.csail.mit.edu/vision/torralbalab/">About the Torralba Lab</a>
+    </div>
+    <div class="col-6 col-md text-center">
+      <a href="https://accessibility.mit.edu/">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-242212-4"></script>
+<script>
+$(document).on('click', '.clickselect', function(ev) {
+  var range = document.createRange();
+  range.selectNodeContents(this);
+  var sel = window.getSelection();
+  sel.removeAllRanges();
+  sel.addRange(range);
+});
+// Google analytics below.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-242212-4');
+</script>
+</html>
+
