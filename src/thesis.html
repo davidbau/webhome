@@ -7,8 +7,8 @@
 <meta property="og:title" content="Dissection of Deep Networks" />
 <meta property="og:description" content="David Bau Thesis Defense: Dissection of Deep Networks"/>
 <meta name="twitter:card" content="summary" /> 
-<meta name="twitter:title" content="David Bau Thesis Defense" />
-<meta name="twitter:description" content="David Bau Thesis Defense: Dissection of Deep Networks"/>
+<meta name="twitter:title" content="David Bau PhD Dissertation" />
+<meta name="twitter:description" content="David Bau PhD Dissertation: Dissection of Deep Networks"/>
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -104,7 +104,7 @@ h2 {
  <nobr>Dissection</nobr> of <nobr>Deep Neural Networks</nobr>
 <address>
   <nobr><a href="https://people.csail.mit.edu/davidbau/home/"
-           >David Bau</a> PhD Thesis Defense</nobr><br>
+           >David Bau</a> PhD Dissertation</nobr><br>
   <nobr><a href="https://www.csail.mit.edu/">MIT CSAIL</a></nobr>
 </address>
  </p>
@@ -117,11 +117,17 @@ h2 {
 
 <p>
 <a href="https://www.youtube.com/watch?v=SPSobhMD7rc"
- target="_blank" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-video-thumb.png" style="border:1px solid" data-nothumb=""><br>Defense Video</a>
-<a href="davidbau-defense-slides.pptx" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-slides-thumb.png" style="border:1px solid" data-nothumb=""><br>Defense Slides</a>
-<a href="Bau-davidbau-PhD-EECS-2021-thesis.pdf" class="d-inline-block p-3 align-middle"><img height="100" width="78" src="thesis-paper-thumb.png" style="border:1px solid" data-nothumb=""><br>Thesis PDF</a>
+   target="_blank" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-video-thumb.png" style="border:1px solid" data-nothumb=""><br>Defense Video<br>(Youtube)</a>
+<a href="davidbau-defense-slides.pptx" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-slides-thumb.png" style="border:1px solid" data-nothumb=""><br>Defense Slides<br>(Powerpoint)</a>
+<a href="Bau-davidbau-PhD-EECS-2021-thesis.pdf" class="d-inline-block p-3 align-middle"><img height="100" width="78" src="thesis-paper-thumb.png" style="border:1px solid" data-nothumb=""><br>Dissertation<br>(PDF)</a>
 </p>
-
+<p>
+<a href="https://netdissect.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-netdissect-thumb.png" style="border:1px solid" data-nothumb=""><br>Network Dissection<br>(CVPR 2017)</a>
+<a href="https://gandissect.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-gandissect-thumb.png" style="border:1px solid" data-nothumb=""><br>GAN Dissection<br>(ICLR 2019)</a>
+<a href="https://ganseeing.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-seeing-thumb.png" style="border:1px solid" data-nothumb=""><br>Seeing Omissions<br>(ICCV 2019)</a>
+<a href="https://dissect.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-pnas-thumb.png" style="border:1px solid" data-nothumb=""><br>The Role of Units<br>(PNAS 2020)</a>
+<a href="https://rewriting.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-rewriting-thumb.png" style="border:1px solid" data-nothumb=""><br>Rewriting Rules<br>(ECCV 2020)</a>
+</p>
 <div class="card" style="max-width: 1020px;">
 <div class="card-block">
 <h3>Do Deep Networks Contain Concepts?</h3>
@@ -130,6 +136,7 @@ A deep network learns its own computations, so we cannot ask a programmer to exp
 </p>
 </div>
 </div>
+
 </div> <!-- end row -->
 
 <div class="row">
@@ -137,7 +144,7 @@ A deep network learns its own computations, so we cannot ask a programmer to exp
 
 <h2>What is the big idea here?</h2>
 
-<p>One of the great challenges of neural networks is to understand how they work.  Because a deep network is trained by an optimizer, the programmer does not know why the network does what it does. So we have traditionally focused on testing a network's external behavior, ignorant of insights or flaws that may hide within the black box.</p>
+<p>One of the great challenges of neural networks is to understand how they work.  Because a deep network is trained by an optimizer, we cannot ask the programmer why the network does the specific calculations that it does. So we have traditionally focused on testing a network's external behavior, ignorant of insights or flaws that may hide within the black box.</p>
 
 <p>But what if we could ask the network itself what it is thinking?  Inspired by classical neuroscience research on biological brains, I introduce methods to directly probe the internal structure of a deep convolutional neural network by testing the activity of individual neurons and their interactions.</p>
 
@@ -146,7 +153,7 @@ Beginning with the simple proposal that an individual neuron might represent one
 </p>
 
 <p>
-Following this inquiry within state-of-the-art models in computer vision leads us to insights about the computational structure of those deep networks that enable several new applications, including "GAN Paint" semantic manipulation of objects in an image; understanding of the sare logic of a classifier; and quick, selective editing of generalizable rules within a fully trained StyleGAN network.
+Following this inquiry within state-of-the-art models in computer vision leads us to insights about the computational structure of those deep networks that enable several new applications, including "GAN Paint" semantic manipulation of objects in an image; understanding of the sparse logic of a classifier; and quick, selective editing of generalizable rules within a fully trained StyleGAN network.
 </p>
 
 <p>
