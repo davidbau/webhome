@@ -122,6 +122,7 @@ h2 {
 <a href="Bau-davidbau-PhD-EECS-2021-thesis.pdf" class="d-inline-block p-3 align-middle"><img height="100" width="78" src="thesis-paper-thumb.png" style="border:1px solid" data-nothumb=""><br>Dissertation<br>(PDF)</a>
 </p>
 <p>
+Demos, code, and data for individual experiments:<br>
 <a href="https://netdissect.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-netdissect-thumb.png" style="border:1px solid" data-nothumb=""><br>Network Dissection<br>(CVPR 2017)</a>
 <a href="https://gandissect.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-gandissect-thumb.png" style="border:1px solid" data-nothumb=""><br>GAN Dissection<br>(ICLR 2019)</a>
 <a href="https://ganseeing.csail.mit.edu/" class="d-inline-block p-3 align-middle"><img height="78" width="136" src="thesis-seeing-thumb.png" style="border:1px solid" data-nothumb=""><br>Seeing Omissions<br>(ICCV 2019)</a>
@@ -142,22 +143,53 @@ A deep network learns its own computations, so we cannot ask a programmer to exp
 <div class="row">
 <div class="col">
 
-<h2>What is the big idea here?</h2>
+<h2>Investigating the classical question of the role of a neuron.</h2>
 
-<p>One of the great challenges of neural networks is to understand how they work.  Because a deep network is trained by an optimizer, we cannot ask the programmer why the network does the specific calculations that it does. So we have traditionally focused on testing a network's external behavior, ignorant of insights or flaws that may hide within the black box.</p>
+<p>One of the great challenges of neural networks is to understand how they work.  Unlike ordinary software programmed by a human, we cannot expect a machine-learned neural network to explain why it does the specific calculations that it does. So we have traditionally focused on testing a network's external behavior, ignorant of insights or flaws that may hide within the black box.</p>
 
 <p>But what if we could ask the network itself what it is thinking?  Inspired by classical neuroscience research on biological brains, I introduce methods to directly probe the internal structure of a deep convolutional neural network by testing the activity of individual neurons and their interactions.</p>
 
 <p>
-Beginning with the simple proposal that an individual neuron might represent one internal concept, we investigate the possibility of reading human-understandable concepts within a deep network in a concrete, quantitative way:  Which neurons?  Which concepts?  What role do concept neurons play?  And can we see rules governing relationships between concepts?
-</p>
+We can conduct experiments on artificial neural networks that would not be practical in a biological brain.  Famously, Jerome Lettvin imagined (humorously) that some neuroscientist might someday identify all the neurons in a human brain responsible for the concept of 'mother', so that removing those neurons precisely would render a person unable to describe their own mother.  Lettvin imagined that if this could be done precisely, other thoughts, such as recollections of the mother's dress, might remain intact.  In an artificial neural network, we can conduct experiments closely resembling Lettvin's thought experiment, by identifying, measuring and manipulating sets of neurons for a concept.</p>
+
+<div class="text-center" style="margin-top:18pt">
+<div class="d-inline-block text-left">
+<img src="thesis-ganpaint-animation.gif">
+<div style="max-width: 399px; font-size: 10pt">A 'grandmother neuron' experiment can be expressed as a painting application that activates a set of neurons that code for doors at a given location (Chapter 4 of the thesis).  The same set of neurons cause the network to draw doors of different shapes and sizes, sensitive to context.  They also reveal some areas, such as sky, in which doors cannot be placed by the network.  Rewriting such contextual rules is the topic of Chapter 6 in the thesis.</div>
+</div>
+</div>
+
+<h2>What experiments does the thesis cover?</h2>
 
 <p>
-Following this inquiry within state-of-the-art models in computer vision leads us to insights about the computational structure of those deep networks that enable several new applications, including "GAN Paint" semantic manipulation of objects in an image; understanding of the sparse logic of a classifier; and quick, selective editing of generalizable rules within a fully trained StyleGAN network.
+The thesis is organized in the following way:
+<ol>
+  <li>First we quantify the correlation between individual neurons and human-understandable concepts. The method is called network dissection; by quantifying these correations, it allows us to conclude that neurons do match concepts better than randomized baselines.
+  <li>Next we study the causal role of neurons, by examing the effects of neurons in generative GAN models.  Forcing neurons on and off causes a GAN to add and remove objects in a scene, and also reveals the presence of rules where a GAN refuses to draw some combinations of objects.
+  <li>Then we directly concepts that are missing in a network, by measuring and visualizing classes of objects that a GAN does not draw despite their presence in the training set.
+  <li>Finally we examine the representation of rules governing relationships between concepts, proposing that some rules can be understood by treating the weights of a layer as an associative memory. We demonstrate the ability to make specific alterations in rules by rewriting memories directly, without training on new data.
+</ol>
 </p>
 
+<div class="text-center" style="margin-top:18pt">
+<div class="d-inline-block text-left">
+<img src="thesis-random-basis-comparison.png" style="max-width:640px">
+<div style="max-width: 639px; font-size: 10pt">Network dissection (Chapter 3 of the thesis) reveals that individual neurons represent human-understandable concepts much better than would be expected if the phenomenon were random. Here we compare the concepts that emerge as individual neurons within an Alexnet, to concepts within a random basis of perfectly equivalent power of the same feature space.</div>
+</div>
+</div>
+
+<h2>Why do we care about what deep networks contain inside?</h2>
 <p>
-In the talk, we challenge the notion that the internal calculations of a neural network must be hopelessly opaque. Instead, we strive to tear back the curtain and chart a path through the detailed structure of a deep network by which we can begin to understand its logic.
+Understanding the internals of deep networks will allow us to debug, manipulate, and reprogram them. That is important because deep networks do more than what they are trained to do.  They contain their own concepts.  They apply their own rules.  These concepts and rules go beyond what is explicitly labeled in training data.
+</p>
+<p>
+Working with the emergent structure of a deep network is not just interesting for debugging.  It also enables new applications.  For example, by uncovering internal concepts for objects within a generative model, we can create "GAN Paint" semantic manipulation of objects in an image, even though the training data did not label any objects.  And by understanding the encoding of rules within a model, we can create new models that obey the modified rules that we choose.  That allows us to create deep networks whose behavior is not determined only by a data set, but also directly by a human designer.
+</p>
+<p>
+Someday, we will be able to understand deep network internals well enough to enable machine teaching, rather than just machine learning.  Instead of just setting a network on the data to learn on its own, we will treat it as a member of an engineering team, where machine-learned models and human experts will both teach and learn from each other.
+</p>
+<p>
+In the dissertation, we challenge the notion that the internal calculations of a neural network must be hopelessly opaque. Instead, we strive to tear back the curtain and chart a path through the detailed structure of a deep network by which we can begin to understand its logic.
 </p>
 
 </div>
