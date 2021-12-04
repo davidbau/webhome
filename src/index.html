@@ -35,6 +35,10 @@ h2, .namecard {
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
+.people {
+  text-align: justify;
+  text-align-last: justify;
+}
 .people a img {
   width: 120px;
 }
@@ -43,6 +47,7 @@ h2, .namecard {
   width: 128px;
   padding: 4px;
   text-align: center;
+  text-align-last: center;
   vertical-align: top;
 }
 .collapse + p, .prologue {
@@ -194,7 +199,9 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
 <figure class="float-right ml-3 selfpic">
   <!--<img src="family.jpg" class="selfpic">
   <figcaption>David Bau (center) and family:<br>(clockwise) Heidi, Cody, Piper, and Anthony</figcaption>-->
-<!--<iframe id="selfpic-video" width="448" height="252" src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&enablejsapi=1&origin=https://people.csail.mit.edu" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+<!--<iframe id="selfpic-video" width="448" height="252"
+src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&enablejsapi=1&origin=http://davidbau.com/"
+frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>-->
 <video controls width="448" height="252" poster="video-poster.jpg" preload="metadata">
 <source src="understanding-video-compact.mp4" type="video/mp4">
 </video>
@@ -267,22 +274,6 @@ My office at MIT:
 <a href="https://whereis.mit.edu/?zoom=16&lat=42.361612839999985&lng=-71.09056785999995&maptype=mit&q=32-383&open=object-32">Stata 32-383</a>
 -->
 </div> <!-- prologue -->
-</div>
-</div>
-
-
-<div class="row">
-<div class="col">
-<div class="team">
-<h2 class="mt-4 mb-3">Collaborations</h2>
-
-<input class="collapse" type="checkbox">
-<p>
-<img src="rewriting.gif" class="projpic">
-Interpretability of large language models.
-</p>
-
-</div>
 </div>
 </div>
 
@@ -397,15 +388,10 @@ Prof. Hanspeter Pfister
 <img src="people/arvind.jpg">
 Prof. Arvind Satyanarayan
 </a>
-<!--
-<a href="https://people.csail.mit.edu/madry/">
-<img src="people/madry.jpg">
-Prof. Aleksander Madry
-</a>
--->
 </div>
 </div>
 </div>
+
 <div class="row">
 <div class="col">
 <div class="publication">
