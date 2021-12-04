@@ -15,3 +15,6 @@ output/people:
 output/%: src/%
 	echo $@
 	cp -r -f -v $< $@
+
+deploy:
+	cp -r -v src/* output
