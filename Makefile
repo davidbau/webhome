@@ -14,4 +14,4 @@ output/people:
 
 output/%: src/%
 	echo $@
-	cp -r -f -v --no-target-directory $< $@
+	cp -r -f -v $< $@
