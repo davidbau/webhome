@@ -1,0 +1,159 @@
+WEBVTT
+
+00:00:01.000 -> 00:00:05.000
+- It's an old idea. It's an idea that came from neuroscience.
+
+00:00:05.000 -> 00:00:08.000
+- Does a though live in an individual neuron?
+
+00:00:08.000 -> 00:00:13.000
+- Or do all neurons in the human brain participate in all ideas?
+
+00:00:13.000 -> 00:00:16.000
+- And it's been very hard to test in humans because
+
+00:00:16.000 -> 00:00:21.000
+- you can't put a probe on every single neuron in the human brain.
+
+00:00:21.000 -> 00:00:26.000
+- In an artificial neural network, we have this luxury of
+- being able to look at everything that's going on.
+
+00:00:26.000 -> 00:00:29.000
+- [music]
+
+00:00:29.000 -> 00:00:31.000
+- Our project is really asking the question:
+
+00:00:31.000 -> 00:00:33.000
+- "What is a neural network learning inside?"
+
+00:00:33.000 -> 00:00:36.000
+- And we study a specific kind of network called a GAN.
+
+00:00:36.000 -> 00:00:39.000
+- That's a generative adversarial network.
+
+00:00:39.000 -> 00:00:45.000
+- We tell it, "Imagine an image that you haven't seen
+- that looks like these million other images".
+
+00:00:45.000 -> 00:00:48.000
+- [music]
+
+00:00:48.000 -> 00:00:52.000
+- The surprising result of the project is that
+
+00:00:52.000 -> 00:00:54.000
+- neural networks actually show evidence
+
+00:00:54.000 -> 00:00:57.000
+- of composition.
+
+00:00:57.000 -> 00:01:00.000
+- And so the question is, "How the heck is it doing it?"
+
+00:01:00.000 -> 00:01:03.000
+- [music]
+
+00:01:03.000 -> 00:01:10.000
+- If it's just memorizing, then it's approaching things
+- the way we normally program computers to do things, right?
+
+00:01:10.000 -> 00:01:16.000
+- If it's composing, it's sort of a sign that
+- it's thinking in a more human-like way,
+
+00:01:16.000 -> 00:01:19.000
+- that it's understanding the structure of the world.
+
+00:01:19.000 -> 00:01:20.000
+- [music]
+
+00:01:20.000 -> 00:01:23.000
+- But correlation is not the same as causation.
+
+00:01:23.000 -> 00:01:26.000
+- It could be that neuron that correlates with trees
+
+00:01:26.000 -> 00:01:31.000
+- is actually what the neural network is using to think about the color green.
+
+00:01:31.000 -> 00:01:34.000
+- So how do we know the difference?
+
+00:01:34.000 -> 00:01:39.000
+- And just like those individual neurons that correspond to trees or doors,
+
+00:01:39.000 -> 00:01:44.000
+- We found that there are individual neurons that actually
+- correlate with these visible bugs,
+
+00:01:44.000 -> 00:01:45.000
+- with these visible artifacts.
+
+00:01:45.000 -> 00:01:47.000
+- So that was really surprising to us.
+
+00:01:47.000 -> 00:01:53.000
+- Because not only is the network sifting through things,
+- and sorting out things that make sense,
+
+00:01:53.000 -> 00:01:58.000
+- It's also sifting and assigning the things that
+- don't make sense to their own variables as well.
+
+00:01:58.000 -> 00:02:01.000
+- And so it was really surprising to us that we go into a neural network
+
+00:02:01.000 -> 00:02:03.000
+- and do a certain type of brain damage, right?
+
+00:02:03.000 -> 00:02:06.000
+- Basically perform a lobotomy on these twenty neurons,
+
+00:02:06.000 -> 00:02:12.000
+- and instead of doing damage to the network,
+- we actually got the network to perform better.
+
+00:02:12.000 -> 00:02:18.000
+- And so why is it that a network actually has
+- neurons in it that cause problems?
+
+00:02:18.000 -> 00:02:21.000
+- Are mistakes an important part of learning?
+
+00:02:21.000 -> 00:02:24.000
+- It's one of the mysteries that we uncovered.
+- We don't know the answer to that.
+
+00:02:24.000 -> 00:02:29.000
+- But I think that there's more profound reasons to be interested in this
+
+00:02:29.000 -> 00:02:34.000
+- beyond the ancient puzzle of,
+- "How does thinking work?" and, "How do humans work?"
+
+00:02:34.000 -> 00:02:40.000
+- Because we're also using these AI's to build
+- our future world, to build our future societies
+
+00:02:40.000 -> 00:02:43.000
+- and it's important that
+
+00:02:43.000 -> 00:02:49.000
+- we are able to understand, anticipate, and control the world that we create,
+
+00:02:49.000 -> 00:02:53.000
+- and as long as we don't really understand what rules they're applying inside,
+
+00:02:53.000 -> 00:02:55.000
+- we're not going to be able to do that.
+
+00:02:55.000 -> 00:03:00.000
+- And so, I think, I don't know, I think it's the most
+- important thing in the world to study this kind of thing.
+
+00:03:00.000 -> 00:03:05.000
+- [music]
+
