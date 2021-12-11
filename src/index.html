@@ -35,6 +35,13 @@ h2, .namecard {
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
+::cue {
+  font-size: 16px;
+  color: #FFF;
+  background-color: rgba(0,0,0,0.25);
+  width: auto;
+  display: inline-block;
+}
 .people {
   text-align: justify;
   text-align-last: justify;
@@ -204,7 +211,7 @@ src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&m
 frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>-->
 <video controls width="448" height="252" poster="video-poster.png" preload="metadata">
 <source src="understanding-video-compact.mp4" type="video/mp4" />
-<track default kind="captions" srclang="en"
+<track default kind="captions" srclang="en" label="English Captions"
  src="understanding-video-english.vtt" />
 </video>
 <figcaption>Why we study deep network internals.  <nobr>David Bau</nobr> (narrates), with Antonio Torralba, Jun-Yan Zhu, Hendrik Strobelt, Jonas Wulff, and William Peebles. <nobr>Video by Lillie Paquette,</nobr> MIT School of Engineering.</figcaption>
