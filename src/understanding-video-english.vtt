@@ -17,11 +17,11 @@ And it's been very hard to test in humans because
 you can't put a probe on every
 single neuron in the human brain.
 
-00:00:21.000 --> 00:00:26.000
+00:00:21.000 --> 00:00:27.000
 In an artificial neural network, we have this luxury of
 being able to look at everything that's going on.
 
-00:00:26.000 --> 00:00:29.000
+00:00:27.000 --> 00:00:29.000
 [music]
 
 00:00:29.000 --> 00:00:31.000
@@ -36,11 +36,11 @@ And we study a specific kind of network called a GAN.
 00:00:36.000 --> 00:00:39.000
 That's a generative adversarial network.
 
-00:00:39.000 --> 00:00:45.000
+00:00:39.000 --> 00:00:46.000
 We tell it, "Imagine an image that you haven't seen
 that looks like these million other images".
 
-00:00:45.000 --> 00:00:48.000
+00:00:46.000 --> 00:00:48.000
 [music]
 
 00:00:48.000 --> 00:00:52.000
@@ -158,10 +158,10 @@ what rules they're applying inside,
 00:02:53.000 --> 00:02:55.000
 we're not going to be able to do that.
 
-00:02:55.000 --> 00:03:00.000
+00:02:55.000 --> 00:03:02.000
 And so, I think, I don't know, I think it's the most
 important thing in the world to study this kind of thing.
 
-00:03:00.000 --> 00:03:05.000
+00:03:02.000 --> 00:03:05.000
 [music]
 
