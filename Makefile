@@ -17,4 +17,4 @@ output/%: src/%
 	cp -r -f -v $< $@
 
 deploy:
-	cp -r -v src/* output
+	rsync -a --info=name src/ output/ --exclude=.git/*
