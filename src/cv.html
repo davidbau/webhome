@@ -29,8 +29,12 @@ a:visited {color:#000088;}
 }
 body, td, th { font-family: 'Times New Roman', serif; font-weight: 400;
   font-size: 11pt; line-height: 1.3; }
-h1 { font-weight: 700; word-spacing: 5pt; letter-spacing: 1pt;
-  font-size: 18pt; margin-bottom: 1pt; text-transform: uppercase;
+h1 {
+  margin-left: 90pt;
+  font-weight: 700; word-spacing: 5pt; letter-spacing: 1pt;
+  font-size: 18pt; margin-bottom: 1pt;
+  font-variant: small-caps;
+  text-transform: uppercase;
 }
 h2 { font-weight: 400; font-size: 15pt;
   font-variant: small-caps;
@@ -46,7 +50,8 @@ hr { border-top: 2pt solid black; height: 0; margin: 0; }
 .item ul { margin: 0; padding: 0; list-style-type: none; }
 .item li { margin: 0; padding-left: 3em; text-indent: -3em; }
 .index { vertical-align: baseline; float: left; font-weight: 200; font-variant: small-caps;  }
-table { border-spacing: 0; border-collapse: collapse; }
+table { border-spacing: 0; border-collapse: collapse }
+table td { vertical-align: top; }
 table.references { min-width: 80%; }
 table.references td { width: 50%; vertical-align: top; padding-bottom: 18pt; }
 td { padding:0; margin:0; }
@@ -55,24 +60,33 @@ p { margin-top: 8pt; margin-bottom: 8pt; }
 </head>
 <body>
 <div id="cv">
-<h1>David Bau</h1>
-<hr>
-<div class="main" style="margin-top: 18pt;">
+<h1>David Bau, Ph.D.</h1>
+<!--<hr>-->
+<div class="main">
 <table style="width:80%"><tr>
 <td style="width:50%">
-Address:<br>
-88 Lincoln Road<br>
-Lincoln, MA 01773
+Northeastern University<br>
+Khoury College of Computer Sciences</br>
+440 Huntington Avenue<br>
+Boston, MA 02115
 </td>
 <td>
-<a href="http://davidbau.com/research/">davidbau.com/research</a><br>
-<a href="mailto:d.bau@northeastern.edu">d.bau@northeastern.edu</a><br>
-+1-781-296-9825
+<table>
+<tr><td>Email:&nbsp;</td>
+  <td><a href="mailto:d.bau@northeastern.edu">d.bau@northeastern.edu</a></td></tr>
+<tr><td>Phone:&nbsp;</td>
+  <td>+1-781-296-9825</td></tr>
+<tr><td>Website:&nbsp;</td>
+  <td><a href="http://davidbau.com/research/">http://davidbau.com/research</a></td></tr>
+<tr><td>Orcid ID:&nbsp;</td>
+  <td><a href="https://orcid.org/0000-0003-1744-6765">0000-0003-1744-6765</a></td></tr>
 </td>
 </tr>
 </table>
+</td>
+</table>
 </div>
-<h2 class="main">Research Interests</h2>
+<h2 class="main">Research Areas</h2>
 <div class="main item">
 Computer vision, Explainable machine learning, Human-computer iteraction.
 </div>
@@ -120,14 +134,13 @@ to understand what deep networks represent when they learn how to learn.
 Ph.D. in Electrical Engineering and Computer Science<br>
 Thesis: <a href="https://dissection.csail.mit.edu/">Dissection of Deep Neural Networks</a><br>
 Advisor: Antonio Torralba<br>
-Anticipated graduation: September 2021
 </div>
 
 <div class="index">1992-1994</div>
 <div class="main item">
 <strong>Cornell University</strong>, Ithaca, NY<br>
 M.S. in Computer Science<br>
-Book coauthored: <em>Numerical Linear Algebra</em><br>
+Book coauthored: <em><a href="https://www.google.com/books/edition/Numerical_Linear_Algebra/JaPtxOytY7kC">Numerical Linear Algebra</a></em><br>
 Advisor: Lloyd N. Trefethen
 </div>
 
@@ -152,12 +165,12 @@ A.B. in Mathematics
 
 <div class="index">2021-2022</div>
 <div class="main item">
-<strong>Postdoctoral Fellow.</strong> Wattenberg lab, Harvard University.
+<strong>Postdoctoral Fellow.</strong> Martin Wattenberg lab, Harvard University.
 </div>
 
 <div class="index">2015-2021</div>
 <div class="main item">
-<strong>Research Assistant.</strong> Torralba lab, MIT CSAIL.
+<strong>Research Assistant.</strong> Antonio Torralba lab, MIT CSAIL.
 </div>
 
 <div class="index">2013-2015</div>
@@ -476,6 +489,8 @@ US&nbsp;Patent&nbsp;6859810. (2001)</div>
 
 <h3 class="main">Undergraduate Research</h3>
 
+
+<div class="main pub">Kevin Meng. <em>Rewriting Facts in an Autoregressive Transformer Language Model.</em></div>
 
 <div class="main pub">Audrey Cui. <em>Steerable GAN Paint for reelighting a scene.</em></div>
 
