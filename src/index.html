@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 <head>
-  <!--<meta http-equiv="refresh" content="1; URL=http://davidbau.com/research/"/> -->
 <title>David Bau</title>
 <meta name="description" content="David Bau is a leading rearcher in interpretable deep network methods.">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -670,6 +669,12 @@ Numerical Linear Algebra</a> is the graduate textbook on numerical linear algebr
 </div>
 
 </div>
+<script>
+// Redirect to new location.
+if (window.location.host == 'people.csail.mit.edu') {
+  window.location.replace('http://davidbau.com/research/');
+}
+</script>
 <script>
 $(document).on('click', '.more, .publication p', function(ev) {
   // Do not collapse a card if the click is for a hyperlink or selection.
