@@ -3,6 +3,7 @@
 <head>
 <title>David Bau</title>
 <meta name="description" content="David Bau is a leading rearcher in interpretable deep network methods.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
@@ -134,6 +135,7 @@ h2, .namecard {
   width: 448px;
   max-width: 100%;
   display: block;
+  height: auto;
 }
 .selfpic iframe {
   max-width: 100%;
@@ -206,7 +208,8 @@ document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
 <!--<iframe id="selfpic-video" width="448" height="252"
 src="https://www.youtube.com/embed/jT5nYLND7co?controls=1&playsinline=1&loop=1&modestbranding=1&rel=0&cc_load_policy=1&enablejsapi=1&origin=http://baulab.info/"
 frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>-->
-<video controls width="448" height="252" poster="video-poster.png" preload="metadata">
+<video controls width="448" height="252" poster="video-poster.png" preload="metadata"
+  class="selfpic">
 <source src="understanding-video-compact.mp4" type="video/mp4" />
 <track default kind="captions" srclang="en" label="English Captions"
  src="understanding-video-english.vtt" />
