@@ -397,7 +397,7 @@ Prof. Arvind Satyanarayan
 <img src="rome-animation.gif" class="projpic">
 <a href="http://rome.baulab.info/">Locating and Editing Factual Knowledge in GPT.</a>
   <b>Knowing</b> differs from <b>saying</b>: uttering words by rote is different from
-  being able to demonstrate knowledge that generalizes across many wordings.
+  knowledge, because <em>knowledge of a fact generalizes across paraphrases</em>.
   In this project, we show that factual knowledge within GPT also corresponds to
   a <b>localized computation that can be directly edited</b>. For example, we can make a
   small change to a small set of the weights of GPT-J to teach it the counterfactual
@@ -408,9 +408,10 @@ Prof. Arvind Satyanarayan
 <span class="extra">
   To show that factual knowledge within a GPT model corresponds to a simple, localized,
   and directly editable computation, we introduce three new concepts.
-  (1) We introduce Causal Tracing, a method to
-  locate decisive information within a network by corrupting and restoring hidden
-  neural states (2) We show how to apply rank-one matrix edits (ROME) to
+  (1) We introduce Causal Tracing, a method to locate decisive information within
+  a network by corrupting and restoring hidden neural states; traces reveal how
+  information about a fact is retrieved by MLP layers in the network.
+  (2) We show how to apply rank-one matrix edits (ROME) to
   change individual memories within an MLP module within a transformer.
   (3) And we show how to distinguish between generalized factual knowledge and rote
   regurgitation of a fact, using a new data set called CounterFact.
