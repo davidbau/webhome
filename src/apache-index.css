@@ -114,7 +114,7 @@ table thead tr th {
   font-weight: bold;
 }
 
-table tr.even {
+table tr:nth-child(even) {
   background: var(--color-table-bg--even);
 }
 

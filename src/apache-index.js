@@ -1,5 +1,7 @@
 /* From https://github.com/Vestride/fancy-index/blob/main/script.js
 
+Modified.
+
 Stylesheet and javascript designed to be used with the following
 Apache FancyIndexing directives.
 
@@ -162,7 +164,7 @@ SOFTWARE.
     const hour = parseInt(timeOfDay[0], 10);
     const minutes = parseInt(timeOfDay[1], 10);
 
-    return new Date(year, month, _day, hour, minutes, 0);
+    return new Date(Date.UTC(year, month, _day, hour, minutes, 0));
   }
 
   function fixTime() {
@@ -172,20 +174,58 @@ SOFTWARE.
     const formatter = new Intl.RelativeTimeFormat();
     const now = Date.now();
 
-    Array.from(document.querySelectorAll('.indexcollastmod')).forEach((date, i) => {
-      // Skip the first row because it's the link to the parent directory.
-      if (i === 0) {
-        return;
-      }
-
+    Array.from(document.querySelectorAll('tbody .indexcollastmod')).forEach((date, i) => {
       const lastModified = getDateFromString(date.textContent.trim());
 
       if (lastModified && !Number.isNaN(lastModified)) {
         const difference = Math.round((lastModified.getTime() - now) / 1000);
         const relativeFormat = getTimeFormatArgs(difference);
         date.textContent = formatter.format(Math.round(relativeFormat.value), relativeFormat.unit);
+        date.title = lastModified;
+        date.setAttribute('data-sort', lastModified.getTime());
       }
     });
+  }
+
+  function getBytesFromString(s) {
+    const units = {K: 1e3, M: 1e6, G: 1e9, T: 1e12, P: 1e15};
+    return parseFloat(s) * (units[s.slice(-1)] || 1.0);
+  }
+
+  function fixSize() {
+    Array.from(document.querySelectorAll('tbody .indexcolsize')).forEach((size, i) => {
+      const bytes = getBytesFromString(size.textContent.trim());
+      size.setAttribute('data-sort', Number.isNaN(bytes) ? -1 : bytes);
+    });
+  }
+
+  function overrideSort() {
+    // https://stackoverflow.com/a/49041392/265298
+    function getCellValue(tr, idx) {
+      return tr.children[idx].getAttribute('data-sort') ||
+             tr.children[idx].innerText || tr.children[idx].textContent || '';
+    }
+    function isdir(r) {
+      const a = r.querySelector('a');
+      return a && a.href.endsWith('/');
+    }
+    function comparer(idx, asc) {
+      function compare(a, b) {
+        if (isdir(a) != isdir(b)) return isdir(a) ? -1 : 1;
+        const v1 = getCellValue(asc ? a : b, idx);
+        const v2 = getCellValue(asc ? b : a, idx);
+        if (v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2)) return v1 - v2;
+        return v1.toString().localeCompare(v2, undefined, {numeric: true, sensitivity: 'base'});
+      }
+      return compare;
+    }
+    document.querySelectorAll('thead a').forEach(a => a.addEventListener('click', ((ev) => {
+      const table = a.closest('table'), th = a.closest('th');
+      Array.from(table.querySelectorAll('tbody tr'))
+           .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+           .forEach(tr => table.tBodies[0].appendChild(tr) );
+      ev.preventDefault();
+    })));
   }
 
   function addSearch() {
@@ -197,8 +237,10 @@ SOFTWARE.
 
     const sortColumns = Array.from(document.querySelectorAll('thead a'));
     const nameColumns = Array.from(document.querySelectorAll('tbody .indexcolname'));
+    const descColumns = Array.from(document.querySelectorAll('tbody .indexcoldesc'));
     const rows = nameColumns.map(({ parentNode }) => parentNode);
-    const fileNames = nameColumns.map(({ textContent }) => textContent);
+    const indexText = nameColumns.map(({ textContent }, i) =>
+          textContent + ' ' + descColumns[i].textContent);
 
     function filter(value) {
       // Allow tabbing out of the search input and skipping the sort links
@@ -211,9 +253,9 @@ SOFTWARE.
         }
       });
 
-      // Test the input against the file/folder name.
+      // Test the input against the file/folder name and description.
       let even = false;
-      fileNames.forEach((name, i) => {
+      indexText.forEach((name, i) => {
         if (!value || name.toLowerCase().includes(value.toLowerCase())) {
           const className = even ? 'even' : '';
           rows[i].className = className;
@@ -243,6 +285,8 @@ SOFTWARE.
     fixTable();
     addTitle();
     fixTime();
+    fixSize();
     addSearch();
+    overrideSort();
   });
 })();
