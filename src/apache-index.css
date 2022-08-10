@@ -103,7 +103,7 @@ table thead {
 table tr th,
 table tr td {
   padding: 0.5625rem 0.625rem;
-  font-size: 0.875rem;
+  font-size: 1.0rem;
   color: var(--color-table-text);
   text-align: left;
   line-height: 1.125rem;
