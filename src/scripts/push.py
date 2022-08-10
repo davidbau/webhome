@@ -10,12 +10,13 @@ import datetime
 import shutil
 
 BASEDIR = '/srv/baulab/www'
+BASESITE = 'baulab.info'
 SECRETS = [b'LeCun'] # Rotate this secret for each semester
 
 def process_request(request, sitename='expo', event=None):
     if not any(e == 'push' for e in request.get('events', []) + [event]):
         return f'Ignored event {str(request["events"])}.'
-    owner_name = request['repository']['owner']['name']
+    owner_name = request['repository']['owner']['login']
     repo_name = request['repository']['name']
     if '..' in repo_name or '..' in owner_name:
         return f'Ignored bad repo name.'
@@ -25,16 +26,24 @@ def process_request(request, sitename='expo', event=None):
     default_branch = request['repository']['default_branch']
     clone_url = request['repository']['clone_url']
     datedir = date_dir()
-    website_dir = f'{BASEDIR}/{sitename}/{datedir}/{owner_name}/{repo_name}'
+    # With this template, each github user only gets one website per semester.
+    website_dir = f'{BASEDIR}/{sitename}/{datedir}/{owner_name}'
     try:
+        # If the website exists and is the right repository, update it.
         os.chdir(website_dir)
+        with open(f'{website_dir}/.git/FETCH_HEAD') as f:
+            fetch_head_url = f.read().split()[-1]
+            if fetch_head_url != clone_url:
+                raise
         subprocess.check_call(['git', 'fetch', '--depth=1'])
         subprocess.check_call(['git', 'reset', '--hard', '@{u}'])
     except:
+        # If there is some other problem, clean and recreate the website.
         shutil.rmtree(website_dir, ignore_errors=True)
         os.makedirs(website_dir, exist_ok=True)
         os.chdir(website_dir)
         subprocess.call(['git', 'clone', '--depth=1', clone_url, '.'])
+        return f'Pushed to https://{sitename}.{BASESITE}/{datedir}/{owner_name}'
 
 def application(environ, start_response):
     """WSGI application to update expo.baulab.info/2022-Fall/username/repo"""
