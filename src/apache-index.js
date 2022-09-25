@@ -181,6 +181,9 @@ SOFTWARE.
         const difference = Math.round((lastModified.getTime() - now) / 1000);
         const relativeFormat = getTimeFormatArgs(difference);
         date.textContent = formatter.format(Math.round(relativeFormat.value), relativeFormat.unit);
+        if (lastModified.getTime() < -2145916800000) {
+          date.textContent = 'undated';
+        }
         date.title = lastModified;
         date.setAttribute('data-sort', lastModified.getTime());
       }
@@ -288,5 +291,8 @@ SOFTWARE.
     fixSize();
     addSearch();
     overrideSort();
+    if (location.hostname.startsWith('papers.')) {
+      document.querySelector('.indexcollastmod a').click();
+    }
   });
 })();
