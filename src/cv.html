@@ -94,15 +94,15 @@ Interpretable Machine Learning, Natural Language Processing, Computer Vision.
 <h2 class="main">Research Projects</h2>
 
 <div class="main item">
-<strong>Model Rewriting, <a href="https://rewriting.csail.mit.edu/">rewriting.csail.mit.edu</a>.</strong> A project to investigate how a user can directly change the parameters of a deep model according to their own intentions, rather than using a data set for retraining.  We find that the weights of a model are structured like an optimal linear associative memory, and we use this insight to develop a method and tool for rewriting the rules of start-of-the-art generative networks.
+<strong>Model Editing, <a href="https://rome.baulab.info/">rome.baulab.info</a>.</strong> A research program to understand the mechanisms of large models well enough that a user can directly change the parameters of a deep model according to their own intentions, rather than using a data set for retraining.  For example, using closed-form upates we are able to locate and edit factual knowledge within a large language model.
 </div>
 
 <div class="main item">
-<strong>GAN Paint, <a href="https://gandissect.csail.mit.edu/">gandissect.csail.mit.edu</a>.</strong>  An analysis method that reveals emergent object concepts represented in the middle layers of a GAN (trained without supervision of labels).  The encoding of objects is simple enough that objects can be added or removed from a scene by activating or silencing units in the GAN directly. We apply this technique to semantic photo manipulation in GAN Paint, <a href="http://ganpaint.io/">ganpaint.io</a>.
+<strong>GAN Paint, <a href="http://gandissect.csail.mit.edu/">gandissect.csail.mit.edu</a>.</strong>  An analysis method that reveals emergent object concepts represented in the middle layers of a GAN (trained without supervision of labels).  The encoding of objects is simple enough that objects can be added or removed from a scene by activating or silencing units in the GAN directly. We apply this technique to semantic photo manipulation in GAN Paint, <a href="http://ganpaint.io/">ganpaint.io</a>.
 </div>
 
 <div class="main item">
-<strong>Network Dissection, <a href="https://dissect.csail.mit.edu/">dissect.csail.mit.edu</a>.</strong>  A system that quantifies human-interpretable concept detectors within representations of deep networks for vision.  This work is used to identify emergent semantics in a range of settings, and to quantify the disentanglement of meaningful individual units in vision networks.
+<strong>Network Dissection, <a href="http://dissect.csail.mit.edu/">dissect.csail.mit.edu</a>.</strong>  A system that quantifies human-interpretable concept detectors within representations of deep networks for vision.  This work is used to identify emergent semantics in a range of settings, and to quantify the disentanglement of meaningful individual units in vision networks.
 </div>
 
 <!--
@@ -132,7 +132,7 @@ to understand what deep networks represent when they learn how to learn.
 <div class="main item">
 <strong>Massachusetts Institute of Technology</strong>, Cambridge, MA<br>
 Ph.D. in Electrical Engineering and Computer Science<br>
-Thesis: <a href="https://dissection.csail.mit.edu/">Dissection of Deep Neural Networks</a><br>
+Thesis: <a href="http://dissection.csail.mit.edu/">Dissection of Deep Neural Networks</a><br>
 Advisor: Antonio Torralba<br>
 </div>
 
@@ -270,7 +270,12 @@ innovative programming tool project.
 <h2 class="main">Peer-Reviewed Publications</h2>
 
 
+<!--<div class="index">Computer Vision</div>-->
 <h3 class="main">Journals</h3>
+
+<div class="main pub">
+Lindsay, Grace W., and <strong>David Bau</strong>. <a href="https://www.sciencedirect.com/science/article/pii/S1389041723000906">Testing methods of neural systems understanding.</a> <em>Cognitive Systems Research (2023): 101156.</em>
+</div>
 
 <div class="main pub">
   <strong>David Bau</strong>, Jun-Yan Zhu, Hendrik Strobelt, Agata Lapedriza, Bolei Zhou, and Antonio Torralba. <a href="https://doi.org/10.1073/pnas.1907375117">Understanding the role of individual units in a deep neural network.</a> <em> Proceedings of the National Academy of Sciences (PNAS), Volume 117, no. 48, December 1 2020, pp. 30071-30078.</em>
@@ -278,91 +283,100 @@ innovative programming tool project.
 
 <div class="main pub">
 <strong>David Bau</strong>, Bolei Zhou, Aude Oliva, Antonio Torralba:
-<a href="http://cvcl.mit.edu/papers/interpreting-deep-visual-PAMI.pdf">Interpreting Deep Visual Representations via Network Dissection.</a> <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) Volume 41 Issue 9, September 2019, pp. 2131-2145.</em>
+<a href="https://arxiv.org/pdf/1711.05611.pdf">Interpreting Deep Visual Representations via Network Dissection.</a> <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) Volume 41 Issue 9, September 2019, pp. 2131-2145.</em>
 </div>
 
 <div class="main pub"><strong>David Bau</strong>, Jeff Gray, Caitlin Kelleher, Josh Sheldon, Franklyn Turbak.
 <a href="http://dl.acm.org/citation.cfm?id=3015455">Learnable Programming: Blocks and Beyond</a>. 
 <em>Communications of the ACM (CACM) Volume 60 Issue 6, June 2017. pp. 72-80.</em></div>
 
-
-<!--<div class="index">Computer Vision</div>-->
 <h3 class="main">Conference papers</h3>
 
 <div class="main pub">
-  Kevin Meng, Arnab Sen Sharma, Alex Andonian, Yonatan Belinkov, and <b>David Bau</b>. <a href="https://memit.baulab.info/">Mass-Editing Memory in a Transformer.</a> <em>Eleventh International Conference on Learning Representations.</em> <nobr>(ICLR 2023 spotlight)</nobr>.
+  Rohit Gandikota, Joanna Materzy&nacute;ska, Jaden Fiotto-Kaufman, <strong>David Bau</strong>. <a href="https://erasing.baulab.info/">Erasing Concepts from Diffusion Models.</a> <em>Proceedings of the 2023 IEEE International Conference on Computer Vision</em> <nobr>(ICCV 2023)</nobr>.
 </div>
 
 <div class="main pub">
-  Kenneth Li, Aspen K Hopkins, <b>David Bau</b>, Fernanda Vi&eacute;gas, Hanspeter Pfister, Martin Wattenberg.  <a href="https://github.com/likenneth/othello_world">Emergent world representations: Exploring a sequence model trained on a synthetic task.</a> <em>Eleventh International Conference on Learning Representations.</em> <nobr>(ICLR 2023 oral)</nobr>.
+  Kevin Meng, Arnab Sen Sharma, Alex Andonian, Yonatan Belinkov, <strong>David Bau</strong>. <a href="https://memit.baulab.info/">Mass-Editing Memory in a Transformer.</a> <em>Eleventh International Conference on Learning Representations.</em> <nobr>(ICLR 2023 spotlight)</nobr>.
 </div>
 
 <div class="main pub">
-  Kevin Meng, <b>David Bau</b>, Alex Andonian, Yonatan Belinkov. <a href="https://rome.baulab.info/">Locating and Editing Factual Associations in GPT.</a> <em>Advances in Neural Information Processing Systems 36.</em> <nobr>(NeurIPS 2022)</nobr>.
+  Kenneth Li, Aspen K Hopkins, <strong>David Bau</strong>, Fernanda Vi&eacute;gas, Hanspeter Pfister, Martin Wattenberg.  <a href="https://github.com/likenneth/othello_world">Emergent world representations: Exploring a sequence model trained on a synthetic task.</a> <em>Eleventh International Conference on Learning Representations.</em> <nobr>(ICLR 2023 oral)</nobr>.
 </div>
 
 <div class="main pub">
-  Sheng-Yu Wang, <b>David Bau</b>, Jun-Yan Zhu.  <a href="https://peterwang512.github.io/GANWarping/">Rewriting Geometric Rules of a GAN</a>. <em>ACM Transactions on Graphics (TOG).</em> <nobr>(SIGGRAPH 2022)</nobr>
+  Kevin Meng, <strong>David Bau</strong>, Alex Andonian, Yonatan Belinkov. <a href="https://rome.baulab.info/">Locating and Editing Factual Associations in GPT.</a> <em>Advances in Neural Information Processing Systems 36.</em> <nobr>(NeurIPS 2022)</nobr>.
 </div>
 
 <div class="main pub">
-  Joanna Materzynska, Antonio Torralba, <b>David Bau</b>. <a href="https://joaanna.github.io/disentangling_spelling_in_clip/">Disentangling Visual and Written Concepts in CLIP</a>. <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.</em> <nobr>(CVPR 2022 oral)</nobr>
+  Sheng-Yu Wang, <strong>David Bau</strong>, Jun-Yan Zhu.  <a href="https://peterwang512.github.io/GANWarping/">Rewriting Geometric Rules of a GAN</a>. <em>ACM Transactions on Graphics (TOG).</em> <nobr>(SIGGRAPH 2022)</nobr>
 </div>
 
 <div class="main pub">
-  Evan Hernandez, Sarah Schwettmann, <b>David Bau</b>, Teona Bagashvilli, Antonio Torralba, Jacob Andreas. <a href="http://milan.csail.mit.edu/">Natural Language Descriptions of Deep Visual Features</a>. <em>Proceedings of the International Conference on Learning Representations.</em> <nobr>(ICLR 2022)</nobr>
+  Joanna Materzy&nacute;ska, Antonio Torralba, <strong>David Bau</strong>. <a href="https://joaanna.github.io/disentangling_spelling_in_clip/">Disentangling Visual and Written Concepts in CLIP</a>. <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.</em> <nobr>(CVPR 2022 oral)</nobr>
 </div>
 
 <div class="main pub">
-Shibani Santurkar, Dimitris Tsipras, Mahalaxmi Elango, <b>David Bau</b>, Antonio Torralba, Aleksander Madry. <a href="https://github.com/MadryLab/EditingClassifiers">Editing a classifier by rewriting its prediction rules.</a> Advances in Neural Information Processing Systems 34. <nobr>(NeuIPS 2021)</nobr>
+  Evan Hernandez, Sarah Schwettmann, <strong>David Bau</strong>, Teona Bagashvilli, Antonio Torralba, Jacob Andreas. <a href="http://milan.csail.mit.edu/">Natural Language Descriptions of Deep Visual Features</a>. <em>Proceedings of the International Conference on Learning Representations.</em> <nobr>(ICLR 2022)</nobr>
 </div>
 
 <div class="main pub">
-Emma Andrews, <b>David Bau</b>, and Jeremiah Blanchard. <a href="https://ieeexplore.ieee.org/document/9576355">From Droplet to Lilypad: Present and Future of Dual-Modality Environments.</a> 2021 IEEE Symposium on Visual Languages and Human-Centric Computing. <nobr>(VL/HCC 2021)</nobr>
+  Shibani Santurkar, Dimitris Tsipras, Mahalaxmi Elango, <strong>David Bau</strong>, Antonio Torralba, and Aleksander Madry. <a href="https://github.com/MadryLab/EditingClassifiers">Editing a classifier by rewriting its prediction rules.</a> <em>Advances in Neural Information Processing Systems 34.</em> <nobr>(NeuIPS 2021)</nobr>
 </div>
 
 <div class="main pub">
-Sarah Schwettmann, Evan Hernandez, <strong>David Bau</strong>, Samuel Klein, Jacob Andreas, Antonio Torralba.
-<a href="https://visualvocab.csail.mit.edu/">Toward a Visual Concept Vocabulary for GAN Latent Space</a>  <em>Proceedings of the IEEE International Conference on Compputer Vision.</em> (ICCV 2021)
+  Emma Andrews, <strong>David Bau</strong>, and Jeremiah Blanchard. <a href="https://ieeexplore.ieee.org/document/9576355">From Droplet to Lilypad: Present and Future of Dual-Modality Environments.</a> <em>2021 IEEE Symposium on Visual Languages and Human-Centric Computing.</em> <nobr>(VL/HCC 2021)</nobr>
 </div>
 
 <div class="main pub">
-Sheng-Yu Wang, <strong>David Bau</strong>, Jun-Yan Zhu.  <a href="https://peterwang512.github.io/GANSketching/">Sketch Your Own GAN.</a>  <em>Proceedings of the IEEE International Conference on Compputer Vision.</em> (ICCV 2021)
+  Sarah Schwettmann, Evan Hernandez, <strong>David Bau</strong>, Samuel Klein, Jacob Andreas, Antonio Torralba. <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Schwettmann_Toward_a_Visual_Concept_Vocabulary_for_GAN_Latent_Space_ICCV_2021_paper.pdf">Toward a Visual Concept Vocabulary for GAN Latent Space</a>. <em>Proceedings of the IEEE/CVF International Conference on Computer Vision.</em> <nobr>(ICCV 2021)</nobr>
 </div>
 
 <div class="main pub">
-<strong>David Bau</strong>, Steven Liu, Tongzhou Wang, Jun-Yan Zhu, and Antonio Torralba. <a href="https://rewriting.csail.mit.edu/">Rewriting a Deep Generative Model.</a> <em>Proceedings of the European Conference on Computer Vision.</em> (ECCV 2020 oral)
+  Sheng-Yu Wang, <strong>David Bau</strong>, and Jun-Yan Zhu. <a href="https://peterwang512.github.io/GANSketching/">Sketch Your Own GAN.</a> <em>Proceedings of the IEEE/CVF International Conference on Computer Vision.</em> <nobr>(ICCV 2021)</nobr>
 </div>
 
 <div class="main pub">
-Lucy Chai, <strong>David Bau</strong>, Ser-Nam Lim, and Phillip Isola. <a href="https://chail.github.io/patch-forensics/">What makes fake images detectable? Understanding properties that generalize.</a> <em>Proceedings of the European Conference on Computer Vision.</em> (ECCV 2020)
+<strong>David Bau</strong>, Steven Liu, Tongzhou Wang, Jun-Yan Zhu, and Antonio Torralba. <a href="http://rewriting.csail.mit.edu/">Rewriting a Deep Generative Model.</a>  <em>Proceedings of the European Conference on Computer Vision.</em> <nobr>(ECCV 2020 oral)</nobr>
 </div>
 
 <div class="main pub">
-Steven Liu, Tongzhou Wang, <strong>David Bau</strong>, Jun-Yan Zhu, and Antonio Torralba. <a href="http://selfcondgan.csail.mit.edu/">Diverse Image Generation via Self-Conditioned GANs.</a> <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.</em> (CVPR 2020)
+Lucy Chai, <strong>David Bau</strong>, Ser-Nam Lim, and Phillip Isola.  <a href="https://chail.github.io/patch-forensics/">What makes fake images detectable?
+Understanding properties that generalize.</a>  <em>Proceedings of the European Conference on Computer Vision.</em> <nobr>(ECCV 2020)</nobr>
+</div>
+
+<div class="main pub">
+Steven Liu, Tongzhou Wang, <strong>David Bau</strong>, Jun-Yan Zhu, and Antonio Torralba. <a href="http://selfcondgan.csail.mit.edu/">Diverse Image Generation via Self-Conditioned GANs.</a>  <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.</em> <nobr>(CVPR 2020)</nobr>
 </div>
 
 <div class="main pub">
 <strong>David Bau</strong>, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, and Antonio Torralba. <a href="http://ganseeing.csail.mit.edu/">Seeing What a GAN Cannot Generate.</a>  <em>Proceedings of the IEEE International Conference on Computer Vision, pp. 4502-4511.</em> (ICCV 2019 oral presentation)
 </div>
+
 <div class="main pub">
 <strong>David Bau</strong>, Hendrik Strobelt, William Peebles, Jonas Wulff, Bolei Zhou, Jun-Yan Zhu, and Antonio Torralba. <a href="http://ganpaint.io/">Semantic Photo Manipulation with a Generative Image Prior.</a> <em>ACM Transactions on Graphics (TOG) 38, no. 4.</em> <nobr>(SIGGRAPH 2019)</nobr>
 </div>
+
 <div class="main pub">
   Didac Suris, Adria Recasens, <strong>David Bau</strong>, David Harwath, James Glass, and Antonio Torralba. <a href="https://github.com/surisdi/learning-by-drawing">Learning words by drawing images.</a> <em>Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.</em>  <nobr>(CVPR 2019)</nobr>
 </div>
+
 <div class="main pub">
 <strong>David Bau</strong>, Jun-Yan Zhu, Hendrik Strobelt, Bolei Zhou, Joshua B. Tenenbaum, William T. Freeman, and Antonio Torralba. <a href="http://gandissect.csail.mit.edu/">GAN Dissection: Visualizing and Understanding Generative Adversarial Networks.</a> <em>Proceedings of the Seventh International Conference on Learning Representations.</em> <nobr>(ICLR 2019)</nobr>
 </div>
+
 <div class="main pub">
 David Weintrop, <strong>David Bau</strong>, and Uri Wilensky. <a href="https://ccl.northwestern.edu/2019/cloud.pdf">The cloud is the limit: A case study of programming on the web, with the web.</a> <em>International Journal of Child-Computer Interaction 20.</em> <nobr>(IJCCI 2019)</nobr>
 </div>
+
 <div class="main pub">
 Leilani H. Gilpin, <strong>David Bau</strong>, Ben Z. Yuan, Ayesha Bajwa, Michael Specter, Lalana Kagal.  <a href="https://arxiv.org/pdf/1806.00069.pdf">Explaining Explanations: An Overview of Interpretability of Machine Learning.</a> <em>Proceedings of the IEEE 5th International Conference on Data Science and Advanced Analytics.</em> <nobr>(DSAA 2018)</nobr>
 </div>
+
 <div class="main pub">
 Bolei Zhou, Yiyou Sun, <strong>David Bau</strong>, and Antonio Torralba. <a href="http://openaccess.thecvf.com/content_ECCV_2018/papers/Antonio_Torralba_Interpretable_Basis_Decomposition_ECCV_2018_paper.pdf">Interpretable Basis Decomposition for Visual Explanation.</a> <em>Proceedings of the European Conference on Computer Vision.</em> <nobr>(ECCV 2018)</nobr>
 </div>
+
 <div class="main pub"><strong>David Bau</strong>, Bolei Zhou, Aditya Khosla, Aude Oliva, Antonio Torralba.  <a href="http://netdissect.csail.mit.edu/">Network Dissection: Quantifying Interpretability of Deep Visual Representations</a>. <em>Proceedings of the 2017 IEEE Conference on Computer Vision and Pattern Recognition</em> <nobr>(CVPR 2017 oral presentation)</nobr></div>
 
 <div class="main pub"><strong>David Bau</strong>, Matt Dawson M, Anthony Bau, C.S. Pickens <a href="http://dl.acm.org/citation.cfm?id=2771875">Pencil Code: Block Code for a Text World</a>. <em>Proceedings of the 14th International Conference on Interaction Design and Children. pp 445-448.</em> <nobr>(IDC 2015)</nobr></div>
@@ -376,11 +390,12 @@ Ming Zhao, Jay Yagnik, Hartwig Adam, <strong>David Bau</strong>.
 <a href="http://link.springer.com/chapter/10.1007/BFb0025870">Solving Alignment Using Elementary Linear Algebra.</a> Languages and Compilers for Parallel Computing, Lecture Notes in Computer Science Volume 892, pp 46-60. <nobr>(LCPC 1994)</nobr>
 </div>
 
-<!--<div class="index">CS Education</div>
--->
 
 <h3 class="main">Workshop papers</h3>
 
+<div class="main pub">
+Xander Davies, Max Nadeau, Nikhil Prakash, Tamar Rott Shaham, <strong>David Bau</strong>. <a href="https://arxiv.org/abs/2307.03637">Discovering Variable Binding Circuitry with Desiderata.</a> <em>Workshop on Challenges in Deployable Generative AI</em> <nobr>(ICML 2023 Workshop)</nobr>
+</div>
 <div class="main pub">
 <strong>David Bau</strong>, Steven Liu, Tongzhou Wang, Jun-Yan Zhu, Antonio Torralba
 <a href="https://neurips2020creativity.github.io/">Horses With Blue Jeans - Creating New Worlds by Rewriting a GAN.</a> <em>4th Workshop on Machine Learning for Creativity and Design</em> <nobr>(NeurIPS 2020 Workshop)</nobr>
@@ -391,11 +406,6 @@ Ming Zhao, Jay Yagnik, Hartwig Adam, <strong>David Bau</strong>.
 <div class="main pub">
 Jonathan Frankle, <strong>David Bau</strong>.  <a href="https://debug-ml-iclr2019.github.io/cameraready/DebugML-19_paper_15.pdf">Dissecting Pruned Neural Networks.</a> <em>ICLR Debugging Machine Learning Models Workshop.</em> <nobr>(ICLR 2019 workshop)</nobr>
 </div>
-<!--
-<div class="main pub">
-Amy Briggs, <strong>David Bau</strong>, Caroline Meeks, and Pat Yongpradit. <a href="https://dl.acm.org/citation.cfm?id=2677334">Supporting the computer science learning process.</a> <em>Proceedings of the 46th ACM Technical Symposium on Computer Science Education.</em> <nobr>(SIGCSE 2015)</nobr>
-</div>
--->
 
 <div class="main pub">
 Saksham Aggarwal, David Anthony Bau, <strong>David Bau</strong>. <a href="https://ieeexplore.ieee.org/document/7369008">A blocks-based editor for HTML code.</a> <em>IEEE Blocks and Beyond Workshop, pp. 83-85.</em>  (VL/HCC 2015 workshop)
@@ -403,7 +413,6 @@ Saksham Aggarwal, David Anthony Bau, <strong>David Bau</strong>. <a href="https:
 
 <div class="main pub"><strong>David Bau</strong>, Anthony Bau. <a href="http://dl.acm.org/citation.cfm?id=2688481">A Preview of Pencil Code: A Tool for Developing Mastery of Programming</a>.
 <em>Proceedings of the 2nd Workshop on Programming for Mobile & Touch.</em> <nobr>(PROMOTO 2014)</nobr></div>
-
 
 <h2 class="main">Book</h2>
 
