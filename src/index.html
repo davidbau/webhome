@@ -437,10 +437,38 @@ Prof. Arvind Satyanarayan
 
 <input class="collapse" type="checkbox">
 <p>
+<img src="unified.png" class="projpic">
+<a href="http://unified.baulab.info/">Unified Concept Editing in Diffusion Models.</a>
+  Text-to-image diffusion models such as Stable Diffusion have many issues
+  that limit their sutiability for real-world deployment: they amplify racial and
+  gender biases; they imitate copyrighted images; and they generate offensive content.
+  We introduce a method, Unified Concept Editing, that allows precise editing of many
+  concepts within a diffusion model, and we show that it can be used to reduce bias,
+  copyright, and offensive content issues simultaneously.
+<span class="more"></span>
+<span class="extra">
+  Our UCE method is a generalization and improvement upon the
+  <a href="//rome.baulab.info/">ROME</a>,
+  <a href="//memit.baulab.info/">MEMIT</a>, and
+  <a href="https://time-diffusion.github.io/">TIME</a> methods.  It
+  modifies the associations between textual concepts and visual concepts by
+  directly editing the cross-attention parameters in the diffusion model
+  without any additional training images.  Its closed-form parameter modification
+  explicitly applies an optimal change to sets of concepts while protecting
+  other sets of concepts from unintended modification.  The paper compares UCE
+  to previous state-of-the-art erasure, debiasing, and offensive image removal
+  methods and shows that our unified editing method outperforms previous separate
+  approaches by a significant margin.
+</span>
+<a href="https://arxiv.org/abs/2308.14761"
+   >R Gandikota, H Orad, Y Belinkov, J Materzy&nacute;ska, <span class="me">D Bau</span>.
+   <em>Unified Concept Editing in Diffusion Models.</em> 2023. arXiv preprint arXiv:2308:14761</a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
 <img src="rome-animation.gif" class="projpic">
 <a href="http://rome.baulab.info/">Locating and Editing Factual Associations in GPT.</a>
-  <!--<b>Knowing</b> differs from <b>saying</b>: uttering words by rote is different from
-    knowledge, because <em>knowledge of a fact generalizes across contexts</em>.-->
   In this project, we show that factual knowledge within GPT also corresponds to
   a <b>localized computation that can be directly edited</b>. For example, we can make a
   small change to a small set of the weights of GPT-J to teach it the counterfactual
@@ -462,7 +490,7 @@ Prof. Arvind Satyanarayan
 <a href="https://arxiv.org/abs/2202.05262"
 >K Meng* and <span class="me">D Bau*</span>, A Andonian, Y Belinkov.
 <em>Locating and Editing Factual Associations in GPT</em>.
-To appear in Neurips 2022.</a>
+NeurIPS 2022.</a>
 </p>
 
 <input class="collapse" type="checkbox">
