@@ -54,7 +54,7 @@ h2, .namecard {
 }
 .people a[href] {
   display: inline-block;
-  width: 128px;
+  width: 132px;
   padding: 4px;
   text-align: center;
   text-align-last: center;
@@ -182,6 +182,16 @@ figcaption {
   .projpic {
     float: left;
     margin: 0 1rem 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .people a[href] {
+    margin: 0 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .people a[href] {
+    margin: 0 20px;
   }
 }
 </style>
@@ -330,7 +340,13 @@ Kevin Meng
 </div>
 </div>
 </div>
-
+<script>
+var p = document.querySelector('p.people');
+for (var i = p.children.length; i >= 0; i--) {
+   p.appendChild(p.children[Math.random() * i | 0]);
+   p.appendChild(document.createTextNode('\n'));
+}
+</script>
 <!--
 <div class="row">
 <div class="col">
