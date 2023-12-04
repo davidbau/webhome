@@ -478,6 +478,38 @@ Prof. Arvind Satyanarayan
 
 <input class="collapse" type="checkbox">
 <p>
+<img src="futurelens.png" class="projpic">
+<a href="http://future.baulab.info/">Future Lens.</a>
+ Autoregressive language models like GPT are trained to
+ predict the next word.  But we found they are also often thinking
+ several further tokens ahead!  In this work, we measure this
+ future information, and we show how to extend the
+ <a href="https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens"
+   >logit lens</a>
+ to reveal a run of future anticipated tokens from individual transformer
+ hidden states.
+<span class="more"></span>
+<span class="extra">
+ Our paper experiments with several ways to decode future tokens from a
+ single hidden state.  Inspired by "tuned lens" methods from
+ <a href="https://arxiv.org/abs/2303.08112">Belrose</a> and
+ <a href="https://arxiv.org/abs/2303.09435">Yom Din</a> that
+ skip to future <em>layers</em>, we first try training a simple
+ linear readout model. We also try transplanting the hidden state
+ into the context of a prompt specially chosen to evoke future output.
+ Using a <a href="https://aclanthology.org/2021.acl-long.353/">tuned prompt</a>
+ reveals that two-ahead tokens can be predicted with more than 48% accuracy,
+ which is good enough to be useful for "future lens" visualizations.
+</span>
+<a href="https://arxiv.org/abs/2311.04897"
+   >K Pal, J Sun, A Yuan, B C Wallace, <span class="me">D Bau</span>.
+   <em>Future Lens: Anticipating Subsequent Tokens from a Single Hidden State.</em>
+   SIGNLL Conference on Computational Natural Language Learning (CoNLL 2023).
+   </a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
 <img src="fv-thumb.png" class="projpic">
 <a href="http://functions.baulab.info/">Function Vectors in Large Language Models.</a>
   The idea of treating a function reference as data is one of the most powerful
@@ -489,8 +521,8 @@ Prof. Arvind Satyanarayan
 <span class="more"></span>
 <span class="extra">
   Function vectors (FVs) emerge when a language model generalizes
-  a list of demonstrations of input-output pairs (that is called
-  in-context learning, ICL).  To study how ICL works, we apply
+  a list of demonstrations of input-output pairs (via in-context
+  learning, ICL).  To study how ICL works, we apply
   causal mediation analysis to identify attention heads
   that transport information that determines the task to execute.
   This analysis reveals a small number of attention heads that transport
@@ -499,7 +531,7 @@ Prof. Arvind Satyanarayan
   finding that they can trigger execution of the function when
   injected into very different contexts including natural text.
   We find that FVs seem to directly encode the word embeddings
-  of the output space, but that they also triggers nontrivial
+  of the output space, and that they also trigger nontrivial
   transformer calculations that differ from word-vector arithmetic.
   FVs are able to obey semantic vector algebra, but rather than
   operating on word embeddings, they enable compositions of
