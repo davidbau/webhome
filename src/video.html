@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>David Bau: Interpretable Deep Networks</title>
+<meta name="description" content="Specializing in the analysis and control of the internal computations of deep generative models for images and text, David Bau is a leading rearcher in interpretable deep network methods.">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+body, td, th {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #e4f1fe;
+}
+.prologue {
+  margin-bottom: 1rem;
+}
+span.me {
+  font-weight: bold;
+  white-space: nowrap;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  text-align: center;
+}
+a[href="/"]:hover {
+  text-decoration: none;
+}
+input.collapse {
+  display: none;
+}
+h2, .namecard {
+  background-color: #0E2863;
+  color: #e4f1fe;
+  position: relative;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+::cue {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #FFF;
+}
+.people {
+  text-align: justify;
+  text-align-last: justify;
+}
+.people a img {
+  width: 120px;
+}
+.people a[href] {
+  display: inline-block;
+  width: 132px;
+  padding: 4px;
+  text-align: center;
+  text-align-last: center;
+  vertical-align: top;
+}
+.collapse + p, .prologue {
+  background-color: white;
+  position: relative;
+  padding: 30px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.collapse + p:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  cursor: default;
+}
+.collapse + p .more::before {
+  content: 'more\25B9';
+  padding-right: .2em;
+  color: #0275d8;
+  cursor: pointer;
+  transition: font-size 0.2s;
+}
+.collapse + p:hover .more::before {
+  color: seagreen;
+}
+.collapse:checked + p .more::before {
+  content: '\25C3';
+  color: lightgray;
+  position: absolute;
+  font-style: normal;
+  right: 3px;
+  bottom: 0;
+}
+.collapse + p .more:hover::before {
+  color: lightseagreen;
+}
+.collapse + p .extra {
+  font-size: 0;
+  opacity: 0;
+  transition: opacity 0.5s, font-size 0.2s;
+}
+.collapse:checked + p .extra {
+  font-size: 16px;
+  opacity: 1;
+}
+.collapse + p::after {
+  content: '';
+  display: block;
+  clear: both;
+  padding: 0;
+  margin: 0;
+}
+.footer {
+  margin-top: 8px;
+  text-align: justify;
+  /*word-spacing: 10px; */
+  width: 100%;
+}
+.footer::after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+.footer a {
+  word-spacing: initial;
+  display: inline-block;
+}
+.namecard {
+  padding: 2rem 15px 1rem;
+  text-align: center;
+  font-weight: 300;
+}
+.namecard a {
+  color: inherit;
+}
+.namecard h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: inherit;
+}
+.selfpic {
+  width: 672px;
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+.selfpic iframe {
+  max-width: 100%;
+}
+.projpic {
+  width: 288px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 15px auto;
+}
+figcaption {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 3px;
+}
+.highlight {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  background: gainsboro;
+}
+@media (min-width: 576px) {
+  .nd-pageheader {
+    padding-top:1rem;
+    padding-bottom: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .nd-pageheader h1 {
+    font-size:3rem
+  }
+  .nd-pageheader p {
+    font-size: 1.5rem
+  }
+  .selfpic {
+    display: inline-block;
+  }
+  .projpic {
+    float: left;
+    margin: 0 1rem 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .people a[href] {
+    margin: 0 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .people a[href] {
+    margin: 0 20px;
+  }
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FD12LWN557"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); gtag('config', 'G-FD12LWN557');
+</script>
+</head>
+<body class="db-page">
+<div class="container">
+<div class="row">
+<div class="col">
+ <div class="namecard">
+   <h1><nobr><a href="/">David Bau</a></nobr></h1>
+ <p class="lead">
+ <nobr><a href="/">Interpretable Neural Networks</a></nobr>
+<address>
+ <a href="https://www.khoury.northeastern.edu/research/">
+ <nobr>Northeastern University </nobr>
+ <nobr>Khoury College of Computer Sciences</nobr></a><br>
+ <!-- <nobr>Massachusetts Institute of Technology</nobr><br> -->
+ <nobr><script>
+var emn = 'davidbau' + ''.constructor.fromCharCode(1<<6) + 'northeastern.edu';
+document.write('<a href="mailto:' + emn + '">' + emn + '</a>');
+ </script></nobr><br>
+</address>
+ </p>
+ </div>
+<div class="prologue clearfix">
+<figure class="float-right ml-3 selfpic">
+<video controls width="672" height="378" poster="video-poster.png" preload="metadata"
+       autoplay
+  class="selfpic">
+<source src="understanding-video-compact.mp4" type="video/mp4" />
+<track default kind="captions" srclang="en" label="English Captions"
+ src="understanding-video-english.vtt" />
+</video>
+<figcaption>Why we study deep network internals.  <nobr>David Bau</nobr> (narrates), with Antonio Torralba, Jun-Yan Zhu, Hendrik Strobelt, Jonas Wulff, and William Peebles. <nobr>Video by Lillie Paquette,</nobr> MIT School of Engineering.</figcaption>
+</figure>
+<p>
+When we study artificial neural networks, we have the luxury of looking at
+everything that is going on.  This presents us with a new empirical
+opportunity to tackle the grand and fundamental research problem of
+understanding how cognition is organized.
+</p>
+<p>
+<!--Developing an understanding the rich internal structure of deep networks is a
+  grand challenge with many practical implications.-->
+This video interview was from
+my dissertation work on GANs, but as neural networks have continued to become
+more powerful, the urgency of understanding, anticipating, and controlling these
+black-box systems has also grown.  Our lab is currently focused on understanding
+the structure of large generative models including LLMs and diffusion models.
+</p>
+<p>
+Want to come to Boston to work on deep learning with me?
+<a href="https://www.khoury.northeastern.edu/apply/phd-apply/">Apply
+  to Khoury here</a> and <a href="students.html"
+  >contact me</a> if you are interested in joining as a graduate
+student or postdoc.
+</p>
+<p>
+<a href="/">Back to the main page to read more about our research</a>
+</div>
+
+<div class="row">
+<div class="col">
+<div class="footer">
+        <a href="https://baulab.info/">Home</a>
+        <a href="http://dblp.uni-trier.de/pers/hd/b/Bau:David">Dblp</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=CYI6cKgAAAAJ&view_op=list_works&sortby=pubdate">Scholar</a>
+        <a href="https://github.com/davidbau">Github</a>
+        <a href="https://www.linkedin.com/in/david-bau-4b8130/">LinkedIn</a>
+        <a rel="me" href="https://sigmoid.social/@davidbau">Mastodon</a>
+        <a href="http://davidbau.com">Personal Blog</a>
+        <a href='https://www.google.com/search?safe=off&noj=1&biw=1855&bih=917&q=david+bau+-mp3+-radio+-soundcloud+-minnesota+-tennis+-mx+-romero+-techno+-remix+-spotify+-pandora+-"noah+david"+-"extension+educator"+-"bau+mann"+-"bau+man"+-"bau+mert"+-"bau+telle"+-"bau+xi"+-"behavioural analysis"+-mirador&oq=david+bau+-music+-mp3+-radio+-youtube+-soundcloud+-minnesota+-tennis+-"records"+-"noah+david"+-"extension+educator"+-Noguer+-dgbau+-worthington+-"bau+mann"+-"bau+man"+-"bau+telle"+-"bau+xi"+-mirador+-gmbh'>Search</a>
+</div>
+</div>
+</div>
+
+</div>
+<script>
+// Redirect to new location.
+if (window.location.host == 'people.csail.mit.edu' ||
+    window.location.host == 'davidbau.com') {
+  window.location.replace('https://baulab.info/');
+}
+</script>
+<script>
+$(document).on('click', '.more, .publication p', function(ev) {
+  // Do not collapse a card if the click is for a hyperlink or selection.
+  if ($(ev.target).closest('a').length ||
+          getSelection().type == 'Range' || ev.shiftKey || ev.ctrlKey) {
+    return;
+  }
+  // Use the hidden checkbox technique to preserve collapse-state on "back"
+  var collapse = $(this).closest('p').prev('input.collapse');
+  collapse.prop('checked', !collapse.prop('checked'));
+  ev.stopPropagation();
+});
+</script>
+</body>
+<script type="text/javascript">
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('selfpic-video', { events: {
+     'onStateChange': function() {
+        player.setOption('captions', 'fontSize', 2);
+      },
+    }});
+  }
+</script>
+<script src="https://www.youtube.com/iframe_api"></script>
+</html>
