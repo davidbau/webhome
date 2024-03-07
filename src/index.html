@@ -483,34 +483,36 @@ Prof. Arvind Satyanarayan
 
 <input class="collapse" type="checkbox">
 <p>
-<img src="futurelens.png" class="projpic">
-<a href="http://future.baulab.info/">Future Lens.</a>
- Autoregressive language models like GPT are trained to
- predict the next word.  But we found they are also often thinking
- several further tokens ahead!  In this work, we measure this
- future information, and we show how to extend the
- <a href="https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens"
-   >logit lens</a>
- to reveal a run of future anticipated tokens from individual transformer
- hidden states.
+<img src="finetuning.png" class="projpic">
+<a href="http://finetuning.baulab.info/">Fine-Tuning Enhances Existing Mechanisms.</a>
+ When you fine-tune an LLM, are you teaching it something new or
+ exposing what it already knows?  In this work, we pin down the detailed
+ structure of the mechanisms for an entity-tracking task using new
+ patching techniques, revealing a pre-existing circuit when a the
+ capability emerges from fine-tuning.
 <span class="more"></span>
 <span class="extra">
- Our paper experiments with several ways to decode future tokens from a
- single hidden state.  Inspired by "tuned lens" methods from
- <a href="https://arxiv.org/abs/2303.08112">Belrose</a> and
- <a href="https://arxiv.org/abs/2303.09435">Yom Din</a> that
- skip to future <em>layers</em>, we first try training a simple
- linear readout model. We also try transplanting the hidden state
- into the context of a prompt specially chosen to evoke future output.
- Using a <a href="https://aclanthology.org/2021.acl-long.353/">tuned prompt</a>
- reveals that two-ahead tokens can be predicted with more than 48% accuracy,
- which is good enough to be useful for "future lens" visualizations.
+ The paper applies path-patching causal mediation methods as
+ used in <a href="https://arxiv.org/abs/2211.00593">Wang 2022 (IOI)</a>
+ to identify the components for a circuit for entity
+ tracking that emerges after fine-tuning. Interestingly, we find that
+ the components already existed in the model prior to fine-tuning.
+ Furthermore we use
+ <a href="https://dcm.baulab.info/">our DCM patching method</a>
+ to deduce the type of information being transmitted at
+ most of the steps before and after fine-tuning, and find that
+ the role of the information is unchanged under fine-tuning.
+ Finally, we introduce Cross-Model Activation Patching (CMAP) to
+ test whether the encoding of information is changed after fine-tuning,
+ and we find that the encodings are compatible, not only allowing
+ interchange, but also revealing that improved task performance
+ can be obtained when fine-tuned model activations are patched
+ directly into the original model.
 </span>
 <a href="https://arxiv.org/abs/2311.04897"
-   >K Pal, J Sun, A Yuan, B C Wallace, <span class="me">D Bau</span>.
-   <em>Future Lens: Anticipating Subsequent Tokens from a Single Hidden State.</em>
-   CoNLL 2023.
-   </a>
+   >N Prakash, T R Shaham, T Haklay, Y Belinkov, <span class="me">D Bau</span>.
+   <em>Fine-Tuning Enhances Existing Mechanisms: A Case Study on Entity Tracking.</em>
+   <nobr>ICLR 2024.</nobr></a>
 </p>
 
 <input class="collapse" type="checkbox">
@@ -576,6 +578,38 @@ Prof. Arvind Satyanarayan
 <a href="https://arxiv.org/abs/2308.14761"
    >R Gandikota, H Orad, Y Belinkov, J Materzy&nacute;ska, <span class="me">D Bau</span>.
    <em>Unified Concept Editing in Diffusion Models.</em> WACV 2024.</a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
+<img src="futurelens.png" class="projpic">
+<a href="http://future.baulab.info/">Future Lens.</a>
+ Autoregressive language models like GPT are trained to
+ predict the next word.  But we found they are also often thinking
+ several further tokens ahead!  In this work, we measure this
+ future information, and we show how to extend the
+ <a href="https://www.lesswrong.com/posts/AcKRB8wDpdaN6v6ru/interpreting-gpt-the-logit-lens"
+   >logit lens</a>
+ to reveal a run of future anticipated tokens from individual transformer
+ hidden states.
+<span class="more"></span>
+<span class="extra">
+ Our paper experiments with several ways to decode future tokens from a
+ single hidden state.  Inspired by "tuned lens" methods from
+ <a href="https://arxiv.org/abs/2303.08112">Belrose</a> and
+ <a href="https://arxiv.org/abs/2303.09435">Yom Din</a> that
+ skip to future <em>layers</em>, we first try training a simple
+ linear readout model. We also try transplanting the hidden state
+ into the context of a prompt specially chosen to evoke future output.
+ Using a <a href="https://aclanthology.org/2021.acl-long.353/">tuned prompt</a>
+ reveals that two-ahead tokens can be predicted with more than 48% accuracy,
+ which is good enough to be useful for "future lens" visualizations.
+</span>
+<a href="https://arxiv.org/abs/2311.04897"
+   >K Pal, J Sun, A Yuan, B C Wallace, <span class="me">D Bau</span>.
+   <em>Future Lens: Anticipating Subsequent Tokens from a Single Hidden State.</em>
+   CoNLL 2023.
+   </a>
 </p>
 
 <input class="collapse" type="checkbox">
