@@ -591,16 +591,16 @@ Prof. Arvind Satyanarayan
   of retraining the whole model on filtered training data.
 <span class="more"></span>
 <span class="extra">
-  The ESD method erases a concept <em>c</em> by using the original model's own
-  knowledge of the <em>c</em> as a guide while training a modified model.
+  The ESD method erases a concept by using the original model's own
+  knowledge of the concept as a guide while training a modified model.
   Rather than guiding the new model to imitate the original exactly, the new model
   is guided to imitate the original, while reversing its behavior of the selected
-  concept <em>c</em>.
+  concept.
   This objective corresponds to an exact ratio of probability distributions,
   and is straightforward to compute, equivalent to an application of
   <a href="https://arxiv.org/abs/2207.12598">classifier-free guidance</a>
   for training rather than inference. Our paper studies the ESD method
-  as configured to apply to different sets of parameters, and as
+  as used to tune different sets of parameters, and as
   applied to a variety of concept-erasure applications including artistic style
   removal, offensive-image removal, and removing knowledge of object classes.
 </span>
