@@ -580,6 +580,36 @@ Prof. Arvind Satyanarayan
 
 <input class="collapse" type="checkbox">
 <p>
+<img src="erasing.png" class="projpic">
+<a href="http://erasing.baulab.info/">Erasing Concepts from Diffusion Models.</a>
+  We propose a method for fine-tuning model weights to erase concepts from
+  diffusion models using their own knowledge. Given just the text of the concept
+  to be erased, our method can edit the model weights to erase the concept while
+  minimizing the inteference with other concepts. This type of fine-tuning has
+  an advantage over previous methods: it is not easy to circumvent because it
+  modifies weights, yet it is fast and practical because it avoids the expense
+  of retraining the whole model on filtered training data.
+<span class="more"></span>
+<span class="extra">
+  The ESD method erases a concept <em>c</em> by using the original model's own
+  knowledge of the <em>c</em> as a guide while training a modified model.
+  Rather than guiding the new model to imitate the original exactly, the new model
+  is guided to imitate the original, while reversing its behavior of the selected
+  concept <em>c</em>.
+  This objective corresponds to an exact ratio of probability distributions,
+  and is straightforward to compute, equivalent to an application of
+  <a href="https://arxiv.org/abs/2207.12598">classifier-free guidance</a>
+  for training rather than inference. Our paper studies the ESD method
+  as configured to apply to different sets of parameters, and as
+  applied to a variety of concept-erasure applications including artistic style
+  removal, offensive-image removal, and removing knowledge of object classes.
+</span>
+<a href="https://arxiv.org/abs/2303.07345"
+   >R Gandikota, J Materzy&nacute;ska, Jaden Fiotto-Kaufman, <span class="me">D Bau</span>.
+   <em>Erasing Concepts from Diffusion Models.</em> ICCV 2023.</a>
+</p>
+<input class="collapse" type="checkbox">
+<p>
 <img src="rome-animation.gif" class="projpic">
 <a href="http://rome.baulab.info/">Locating and Editing Factual Associations in GPT.</a>
   In this project, we show that factual knowledge within GPT also corresponds to
