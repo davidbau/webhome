@@ -582,6 +582,36 @@ Prof. Arvind Satyanarayan
 
 <input class="collapse" type="checkbox">
 <p>
+<img src="sliders.png" class="projpic">
+<a href="http://sliders.baulab.info/">Concept Sliders</a>
+ GANs are famous for containing disenangled latents that can control a variety
+ of interpretable image attributes, so we want to know: are similar controllable latents
+ present in diffusion models?  In this work, we develop Concept Sliders, a way of finding
+ LoRA adjustments to diffusion model weights that cleanly and smoothly
+ control a single disentangled concept.
+<span class="more"></span>
+<span class="extra">
+ Concept sliders are based on the guided-training technique underling
+ our previous <a href="https://erasing.baulab.info">ESD</a> work, but
+ instead of erasing a concept, we develop the needed techniques to
+ modulate or amplify a concept without changing the underlying layout
+ of the image, and without entangling the concept with correlated
+ concepts that we wish to remain unchanged.  Concept sliders have been
+ an open-source hit among the artistic community, and they also provide
+ a promising window into the organization of visual concept information
+ within the parameter space of diffusion models.  The paper develops
+ and evaluates over 50 different concept sliders, and examines their
+ efficacy, distortion, and composition.
+</span>
+<a href="https://arxiv.org/abs/2308.09124"
+   >R Gandikota, J Materzy&nacute;ska, T Zhou, A Torralba,
+   <span class="me">D Bau</span>.
+   <em>Concept Sliders: LoRA Adaptors for Precise Control in Diffusion Models</em>
+   <nobr>ECCV 2024.</nobr></a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
 <img src="lre.png" class="projpic">
 <a href="http://lre.baulab.info/">Linearity of Relation Decoding in Transformer LMs.</a>
  What is the right level of abstraction to use when understanding a huge network?
