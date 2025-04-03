@@ -370,7 +370,7 @@ Kevin Meng
 </div>
 </div>
 <script>
-var p = document.querySelector('p.people');
+var p = document.querySelector('p.people .current');
 for (var i = p.children.length; i >= 0; i--) {
    p.appendChild(p.children[Math.random() * i | 0]);
    p.appendChild(document.createTextNode('\n'));
