@@ -78,6 +78,9 @@ h2, .namecard {
   cursor: pointer;
   transition: font-size 0.2s;
 }
+.collapse + p .people .more::before {
+  content: 'alumni\25B9';
+}
 .collapse + p:hover .more::before {
   color: seagreen;
 }
@@ -97,16 +100,22 @@ h2, .namecard {
   opacity: 0;
   transition: opacity 0.5s, font-size 0.2s;
 }
-.collapse + p .extra img {
-  height: 0;
-  transition: height 0.2s;
-}
 .collapse:checked + p .extra {
   font-size: 16px;
   opacity: 1;
 }
+.collapse + p .extra img {
+  height: 0;
+  transition: height 0.2s;
+}
 .collapse:checked + p .extra img {
   height: auto;
+}
+.collapse + p .people .extra a[href] {
+  padding: 0;
+}
+.collapse:checked + p .people .extra a[href] {
+  padding: 4px;
 }
 .collapse + p::after {
   content: '';
@@ -356,6 +365,7 @@ Jaden Fiotto-Kaufman
 Alex Loftus
 </a>
 </span>
+<span class="more"></span>
 <span class="extra">
 <a href="https://aaronmueller.github.io/">
 <img src="people/aaron.jpg">
