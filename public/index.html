@@ -71,22 +71,22 @@ h2, .namecard {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   cursor: default;
 }
-.collapse + p .more::before {
+.collapse + p .more::after {
   content: 'more\25B9';
   padding-right: .2em;
   color: #0275d8;
   cursor: pointer;
   transition: font-size 0.2s;
 }
-.collapse + p.people .more::before {
+.collapse + p.people .more::after {
   display: block;
   text-align: right;
   content: 'alumni\25B9';
 }
-.collapse + p:hover .more::before {
+.collapse + p:hover .more::after {
   color: seagreen;
 }
-.collapse:checked + p .more::before {
+.collapse:checked + p .more::after {
   content: '\25C3';
   color: lightgray;
   position: absolute;
@@ -94,7 +94,7 @@ h2, .namecard {
   right: 3px;
   bottom: 0;
 }
-.collapse:checked + p.people .more::before {
+.collapse:checked + p.people .more::after {
   display: none;
 }
 .collapse + p .more:hover::before {
