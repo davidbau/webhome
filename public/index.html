@@ -80,6 +80,7 @@ h2, .namecard {
 }
 .collapse + p.people .more::before {
   display: block;
+  text-align: right;
   content: 'alumni\25B9';
 }
 .collapse + p:hover .more::before {
@@ -92,6 +93,9 @@ h2, .namecard {
   font-style: normal;
   right: 3px;
   bottom: 0;
+}
+.collapse:checked + p.people .more::before {
+  display: none;
 }
 .collapse + p .more:hover::before {
   color: lightseagreen;
@@ -114,6 +118,7 @@ h2, .namecard {
 }
 .collapse + p .people .extra a[href] {
   padding: 0;
+  pointer-events: none;
 }
 .collapse:checked + p .people .extra a[href] {
   padding: 4px;
