@@ -97,6 +97,10 @@ h2, .namecard {
   opacity: 0;
   transition: opacity 0.5s, font-size 0.2s;
 }
+.collapse + p .extra img {
+  height: 0;
+  transition: height 0.2s;
+}
 .collapse:checked + p .extra {
   font-size: 16px;
   opacity: 1;
