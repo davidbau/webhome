@@ -78,9 +78,13 @@ h2, .namecard {
   cursor: pointer;
   transition: font-size 0.2s;
 }
-.collapse + p.people .more::after {
+.collapse + p.people .more {
   display: block;
-  text-align: right;
+  position: relative;
+}
+.collapse + p.people .more::after {
+  position: absolute;
+  right: 0;
   content: 'alumni\25B9';
 }
 .collapse + p:hover .more::after {
