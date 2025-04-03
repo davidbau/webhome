@@ -78,7 +78,8 @@ h2, .namecard {
   cursor: pointer;
   transition: font-size 0.2s;
 }
-.collapse + p .people .more::before {
+.collapse + p.people .more::before {
+  display: block;
   content: 'alumni\25B9';
 }
 .collapse + p:hover .more::before {
