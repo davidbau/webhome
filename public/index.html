@@ -668,6 +668,111 @@ Prof. Arvind Satyanarayan
 
 <input class="collapse" type="checkbox">
 <p>
+<img src="algebra.jpg" class="projpic">
+<a href="https://algebra.baulab.info/">In-Context Algebra.</a>
+ How does a transformer reason about tokens whose meaning is unknown
+ ahead of time? We design an in-context learning setting in which each
+ token is a pure algebraic variable that acquires meaning only through
+ its interactions in a sequence. In this setting we find that models
+ develop symbolic reasoning mechanisms based on sparse relational
+ patterns, distinct from the geometric representations seen in numeric
+ reasoning&mdash;suggesting that the reasoning strategy a transformer
+ learns depends on the structure of the task.
+<span class="more"></span>
+<span class="extra">
+ This work extends the Function Vectors line into the domain of purely
+ symbolic in-context learning. By stripping away fixed token meaning, we
+ isolate what computational strategies a transformer develops when it
+ must infer structure from context alone, and we show that the resulting
+ mechanisms are recognisably symbolic and algebraic rather than purely
+ numeric or geometric.
+</span>
+<a href="https://arxiv.org/abs/2512.16902"
+   >E Todd, J Brinkmann, R Gandikota, <span class="me">D Bau</span>.
+   <em>In-Context Algebra.</em>
+   <nobr>ICLR 2026.</nobr></a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
+<img src="filter.jpg" class="projpic">
+<a href="https://filter.baulab.info/">Filter Heads.</a>
+ How do LLMs perform filtering operations such as "find the fruit in
+ this list"? We find that they use a surprisingly elegant mechanism,
+ very similar to how a programmer would write a filter function:
+ specialized attention heads&mdash;<em>filter heads</em>&mdash;encode
+ the predicate in the query states of certain tokens. The encoding is
+ sufficiently abstract that it can be transported to a different context
+ to trigger the same filtering operation on a new list of candidates, in
+ a different format or language, even in a different task.
+<span class="more"></span>
+<span class="extra">
+ We find that LMs can implement the same filter operation using two
+ distinct strategies depending on when each piece of information becomes
+ available. In <em>lazy evaluation</em>, when the question comes after
+ the list, the model uses special attention heads at query time. In
+ <em>eager evaluation</em>, when the question is known before the list,
+ the model evaluates each item as it is read and stores an intermediate
+ flag in the item's representation.
+</span>
+<a href="https://arxiv.org/abs/2510.26784"
+   >A Sen Sharma, G Rogers, N Shapira, <span class="me">D Bau</span>.
+   <em>LLMs Process Lists With General Filter Heads.</em>
+   <nobr>ICLR 2026.</nobr></a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
+<img src="belief.jpg" class="projpic">
+<a href="https://belief.baulab.info/">Language Models use Lookbacks to Track Beliefs.</a>
+ Theory of mind&mdash;the ability to infer others' mental states&mdash;is
+ a key aspect of social intelligence. But do LLMs truly represent mental
+ states, or simply rely on surface statistical patterns? We identify a
+ consistent algorithmic pattern, the <em>Lookback Mechanism</em>, in
+ which the model assigns reference identifiers to character&ndash;object&ndash;state
+ relationships and then reasons over them through successive lookbacks.
+<span class="more"></span>
+<span class="extra">
+ The model first looks back to identify the correct state, then to
+ retrieve the corresponding answer, and, when relevant, to incorporate
+ information about what different characters can observe. Together
+ these steps suggest a structured mechanism underlying early
+ theory-of-mind-like behavior in LLMs.
+</span>
+<a href="https://arxiv.org/abs/2505.14685"
+   >N Prakash, N Shapira, A Sen Sharma, C Riedl, Y Belinkov,
+   T Rott Shaham, <span class="me">D Bau</span>, A Geiger.
+   <em>Language Models use Lookbacks to Track Beliefs.</em>
+   <nobr>ICLR 2026.</nobr></a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
+<img src="dualroute.jpg" class="projpic">
+<a href="https://dualroute.baulab.info/">The Dual-Route Model of Induction.</a>
+ When you copy a sentence onto a fresh sheet of paper, you can either
+ transfer it letter by letter or copy whole familiar words at a time. We
+ find that LLMs do something similar: we differentiate two types of
+ induction heads&mdash;<em>token induction heads</em>, which copy
+ bit-by-bit, and <em>concept induction heads</em>, which copy word
+ meanings instead of individual tokens.
+<span class="more"></span>
+<span class="extra">
+ Concept induction heads work together with token induction heads to
+ copy meaningful text, a synergy we call the dual-route model of
+ induction. The concept-copying route also turns out to mediate
+ natural-language translation, connecting to our broader investigation
+ of whether early-curriculum copying behaviors form the substrate that
+ supports later abstract in-context learning.
+</span>
+<a href="https://arxiv.org/abs/2504.03022"
+   >S Feucht, E Todd, B C Wallace, <span class="me">D Bau</span>.
+   <em>The Dual-Route Model of Induction.</em>
+   <nobr>COLM 2025.</nobr></a>
+</p>
+
+<input class="collapse" type="checkbox">
+<p>
 <img src="sliders.png" class="projpic">
 <a href="http://sliders.baulab.info/">Concept Sliders.</a>
  While GANs are famous for containing disenangled latents that can control a variety
