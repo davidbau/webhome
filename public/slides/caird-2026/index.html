@@ -18415,16 +18415,21 @@ function showStep(s) {
 // ---------- playback ----------
 const STEP_MS = 1900, DWELL_MS = 2600;
 let anim = null, playing = false, dwellTimer = null;
+// Each key press moves the goal one beat further. However many beats remain, the move
+// takes at most one normal transition time: rapid presses zip ahead instead of queueing.
 function goTo(target, onDone) {
+  const moving = !!anim;
   cancelAnimationFrame(anim?.raf ?? 0);
   const from = t, dist = Math.abs(target - from);
-  if (reduce || dist < 1e-6) { t = target; render(); onDone && onDone(); return; }
-  const slow = (Math.floor(Math.min(from, target) + 1e-6) === HAND - 1 && dist <= 1.01) ? 1.5 : 1;   // the handoff gets extra time
-  const dur = STEP_MS * slow * Math.min(2.2, Math.max(.35, dist)), start = performance.now();
-  anim = { raf: 0 };
+  if (reduce || dist < 1e-6) { anim = null; t = target; render(); onDone && onDone(); return; }
+  const single = !moving && dist <= 1.01;
+  const slow = (single && Math.floor(Math.min(from, target) + 1e-6) === HAND - 1) ? 1.5 : 1;   // the handoff gets extra time
+  const dur = single ? STEP_MS * slow * Math.max(.35, dist) : STEP_MS * Math.min(1, Math.max(.45, dist)), start = performance.now();
+  const shape = single ? (k => k) : easeOut;        // retargeting: keep moving fast, settle at the goal
+  anim = { raf: 0, goal: target };
   const tick = now => {
     const k = clamp((now - start) / dur);
-    t = from + (target - from) * (dist > 1.01 ? ease(k) : k);
+    t = from + (target - from) * shape(k);
     render();
     if (k < 1) anim.raf = requestAnimationFrame(tick); else { anim = null; onDone && onDone(); }
   };
@@ -18446,8 +18451,9 @@ function setPlayUi() {
   playIcon.setAttribute('d', playing ? 'M3.5 2.5h3.2v11H3.5zm5.8 0h3.2v11H9.3z' : 'M4 2.5v11l9-5.5z');
   playBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
 }
-const next = () => { stopPlay(); goTo(Math.min(N, Math.floor(t + 1e-6) + 1), setPlayUi); };
-const prev = () => { stopPlay(); goTo(Math.max(0, Math.ceil(t - 1e-6) - 1), setPlayUi); };
+const goalNow = () => anim ? anim.goal : t;       // presses stack on the pending goal, not the current frame
+const next = () => { stopPlay(); goTo(Math.min(N, Math.floor(goalNow() + 1e-6) + 1), setPlayUi); };
+const prev = () => { stopPlay(); goTo(Math.max(0, Math.ceil(goalNow() - 1e-6) - 1), setPlayUi); };
 const scrub = document.getElementById('scrub');
 scrub.addEventListener('input', () => { stopPlay(); cancelAnimationFrame(anim?.raf ?? 0); anim = null; t = +scrub.value; render(); });
 scrub.addEventListener('change', () => { const s = Math.round(t); if (Math.abs(s - t) < .08) { t = s; render(); } });
