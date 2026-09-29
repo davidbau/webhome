@@ -21805,7 +21805,7 @@ let playing = false, dwellTimer = null, loopAtEnd = false;
 const playBtn = document.getElementById('play');
 function dwellFor(b) {
   if (video && BEATS[b][0] === 1) return Math.max(4000, ((video.duration || 25) - (video.currentTime || 0)) * 1000 + 400);
-  return BEATS[b][1] ? 5000 : 4000;
+  return BEATS[b][1] ? 3200 : 2500;
 }
 function setPlayUi() { playBtn.textContent = playing ? 'Pause' : 'Play'; playBtn.classList.toggle('on', playing); if (video) video.loop = !playing; }
 function stopPlay() { playing = false; clearTimeout(dwellTimer); setPlayUi(); }
