@@ -18497,6 +18497,7 @@ function fullscreen() {
 }
 document.getElementById('full').onclick = fullscreen;
 document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); fullscreen(); return; }   // cmd/ctrl-Enter: full screen
   if (e.metaKey || e.ctrlKey || e.altKey) return;
   const k = e.key; document.body.classList.add('seen');
   if (k === 'ArrowRight' || k === 'PageDown' || k === 'ArrowDown' || k === 'Enter') { e.preventDefault(); next(); }
