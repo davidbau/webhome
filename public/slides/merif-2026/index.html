@@ -575,7 +575,7 @@ input[type=range]::-moz-range-track{height:3px;background:var(--track)} input[ty
 <g mask="url(#m1-mask-1)">
 <use href="#m1-source-12" transform="matrix(0.24, 0, 0, 0.24, 12.24, 13.92)"/>
 </g>
-</g><g class="layer" data-id="2" style="opacity:0">
+</g><g class="layer" data-id="2" style="opacity:1">
 <defs>
 <filter id="m2-filter-remove-color" x="0%" y="0%" width="100%" height="100%">
 <feColorMatrix color-interpolation-filters="sRGB" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0" />
@@ -21745,7 +21745,7 @@ input[type=range]::-moz-range-track{height:3px;background:var(--track)} input[ty
 <script>
 (() => {
 const POS = {"1": [0, 0], "2": [0, 720], "3": [0, 1440], "4": [0, 2160], "5": [0, 2880], "6": [0, 3600], "7": [0, 4320], "8": [0, 5040], "9": [0, 5760], "10": [0, 6480], "11": [0, 7200], "12": [0, 7920], "99": [0, 8640], "13": [0, 9360], "14": [935, 9360], "98": [0, 10080], "15": [0, 10800], "16": [0, 11520], "17": [0, 12240], "18": [0, 12960], "19": [0, 13680], "20": [0, 14400]};        // slide number -> [x, y] on the canvas
-const LAYERS = {"1": [0], "2": [1, 2], "3": [3, 4], "4": [5, 6, 7, 8, 9], "5": [10], "6": [11, 12], "7": [13], "8": [14, 15, 16], "9": [17, 18, 19, 20], "10": [21, 22], "11": [23], "12": [24], "13": [25], "14": [26, 27], "15": [28], "16": [29], "17": [30], "18": [31, 32, 33, 34], "19": [35], "20": [36]};  // slide number -> [base layer, click layers...]
+const LAYERS = {"1": [0], "2": [1], "3": [3, 4], "4": [5, 6, 7, 8, 9], "5": [10], "6": [11, 12], "7": [13], "8": [14, 15, 16], "9": [17, 18, 19, 20], "10": [21, 22], "11": [23], "12": [24], "13": [25], "14": [26, 27], "15": [28], "16": [29], "17": [30], "18": [31, 32, 33, 34], "19": [35], "20": [36]};  // slide number -> [base layer, click layers...]
 // one entry per click: [slide, zoom rect in slide coordinates or null for the whole slide, caption, layer revealed or null]
 const BEATS = [];
 const B = (s, r, cap, reveal) => BEATS.push([s, r, cap, reveal ?? null]);
@@ -21754,7 +21754,7 @@ for (const s of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 99, 13, 14, 98, 15, 16, 
   const L = LAYERS[s] || [null];
   B(s, null, TITLES[s], null);
   L.slice(1).forEach((layer, k) => B(s, null, TITLES[s], layer));
-  for (const z of ({"5": [[[16, 78, 482, 478], "Red-team examples: arguing away the right answer, misattributing findings"], [[478, 78, 944, 478], "More red-team examples: misattributing findings, contradicting itself"]], "7": [[[60, 60, 900, 240], "Detectors tested: LLM-as-judge, self-evaluation, and probes all score poorly"]], "11": [[[20, 140, 520, 400], "The winning white-box approach: a contrastive self-audit using logits"]], "17": [[[20, 20, 940, 300], "Steering group: researchers across universities, labs, and nonprofits"]], "15": [[[140, 130, 820, 450], "How NNsight reads and writes internals inside a live inference engine"]]}[s] || [])) B(s, z[0], z[1], null);
+  for (const z of ({"5": [[[16, 78, 482, 478], "Red-team examples: arguing away the right answer, misattributing findings"], [[478, 78, 944, 478], "More red-team examples: misattributing findings, contradicting itself"]], "7": [[[60, 60, 900, 240], "Detectors tested: LLM-as-judge, self-evaluation, and probes all score poorly"]], "11": [[[20, 140, 520, 400], "The winning white-box approach: a contrastive self-audit using logits"]], "15": [[[140, 130, 820, 450], "How NNsight reads and writes internals inside a live inference engine"]]}[s] || [])) B(s, z[0], z[1], null);
 }
 const N = BEATS.length - 1;
 const svg = document.getElementById('svg');
